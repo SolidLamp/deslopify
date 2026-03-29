@@ -5,6 +5,7 @@ const apexName = parts.slice(1).join(".");
 const blockedClasses = [
     "ai-header-button", // "*://dictionary.cambridge.org/*"
     "assistantIcon", // "*://*.collinsdictionary.com/*"
+    "react-module", // "*://duckduckgo.com/*"
 ];
 
 const blockedIDs = [
@@ -15,9 +16,12 @@ const blockedIDs = [
     // "rcnt", // "*://www.google.com/*"
 ];
 
-const blockedDataTestIDs = [];
+const blockedDataTestIDs = [
+    "ai-toggle", // "*://duckduckgo.com/*"
+    "aichat-button", // "*://duckduckgo.com/*"
+];
 
-function main() {
+function main(...args) {
     let elements = [];
 
     // Detect elements by class
@@ -62,6 +66,9 @@ function main() {
 }
 
 main();
+/*
+// browser.tabs.onUpdated.addListener(main);
+*/
 
 // Repeat the blocking multiple times for slow websites
 setTimeout(main, 100);

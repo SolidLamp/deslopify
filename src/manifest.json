@@ -1,8 +1,8 @@
 {
     "manifest_version": 3,
     "name": "Deslopify",
-    "version": "0.1",
-    "version_name": "Beta build 1",
+    "version": "0.2",
+    "version_name": "Beta build 2",
 
     "description": "Blocks AI slop elements from supported websites.",
 
@@ -27,7 +27,8 @@
                 "*://*.collinsdictionary.com/*",
                 "*://*.investopedia.com/*",
                 "*://*.indeed.com/*",
-                "*://www.google.com/*"
+                "*://www.google.com/*",
+                "*://duckduckgo.com/*"
             ],
             "js": ["borderify.js"]
         }
