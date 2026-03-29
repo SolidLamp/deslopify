@@ -2,6 +2,11 @@ const website = window.location.hostname;
 const parts = website.split(".");
 const apexName = parts.slice(1).join(".");
 
+const blockedClasses = [
+    "ai-header-button", // "*://dictionary.cambridge.org/*"
+    "assistantIcon", // "*://*.collinsdictionary.com/*"
+];
+
 const blockedIDs = [
     "askmiso-ask-query_1-0", // "*://*.investopedia.com/*"
     "AIOverlay", // "*://*.oed.com/*"
@@ -10,13 +15,12 @@ const blockedIDs = [
     // "rcnt", // "*://www.google.com/*"
 ];
 
-const blockedClasses = [
-    "ai-header-button", // "*://dictionary.cambridge.org/*"
-    "assistantIcon", // "*://*.collinsdictionary.com/*"
-];
+const blockedDataTestIDs = [];
 
 function main() {
     let elements = [];
+
+    // Detect elements by class
     for (let i = 0; i < blockedClasses.length; ++i) {
         let newElements = document.getElementsByClassName(blockedClasses[i]);
         if (newElements) {
@@ -25,14 +29,22 @@ function main() {
         }
     }
 
-    console.log(
-        "Deslopify: " + elements.length.toString() + " elements detected.",
-    );
-
+    // Detect elements by id
     for (let i = 0; i < blockedIDs.length; ++i) {
         let newElement = document.getElementById(blockedIDs[i]);
         if (newElement) {
             elements[elements.length] = newElement;
+        }
+    }
+
+    // Detect elements by data-testid
+    for (let i = 0; i < blockedDataTestIDs.length; ++i) {
+        let newElements = document.querySelectorAll(
+            "[data-testid='" + blockedDataTestIDs[i] + "']",
+        );
+        if (newElements) {
+            let newElementArray = Array.from(newElements);
+            elements = elements.concat(newElementArray);
         }
     }
 
@@ -49,13 +61,13 @@ function main() {
     console.log("Deslopify: deleted " + len.toString() + " elements.");
 }
 
-main()
+main();
 
 // Repeat the blocking multiple times for slow websites
-setTimeout(main, 100)
-setTimeout(main, 300)
-setTimeout(main, 500)
-setTimeout(main, 1000)
+setTimeout(main, 100);
+setTimeout(main, 300);
+setTimeout(main, 500);
+setTimeout(main, 1000);
 // TODO: Create a better solution
 
 /**
