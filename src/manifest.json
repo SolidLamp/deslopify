@@ -26,7 +26,8 @@
                 "*://*.oed.com/*",
                 "*://*.collinsdictionary.com/*",
                 "*://*.investopedia.com/*",
-                "*://*.indeed.com/*"
+                "*://*.indeed.com/*",
+                "*://www.google.com/*"
             ],
             "js": ["borderify.js"]
         }
@@ -34,13 +35,8 @@
 
     "web_accessible_resources": [
         {
-            "resources": ["test1.png", "test2.png"],
-            "matches": ["https://web-accessible-resources-1.example.com/*"]
-        },
-        {
-            "resources": ["test3.png", "test4.png"],
-            "matches": ["https://web-accessible-resources-2.example.com/*"],
-            "use_dynamic_url": true
+            "resources": ["blockedClassses.json", "blockedIDs.json"],
+            "matches": []
         }
     ]
 }
