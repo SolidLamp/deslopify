@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Deslopify",
+  "version": "0.1",
+  "version_name": "Beta build 1",
+
+  "description": "Blocks AI slop elements from supported websites.",
+
+  "icons": {
+    "48": "icons/border-48.png"
+  },
+
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "deslopify@solid.lamp",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
+    }
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://dictionary.cambridge.org/*", "*://*.oed.com/*", "*://*.collinsdictionary.com/*", "*://*.investopedia.com/*", "*://*.indeed.com/*"],
+      "js": ["borderify.js"]
+    }
+  ]
+}
