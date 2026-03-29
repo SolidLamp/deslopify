@@ -1,10 +1,18 @@
+const website = window.location.hostname;
+const parts = website.split(".");
+const apexName = parts.slice(1).join(".");
+
+
 const blockedIDs = [
-    "askmiso-ask-query_1-0",
-    "AIOverlay",
-    "mosaic-provider-career-guide-scout-promo",
+    "askmiso-ask-query_1-0", // "*://*.investopedia.com/*"
+    "AIOverlay", // "*://*.oed.com/*"
+    "mosaic-provider-career-guide-scout-promo", // "*://*.indeed.com/*"
 ];
 
-const blockedClasses = ["ai-header-button", "assistantIcon"];
+const blockedClasses = [
+    "ai-header-button", // "*://dictionary.cambridge.org/*"
+    "assistantIcon", // "*://*.collinsdictionary.com/*"
+];
 
 let elements = [];
 for (let i = 0; i < blockedClasses.length; ++i) {
