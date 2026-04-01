@@ -35,6 +35,19 @@
         }
     ],
 
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false,
+        "type": "module"
+    },
+
+    "action": {
+        "default_icon": {
+            "48": "icons/border-48.png"
+        },
+        "default_title": "Deslopify"
+    },
+
     "web_accessible_resources": [
         {
             "resources": ["blockedClassses.json", "blockedIDs.json"],

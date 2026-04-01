@@ -65,21 +65,20 @@ function main(...args) {
     }
 
     console.log("Deslopify: deleted " + len.toString() + " elements.");
+
+    const sending = browser.runtime.sendMessage(len.toString());
+    console.log(sending);
 }
 
 main();
+
 /*
 // browser.tabs.onUpdated.addListener(main);
 */
 
 // Repeat the blocking multiple times for slow websites
+// TODO: Create a better solution
 setTimeout(main, 100);
 setTimeout(main, 300);
 setTimeout(main, 500);
 setTimeout(main, 1000);
-// TODO: Create a better solution
-
-/**
- * TODO: Create background script and set up counter of blocked elements
- * browser.action.setBadgeText({text: len.toString()});
- */
