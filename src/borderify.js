@@ -7,7 +7,7 @@ const blockedClasses = [
     "assistantIcon", // "*://*.collinsdictionary.com/*"
     "react-module", // "*://duckduckgo.com/*"
     "fixed bottom-4 right-4 sm:right-6 z-50 w-14 h-14 rounded-full", // "*://plughopper.com/*"
-    "flex-1 overflow-y-auto px-4 py-4 space-y-3", // "*://plughopper.com/*"
+    "fixed bottom-20 right-4", // "*://plughopper.com/*"
 ];
 
 const blockedIDs = [
@@ -23,7 +23,7 @@ const blockedDataTestIDs = [
     "aichat-button", // "*://duckduckgo.com/*"
 ];
 
-function main(...args) {
+function main() {
     let elements = [];
 
     // Detect elements by class
@@ -54,31 +54,40 @@ function main(...args) {
         }
     }
 
-    console.log(
-        "Deslopify: " + elements.length.toString() + " elements detected.",
-    );
+    console.log(elements.length.toString() + " elements detected.");
     let len = elements.length;
 
     for (let i = 0; i < len; ++i) {
         elements[i].style.display = "none";
-        console.log("Deslopify: deleted element.");
+        console.log("Deslopify: Deleted element.");
     }
 
-    console.log("Deslopify: deleted " + len.toString() + " elements.");
+    console.log("Deslopify: Deleted " + len.toString() + " elements.");
 
-    const sending = browser.runtime.sendMessage(len.toString());
-    console.log(sending);
+    const response = browser.runtime.sendMessage(len.toString());
 }
+
+/* async function sendMsg(len) {
+    try {
+        const response = await browser.runtime.sendMessage(len.toString());
+        console.log("Response:", response);
+    } catch (e) {
+        console.error(`Message failed: ${e}`);
+    }
+}
+
+browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
+    console.log(message)
+    sendResponse({ message: "Succesfully updated." });
+}); */
 
 main();
 
-/*
-// browser.tabs.onUpdated.addListener(main);
-*/
+const observer = new MutationObserver(() => {
+    main();
+});
 
-// Repeat the blocking multiple times for slow websites
-// TODO: Create a better solution
-setTimeout(main, 100);
-setTimeout(main, 300);
-setTimeout(main, 500);
-setTimeout(main, 1000);
+observer.observe(document.body, {
+    childList: true,
+    subtree: true,
+});

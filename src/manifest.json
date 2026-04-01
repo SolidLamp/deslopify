@@ -10,6 +10,19 @@
         "48": "icons/border-48.png"
     },
 
+    "permissions": ["scripting", "tabs"],
+
+    "host_permissions": [
+        "*://dictionary.cambridge.org/*",
+        "*://*.oed.com/*",
+        "*://*.collinsdictionary.com/*",
+        "*://*.investopedia.com/*",
+        "*://*.indeed.com/*",
+        "*://www.google.com/*",
+        "*://duckduckgo.com/*",
+        "*://plughopper.com/*"
+    ],
+
     "browser_specific_settings": {
         "gecko": {
             "id": "deslopify@solid.lamp",
@@ -50,8 +63,12 @@
 
     "web_accessible_resources": [
         {
-            "resources": ["blockedClassses.json", "blockedIDs.json"],
-            "matches": []
+            "resources": [
+                "blockedClassses.json",
+                "blockedIDs.json",
+                "borderify.js"
+            ],
+            "matches": ["<all_urls>"]
         }
     ]
 }
