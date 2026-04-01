@@ -1,4 +1,8 @@
 {
     "dictionary.cambridge.org": ["ai-header-button"],
-    "collinsdictionary.com": ["assistantIcon"]
+    "collinsdictionary.com": ["assistantIcon"],
+    "plughopper.com": [
+        "fixed bottom-4 right-4 sm:right-6 z-50 w-14 h-14 rounded-full",
+        "flex-1 overflow-y-auto px-4 py-4 space-y-3"
+    ]
 }

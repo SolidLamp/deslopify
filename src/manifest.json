@@ -28,7 +28,8 @@
                 "*://*.investopedia.com/*",
                 "*://*.indeed.com/*",
                 "*://www.google.com/*",
-                "*://duckduckgo.com/*"
+                "*://duckduckgo.com/*",
+                "*://plughopper.com/*"
             ],
             "js": ["borderify.js"]
         }

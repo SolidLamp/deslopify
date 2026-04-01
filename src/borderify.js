@@ -6,6 +6,8 @@ const blockedClasses = [
     "ai-header-button", // "*://dictionary.cambridge.org/*"
     "assistantIcon", // "*://*.collinsdictionary.com/*"
     "react-module", // "*://duckduckgo.com/*"
+    "fixed bottom-4 right-4 sm:right-6 z-50 w-14 h-14 rounded-full", // "*://plughopper.com/*"
+    "flex-1 overflow-y-auto px-4 py-4 space-y-3", // "*://plughopper.com/*"
 ];
 
 const blockedIDs = [
