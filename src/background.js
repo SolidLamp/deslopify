@@ -15,6 +15,7 @@ const blockedClasses = [
     "react-module", // "*://duckduckgo.com/*"
     "fixed bottom-4 right-4 sm:right-6 z-50 w-14 h-14 rounded-full", // "*://plughopper.com/*"
     "fixed bottom-20 right-4", // "*://plughopper.com/*"
+    "relative max-w-7xl mx-auto px-4 sm:px-6", // "*://plughopper.com/*"
 ];
 
 const blockedIDs = [
