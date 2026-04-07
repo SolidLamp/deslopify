@@ -4,31 +4,18 @@ if (hostname.substring(0, 4) == "www.") {
     domain = hostname.slice(4);
 }
 
-const blockedClasses = [
-    "ai-header-button", // "*://dictionary.cambridge.org/*"
-    "assistantIcon", // "*://*.collinsdictionary.com/*"
-    "react-module", // "*://duckduckgo.com/*"
-    "fixed bottom-4 right-4 sm:right-6 z-50 w-14 h-14 rounded-full", // "*://plughopper.com/*"
-    "fixed bottom-20 right-4", // "*://plughopper.com/*"
-];
+let blockedClasses;
+let blockedIDs;
+let blockedOtherIdentifiers;
 
-const blockedIDs = [
-    "askmiso-ask-query_1-0", // "*://*.investopedia.com/*"
-    "AIOverlay", // "*://*.oed.com/*"
-    "mosaic-provider-career-guide-scout-promo", // "*://*.indeed.com/*"
-    "m-x-content", // "*://www.google.com/*"
-    // "rcnt", // "*://www.google.com/*"
-];
-
-const blockedOtherIdentifiers = [
-    "[data-testid='ai-toggle']", // "*://duckduckgo.com/*"
-    "[data-testid='aichat-button']", // "*://duckduckgo.com/*"
-    "[onclick='window.assistantTracker?.eventBurgerMenuItemClick()']", // "*://dictionary.cambridge.org/*"
-    "[data-mstk-u='']", // "*://www.google.com/*"
-    "[data-fh='']", // "*://www.google.com/*"
-];
-
-function main() {
+/**
+ *Blocks elements.
+ *
+ * @param {string[]} blockedClasses
+ * @param {string[]} blockedIDs
+ * @param {string[]} blockedOtherIdentifiers
+ */
+function blockElements(blockedClasses, blockedIDs, blockedOtherIdentifiers) {
     let elements = [];
 
     // Detect elements by class
@@ -70,10 +57,18 @@ function main() {
     const response = browser.runtime.sendMessage(len);
 }
 
-main();
+const message = browser.runtime.sendMessage("getBlocklist");
+message.then((value) => {
+    // console.log(value.message);
+    let blocklist = value.message;
+    blockedClasses = blocklist.classes;
+    blockedIDs = blocklist.ids;
+    blockedOtherIdentifiers = blocklist.otherIdentifiers;
+    blockElements(blockedClasses, blockedIDs, blockedOtherIdentifiers);
+});
 
 const observer = new MutationObserver(() => {
-    main();
+    blockElements(blockedClasses, blockedIDs, blockedOtherIdentifiers);
 });
 
 observer.observe(document.body, {
