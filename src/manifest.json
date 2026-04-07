@@ -44,7 +44,7 @@
                 "*://duckduckgo.com/*",
                 "*://plughopper.com/*"
             ],
-            "js": ["borderify.js"]
+            "js": ["deslopify.js"]
         }
     ],
 
