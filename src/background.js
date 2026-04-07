@@ -1,5 +1,7 @@
-let fullURL = browser.runtime.getURL("blocklist.json");
-console.log(fullURL);
+const blocklistURL = browser.runtime.getURL("blocklist.json");
+const response = await fetch(blocklistURL);
+const blocklistObject = await response.json();
+console.log(blocklistObject);
 
 /**
  * A list of components to block on a given webpage.
@@ -8,31 +10,6 @@ console.log(fullURL);
  * @property {string[]} ids
  * @property {string[]} otherIdentifiers
  */
-
-const blockedClasses = [
-    "ai-header-button", // "*://dictionary.cambridge.org/*"
-    "assistantIcon", // "*://*.collinsdictionary.com/*"
-    "react-module", // "*://duckduckgo.com/*"
-    "fixed bottom-4 right-4 sm:right-6 z-50 w-14 h-14 rounded-full", // "*://plughopper.com/*"
-    "fixed bottom-20 right-4", // "*://plughopper.com/*"
-    "relative max-w-7xl mx-auto px-4 sm:px-6", // "*://plughopper.com/*"
-];
-
-const blockedIDs = [
-    "askmiso-ask-query_1-0", // "*://*.investopedia.com/*"
-    "AIOverlay", // "*://*.oed.com/*"
-    "mosaic-provider-career-guide-scout-promo", // "*://*.indeed.com/*"
-    "m-x-content", // "*://www.google.com/*"
-    // "rcnt", // "*://www.google.com/*"
-];
-
-const blockedOtherIdentifiers = [
-    "[data-testid='ai-toggle']", // "*://duckduckgo.com/*"
-    "[data-testid='aichat-button']", // "*://duckduckgo.com/*"
-    "[onclick='window.assistantTracker?.eventBurgerMenuItemClick()']", // "*://dictionary.cambridge.org/*"
-    "[data-mstk-u='']", // "*://www.google.com/*"
-    "[data-fh='']", // "*://www.google.com/*"
-];
 
 /**
  *Updates the count as displayed on the badge next to the extension icon.
@@ -56,23 +33,41 @@ function updateBadgeCounter(count, tabID, sendResponse) {
 /**
  *Gets the blocklist
  *
+ * @param {string} domain
  * @returns {Blocklist}
  */
-function getBlocklist() {
-    const blocklist = {
-        classes: blockedClasses,
-        ids: blockedIDs,
-        otherIdentifiers: blockedOtherIdentifiers,
-    };
-    return blocklist;
+function getBlocklist(domain) {
+    const defaultBlocklist = {
+        classes: [],
+        IDs: [],
+        otherIdentifiers: [],
+    }
+    if (typeof domain != "string") {
+        console.warn("Deslopify: Invalid domain");
+        return defaultBlocklist;
+    }
+    if (domain in blocklistObject) {
+        let blocklist = blocklistObject[domain];
+        console.log(`Deslopify: Domain found: ${domain}!`);
+        console.log(blocklist);
+        return blocklist;
+    } else {
+        console.log(`Deslopify: Domain has no data: ${domain}`);
+        return defaultBlocklist;
+    }
 }
 
 browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
     const tabID = sender.tab.id;
     if (typeof message == "number") {
         updateBadgeCounter(message, tabID, sendResponse);
-    } else if (message == "getBlocklist") {
-        const blocklist = getBlocklist();
+    } else if (
+        typeof message == "object" &&
+        "message" in message &&
+        "data" in message &&
+        message.message == "getBlocklist"
+    ) {
+        const blocklist = getBlocklist(message.data);
         sendResponse({ message: blocklist });
     } else {
         sendResponse({ message: "Failed to parse message." });

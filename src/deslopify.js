@@ -57,12 +57,26 @@ function blockElements(blockedClasses, blockedIDs, blockedOtherIdentifiers) {
     const response = browser.runtime.sendMessage(len);
 }
 
-const message = browser.runtime.sendMessage("getBlocklist");
+// We need this loop if the user adds the extension while already on a page.
+noConnection = true;
+let message;
+while (noConnection) {
+    try {
+        message = browser.runtime.sendMessage({
+            message: "getBlocklist",
+            data: domain,
+        });
+        noConnection = false;
+    } catch (e) {
+        noConnection = true;
+    }
+}
+
 message.then((value) => {
     // console.log(value.message);
     let blocklist = value.message;
     blockedClasses = blocklist.classes;
-    blockedIDs = blocklist.ids;
+    blockedIDs = blocklist.IDs;
     blockedOtherIdentifiers = blocklist.otherIdentifiers;
     blockElements(blockedClasses, blockedIDs, blockedOtherIdentifiers);
 });

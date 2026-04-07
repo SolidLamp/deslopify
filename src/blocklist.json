@@ -1,36 +1,53 @@
 {
     "collinsdictionary.com": {
-        "classes": ["assistantIcon"]
+        "classes": ["assistantIcon"],
+        "IDs": [],
+        "otherIdentifiers": []
     },
     "dictionary.cambridge.org": {
         "classes": ["ai-header-button"],
+        "IDs": [],
         "otherIdentifiers": [
             "[onclick='window.assistantTracker?.eventBurgerMenuItemClick()']"
         ]
     },
     "duckduckgo.com": {
+        "classes": [],
+        "IDs": [],
         "otherIdentifiers": [
             "[data-testid='ai-toggle']",
             "[data-testid='aichat-button']"
         ]
     },
     "google.com": {
+        "classes": [],
         "IDs": ["m-x-content"],
         "otherIdentifiers": ["[data-mstk-u='']", "[data-fh='']"]
     },
     "indeed.com": {
-        "IDs": ["mosaic-provider-career-guide-scout-promo"]
+        "classes": [],
+        "IDs": ["mosaic-provider-career-guide-scout-promo"],
+        "otherIdentifiers": []
     },
     "investopedia.com": {
-        "IDs": ["askmiso-ask-query_1-0"]
+        "classes": [],
+        "IDs": ["askmiso-ask-query_1-0"],
+        "otherIdentifiers": []
     },
     "oed.com": {
-        "IDs": ["AIOverlay"]
+        "classes": [],
+        "IDs": ["AIOverlay"],
+        "otherIdentifiers": []
     },
     "plughopper.com": {
         "classes": [
             "fixed bottom-4 right-4 sm:right-6 z-50 w-14 h-14 rounded-full",
-            "flex-1 overflow-y-auto px-4 py-4 space-y-3"
-        ]
+            "fixed sm:right-6 z-50",
+            "flex-1 overflow-y-auto px-4 py-4 space-y-3",
+            "relative max-w-7xl mx-auto px-4 sm:px-6",
+            "w-1 h-1 rounded-full dark:bg-white/20"
+        ],
+        "IDs": [],
+        "otherIdentifiers": ["[href='/what-to-pack']"]
     }
 }

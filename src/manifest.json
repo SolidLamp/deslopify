@@ -1,8 +1,8 @@
 {
     "manifest_version": 3,
     "name": "Deslopify",
-    "version": "0.3",
-    "version_name": "Beta build 3",
+    "version": "0.4",
+    "version_name": "Beta build 4",
 
     "description": "Blocks AI slop elements from supported websites.",
 
