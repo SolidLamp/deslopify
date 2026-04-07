@@ -1,6 +1,8 @@
-const website = window.location.hostname;
-const parts = website.split(".");
-const apexName = parts.slice(1).join(".");
+let hostname = window.location.hostname;
+let domain = hostname;
+if (hostname.substring(0, 4) == "www.") {
+    domain = hostname.slice(4);
+}
 
 const blockedClasses = [
     "ai-header-button", // "*://dictionary.cambridge.org/*"
@@ -18,9 +20,12 @@ const blockedIDs = [
     // "rcnt", // "*://www.google.com/*"
 ];
 
-const blockedDataTestIDs = [
-    "ai-toggle", // "*://duckduckgo.com/*"
-    "aichat-button", // "*://duckduckgo.com/*"
+const blockedOtherIdentifiers = [
+    "[data-testid='ai-toggle']", // "*://duckduckgo.com/*"
+    "[data-testid='aichat-button']", // "*://duckduckgo.com/*"
+    "[onclick='window.assistantTracker?.eventBurgerMenuItemClick()']", // "*://dictionary.cambridge.org/*"
+    "[data-mstk-u='']", // "*://www.google.com/*"
+    "[data-fh='']", // "*://www.google.com/*"
 ];
 
 function main() {
@@ -43,11 +48,9 @@ function main() {
         }
     }
 
-    // Detect elements by data-testid
-    for (let i = 0; i < blockedDataTestIDs.length; ++i) {
-        let newElements = document.querySelectorAll(
-            "[data-testid='" + blockedDataTestIDs[i] + "']",
-        );
+    // Detect elements by other identifiers
+    for (let i = 0; i < blockedOtherIdentifiers.length; ++i) {
+        let newElements = document.querySelectorAll(blockedOtherIdentifiers[i]);
         if (newElements) {
             let newElementArray = Array.from(newElements);
             elements = elements.concat(newElementArray);
@@ -64,22 +67,8 @@ function main() {
 
     console.log("Deslopify: Deleted " + len.toString() + " elements.");
 
-    const response = browser.runtime.sendMessage(len.toString());
+    const response = browser.runtime.sendMessage(len);
 }
-
-/* async function sendMsg(len) {
-    try {
-        const response = await browser.runtime.sendMessage(len.toString());
-        console.log("Response:", response);
-    } catch (e) {
-        console.error(`Message failed: ${e}`);
-    }
-}
-
-browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
-    console.log(message)
-    sendResponse({ message: "Succesfully updated." });
-}); */
 
 main();
 

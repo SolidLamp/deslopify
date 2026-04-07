@@ -2,6 +2,7 @@ let fullURL = browser.runtime.getURL("blockedIDs.json");
 console.log(fullURL);
 
 browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
+    message = message.toString()
     const tabID = sender.tab.id;
     console.log("Received message!");
     if (message == "0") {
@@ -11,7 +12,7 @@ browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
         browser.action.setBadgeBackgroundColor({ color: "grey" });
         sendResponse({ message: "Succesfully updated." });
     }
-    return true;
+    //return true;
 });
 
 /* browser.tabs.onUpdated.addListener(async (tabId, changeInfo, tab) => {

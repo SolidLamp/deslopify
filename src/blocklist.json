@@ -1,0 +1,36 @@
+{
+    "collinsdictionary.com": {
+        "classes": ["assistantIcon"]
+    },
+    "dictionary.cambridge.org": {
+        "classes": ["ai-header-button"],
+        "otherIdentifiers": [
+            "[onclick='window.assistantTracker?.eventBurgerMenuItemClick()']"
+        ]
+    },
+    "duckduckgo.com": {
+        "otherIdentifiers": [
+            "[data-testid='ai-toggle']",
+            "[data-testid='aichat-button']"
+        ]
+    },
+    "google.com": {
+        "IDs": ["m-x-content"],
+        "otherIdentifiers": ["[data-mstk-u='']", "[data-fh='']"]
+    },
+    "indeed.com": {
+        "IDs": ["mosaic-provider-career-guide-scout-promo"]
+    },
+    "investopedia.com": {
+        "IDs": ["askmiso-ask-query_1-0"]
+    },
+    "oed.com": {
+        "IDs": ["AIOverlay"]
+    },
+    "plughopper.com": {
+        "classes": [
+            "fixed bottom-4 right-4 sm:right-6 z-50 w-14 h-14 rounded-full",
+            "flex-1 overflow-y-auto px-4 py-4 space-y-3"
+        ]
+    }
+}
