@@ -1,9 +1,8 @@
 let fullURL = browser.runtime.getURL("blockedIDs.json");
 console.log(fullURL);
 
-browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
-    message = message.toString()
-    const tabID = sender.tab.id;
+function updateBadgeCounter(count, tabID, sendResponse) {
+    let message = count.toString()
     console.log("Received message!");
     if (message == "0") {
         sendResponse({ message: "Did not update." });
@@ -12,7 +11,13 @@ browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
         browser.action.setBadgeBackgroundColor({ color: "grey" });
         sendResponse({ message: "Succesfully updated." });
     }
-    //return true;
+}
+
+browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
+    const tabID = sender.tab.id;
+    if (typeof message == "number") {
+        updateBadgeCounter(message, tabID, sendResponse)
+    }
 });
 
 /* browser.tabs.onUpdated.addListener(async (tabId, changeInfo, tab) => {
