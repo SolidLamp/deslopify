@@ -1,6 +1,13 @@
 let fullURL = browser.runtime.getURL("blockedIDs.json");
 console.log(fullURL);
 
+/**
+ *Updates the count as displayed on the badge next to the extension icon.
+ *
+ * @param {number} count
+ * @param {number} tabID
+ * @param {Function} sendResponse
+ */
 function updateBadgeCounter(count, tabID, sendResponse) {
     let message = count.toString()
     console.log("Received message!");
