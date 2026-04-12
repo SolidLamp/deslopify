@@ -7,7 +7,7 @@
     "description": "Blocks AI slop elements from supported websites.",
 
     "icons": {
-        "48": "icons/border-48.png"
+        "48": "icons/icon.svg"
     },
 
     "permissions": ["scripting", "tabs"],
@@ -36,7 +36,7 @@
 
     "action": {
         "default_icon": {
-            "48": "icons/border-48.png"
+            "48": "icons/icon.svg"
         },
         "default_title": "Deslopify"
     },
