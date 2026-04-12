@@ -12,17 +12,6 @@
 
     "permissions": ["scripting", "tabs"],
 
-    "host_permissions": [
-        "*://dictionary.cambridge.org/*",
-        "*://*.oed.com/*",
-        "*://*.collinsdictionary.com/*",
-        "*://*.investopedia.com/*",
-        "*://*.indeed.com/*",
-        "*://www.google.com/*",
-        "*://duckduckgo.com/*",
-        "*://plughopper.com/*"
-    ],
-
     "browser_specific_settings": {
         "gecko": {
             "id": "deslopify@solid.lamp",
@@ -34,16 +23,7 @@
 
     "content_scripts": [
         {
-            "matches": [
-                "*://dictionary.cambridge.org/*",
-                "*://*.oed.com/*",
-                "*://*.collinsdictionary.com/*",
-                "*://*.investopedia.com/*",
-                "*://*.indeed.com/*",
-                "*://www.google.com/*",
-                "*://duckduckgo.com/*",
-                "*://plughopper.com/*"
-            ],
+            "matches": ["<all_urls>"],
             "js": ["deslopify.js"]
         }
     ],
@@ -66,7 +46,7 @@
             "resources": [
                 "blocklist.json"
             ],
-            "matches": ["<all_urls>"]
+            "matches": []
         }
     ]
 }
