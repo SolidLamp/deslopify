@@ -28,15 +28,22 @@
         "IDs": [],
         "otherIdentifiers": [
             "[data-testid='ai-toggle']",
-            "[data-testid='aichat-button']"
+            "[data-testid='aichat-button']",
+            "[data-testid='wikinlp']",
+            "[data-layout='wikinlp']",
+            "[data-react-module-id='wikinlp']",
+            "[href$='assist=true']",
+            "[href$='assist=false']",
+            "[href*='ia=chat']",
+            "[href='https://duck.ai/']"
         ],
-        "textContent": []
+        "textContent": ["Search Assist", "Duck.ai"]
     },
     "google.com": {
         "classes": [],
         "IDs": ["m-x-content"],
         "otherIdentifiers": ["[data-mstk-u='']", "[data-fh='']"],
-        "textContent": []
+        "textContent": ["AI Mode"]
     },
     "indeed.com": {
         "classes": [],
@@ -67,7 +74,7 @@
             "[href$='ai-gaming-pc/']",
             "[href$='ai-workstations/']"
         ],
-        "textContent": ["AI (Artificial Intelligence)"]
+        "textContent": ["AI (Artificial Intelligence)", "Copilot + PC", "Copilot+PC"]
     },
     "oed.com": {
         "classes": [],
