@@ -7,6 +7,7 @@ if (hostname.substring(0, 4) == "www.") {
 let blockedClasses;
 let blockedIDs;
 let blockedOtherIdentifiers;
+let blockedTextContent;
 
 /**
  *Blocks elements.
@@ -14,8 +15,14 @@ let blockedOtherIdentifiers;
  * @param {string[]} blockedClasses
  * @param {string[]} blockedIDs
  * @param {string[]} blockedOtherIdentifiers
+ * @param {string[]} blockedTextContent
  */
-function blockElements(blockedClasses, blockedIDs, blockedOtherIdentifiers) {
+function blockElements(
+    blockedClasses,
+    blockedIDs,
+    blockedOtherIdentifiers,
+    blockedTextContent,
+) {
     let elements = [];
 
     // Detect elements by class
@@ -44,12 +51,19 @@ function blockElements(blockedClasses, blockedIDs, blockedOtherIdentifiers) {
         }
     }
 
+    // Detect elements by text content
+    const textElements = Array.from(document.querySelectorAll(["p", "span"]));
+    const blockedTextElements = textElements.filter((element) =>
+        blockedTextContent.includes(element.textContent.trim()),
+    );
+    elements = elements.concat(blockedTextElements);
+
+    
     console.log(elements.length.toString() + " elements detected.");
     let len = elements.length;
 
     for (let i = 0; i < len; ++i) {
         elements[i].style.display = "none";
-        console.log("Deslopify: Deleted element.");
     }
 
     console.log("Deslopify: Deleted " + len.toString() + " elements.");
@@ -78,11 +92,22 @@ message.then((value) => {
     blockedClasses = blocklist.classes;
     blockedIDs = blocklist.IDs;
     blockedOtherIdentifiers = blocklist.otherIdentifiers;
-    blockElements(blockedClasses, blockedIDs, blockedOtherIdentifiers);
+    blockedTextContent = blocklist.textContent;
+    blockElements(
+        blockedClasses,
+        blockedIDs,
+        blockedOtherIdentifiers,
+        blockedTextContent,
+    );
 });
 
 const observer = new MutationObserver(() => {
-    blockElements(blockedClasses, blockedIDs, blockedOtherIdentifiers);
+    blockElements(
+        blockedClasses,
+        blockedIDs,
+        blockedOtherIdentifiers,
+        blockedTextContent,
+    );
 });
 
 observer.observe(document.body, {
