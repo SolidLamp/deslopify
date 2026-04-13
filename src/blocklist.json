@@ -1,4 +1,11 @@
 {
+    "anaconda.com": {
+        "classes": [
+            "text-sm text-gray-500 dark:text-white/50 whitespace-nowrap"
+        ],
+        "IDs": [],
+        "otherIdentifiers": ["[href='/platform/ai-catalyst']"]
+    },
     "collinsdictionary.com": {
         "classes": ["assistantIcon"],
         "IDs": [],
@@ -33,6 +40,24 @@
         "classes": [],
         "IDs": ["askmiso-ask-query_1-0"],
         "otherIdentifiers": []
+    },
+    "lenovo.com": {
+        "classes": [
+            "MuiPaper-root MuiPaper-elevation MuiPaper-elevation16",
+            "chatNotification",
+            "cf-invite"
+        ],
+        "IDs": ["insideChatPane"],
+        "otherIdentifiers": [
+            "[aria-label='Ask Leo']",
+            "[navposkey='ai_nav']",
+            "[href$='all-ai-pcs/']",
+            "[href$='lenovoauraedition/']",
+            "[href$='copilot-plus-pc/']",
+            "[href$='ai-pc/']",
+            "[href$='ai-gaming-pc/']",
+            "[href$='ai-workstations/']"
+        ]
     },
     "oed.com": {
         "classes": [],
