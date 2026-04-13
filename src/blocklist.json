@@ -1,22 +1,27 @@
 {
+    "format_version": 2,
+
     "anaconda.com": {
         "classes": [
             "text-sm text-gray-500 dark:text-white/50 whitespace-nowrap"
         ],
         "IDs": [],
-        "otherIdentifiers": ["[href='/platform/ai-catalyst']"]
+        "otherIdentifiers": ["[href='/platform/ai-catalyst']"],
+        "textContent": []
     },
     "collinsdictionary.com": {
         "classes": ["assistantIcon"],
         "IDs": [],
-        "otherIdentifiers": []
+        "otherIdentifiers": [],
+        "textContent": []
     },
     "dictionary.cambridge.org": {
         "classes": ["ai-header-button"],
         "IDs": [],
         "otherIdentifiers": [
             "[onclick='window.assistantTracker?.eventBurgerMenuItemClick()']"
-        ]
+        ],
+        "textContent": []
     },
     "duckduckgo.com": {
         "classes": [],
@@ -24,22 +29,26 @@
         "otherIdentifiers": [
             "[data-testid='ai-toggle']",
             "[data-testid='aichat-button']"
-        ]
+        ],
+        "textContent": []
     },
     "google.com": {
         "classes": [],
         "IDs": ["m-x-content"],
-        "otherIdentifiers": ["[data-mstk-u='']", "[data-fh='']"]
+        "otherIdentifiers": ["[data-mstk-u='']", "[data-fh='']"],
+        "textContent": []
     },
     "indeed.com": {
         "classes": [],
         "IDs": ["mosaic-provider-career-guide-scout-promo"],
-        "otherIdentifiers": []
+        "otherIdentifiers": [],
+        "textContent": []
     },
     "investopedia.com": {
         "classes": [],
         "IDs": ["askmiso-ask-query_1-0"],
-        "otherIdentifiers": []
+        "otherIdentifiers": [],
+        "textContent": []
     },
     "lenovo.com": {
         "classes": [
@@ -57,12 +66,14 @@
             "[href$='ai-pc/']",
             "[href$='ai-gaming-pc/']",
             "[href$='ai-workstations/']"
-        ]
+        ],
+        "textContent": ["AI (Artificial Intelligence)"]
     },
     "oed.com": {
         "classes": [],
         "IDs": ["AIOverlay"],
-        "otherIdentifiers": []
+        "otherIdentifiers": [],
+        "textContent": []
     },
     "plughopper.com": {
         "classes": [
@@ -73,6 +84,7 @@
             "w-1 h-1 rounded-full dark:bg-white/20"
         ],
         "IDs": [],
-        "otherIdentifiers": ["[href='/what-to-pack']"]
+        "otherIdentifiers": ["[href='/what-to-pack']"],
+        "textContent": []
     }
 }
