@@ -9,6 +9,12 @@
         "otherIdentifiers": ["[href='/platform/ai-catalyst']"],
         "textContent": []
     },
+    "britannica.com": {
+        "classes": ["header-topic-britannica-ai-module", "category-link-CHATBOT"],
+        "IDs": [],
+        "otherIdentifiers": ["[href='/chatbot']"],
+        "textContent": []
+    },
     "collinsdictionary.com": {
         "classes": ["assistantIcon"],
         "IDs": [],
