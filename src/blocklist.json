@@ -10,7 +10,10 @@
         "textContent": []
     },
     "britannica.com": {
-        "classes": ["header-topic-britannica-ai-module", "category-link-CHATBOT"],
+        "classes": [
+            "header-topic-britannica-ai-module",
+            "category-link-CHATBOT"
+        ],
         "IDs": [],
         "otherIdentifiers": ["[href='/chatbot']"],
         "textContent": []
@@ -80,13 +83,30 @@
             "[href$='ai-gaming-pc/']",
             "[href$='ai-workstations/']"
         ],
-        "textContent": ["AI (Artificial Intelligence)", "Copilot + PC", "Copilot+PC"]
+        "textContent": [
+            "AI (Artificial Intelligence)",
+            "Copilot + PC",
+            "Copilot+PC"
+        ]
     },
     "oed.com": {
         "classes": [],
         "IDs": ["AIOverlay"],
         "otherIdentifiers": [],
         "textContent": []
+    },
+    "onecompiler.com": {
+        "classes": ["mr-1"],
+        "IDs": [],
+        "otherIdentifiers": ["[href*='vibecode']"],
+        "textContent": [
+            "AI Tools",
+            "AI",
+            "Vibe Coding",
+            "AI Agent",
+            "Studio/ AI Agent",
+            "Studio AI Agent"
+        ]
     },
     "plughopper.com": {
         "classes": [
@@ -98,6 +118,24 @@
         ],
         "IDs": [],
         "otherIdentifiers": ["[href='/what-to-pack']"],
+        "textContent": []
+    },
+    "smallpdf.com": {
+        "classes": [],
+        "IDs": [],
+        "otherIdentifiers": [
+            "[href*='pdf-summarizer']",
+            "[href*='ai-pdf']",
+            "[href*='question-generator']",
+            "[href*='chat-pdf']",
+            "[href*='translate-pdf']"
+        ],
+        "textContent": ["AI PDF"]
+    },
+    "stackoverflow.com": {
+        "classes": [],
+        "IDs": [],
+        "otherIdentifiers": ["[href*='ai-assist']"],
         "textContent": []
     }
 }
