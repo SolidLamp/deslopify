@@ -52,7 +52,8 @@ function blockElements(
     }
 
     // Detect elements by text content
-    const textElements = Array.from(document.querySelectorAll(["a", "p", "span"]));
+    const textTags = ["a", "p", "span", "div", "button"]
+    const textElements = Array.from(document.querySelectorAll(textTags));
     const blockedTextElements = textElements.filter((element) =>
         blockedTextContent.includes(element.textContent.trim()),
     );
