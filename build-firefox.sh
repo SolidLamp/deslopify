@@ -37,7 +37,16 @@ fi
 cd ..
 pwd
 
-zip -r deslopify-firefox.zip ./firefox
+
+# Check that .zip not already there
+if [ -f deslopify-firefox.zip ]; then
+    rm ./deslopify-firefox.zip
+fi
+
+
+cd ./firefox
+
+zip -r ../deslopify-firefox.zip .
 
 echo "${bold}Created deslopify-firefox.zip!${normal}"
 
