@@ -2,11 +2,14 @@
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "type": "object",
     "properties": {
+        "$schema": {
+            "type": "string"
+        },
         "format_version": {
             "type": "number"
         }
     },
-    "required": ["format_version"],
+    "required": ["$schema", "format_version"],
     "additionalProperties": {
         "type": "object",
         "properties": {
