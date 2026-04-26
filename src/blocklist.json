@@ -121,6 +121,35 @@
         "otherIdentifiers": ["[href='/what-to-pack']"],
         "textContent": []
     },
+    "replit.com": {
+        "classes": [],
+        "IDs": ["ai-prompt-input"],
+        "otherIdentifiers": [
+            "[alt='AI']",
+            "[data-tour-id='chat-input']",
+            "[style*='agent-chat']",
+            "[data-agent-input2-root='true']",
+            "[class*='agentInput2Root']",
+            "[href$='agent4']",
+            "[aria-label='Agent 4']",
+            "[class*='LogoBlock2']",
+            "[class*='PlatformCards']",
+            "[class*='TestimonialsSection2']",
+            "[href$='vibecon.ai']",
+            "[class*='DesignCanvasCard']",
+            "[class*='ParallelAgentsCard']",
+            "[class*='MultipleArtifactsCard']",
+            "[class*='TeamsCard']"
+        ],
+        "textContent": [
+            "Agent 4",
+            "Meet",
+            "Vibe Coding 101",
+            "Agent",
+            "Vibecon",
+            "Turn ideas into apps in minutes — no coding needed"
+        ]
+    },
     "smallpdf.com": {
         "classes": [],
         "IDs": [],
