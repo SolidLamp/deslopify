@@ -1,10 +1,10 @@
 {
     "manifest_version": 3,
     "name": "Deslopify",
-    "version": "0.6",
-    "version_name": "Beta build 6",
+    "version": "0.7",
+    "version_name": "Beta build 7",
 
-    "description": "Blocks AI slop elements from supported websites.",
+    "description": "A content blocker which hides 'in-your-face AI' elements on supported websites.",
 
     "icons": {
         "48": "icons/icon.svg"
@@ -48,7 +48,7 @@
 
     "web_accessible_resources": [
         {
-            "resources": ["blocklist.json", "blocklist.schema.json"],
+            "resources": ["blocklist.json", "blocklist.schema.json", "LICENSE"],
             "matches": []
         }
     ]
