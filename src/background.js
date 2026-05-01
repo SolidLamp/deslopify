@@ -1,4 +1,6 @@
-const blocklistURL = browser.runtime.getURL("blocklist.json");
+const api = typeof browser !== "undefined" ? browser : chrome;
+
+const blocklistURL = api.runtime.getURL("blocklist.json");
 const response = await fetch(blocklistURL);
 const blocklistObject = await response.json();
 console.log(blocklistObject);
@@ -24,8 +26,8 @@ function updateBadgeCounter(count, tabID, sendResponse) {
     if (message == "0") {
         sendResponse({ message: "Did not update." });
     } else {
-        browser.action.setBadgeText({ text: message, tabId: tabID });
-        browser.action.setBadgeBackgroundColor({ color: "grey" });
+        api.action.setBadgeText({ text: message, tabId: tabID });
+        api.action.setBadgeBackgroundColor({ color: "grey" });
         sendResponse({ message: "Succesfully updated." });
     }
 }
@@ -57,7 +59,7 @@ function getBlocklist(domain) {
     }
 }
 
-browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
+api.runtime.onMessage.addListener((message, sender, sendResponse) => {
     const tabID = sender.tab.id;
     if (typeof message == "number") {
         updateBadgeCounter(message, tabID, sendResponse);
@@ -74,10 +76,10 @@ browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
     }
 });
 
-/* browser.tabs.onUpdated.addListener(async (tabId, changeInfo, tab) => {
+/* api.tabs.onUpdated.addListener(async (tabId, changeInfo, tab) => {
     if (changeInfo.status !== "complete") return;
     try {
-        await browser.scripting.executeScript({
+        await api.scripting.executeScript({
             target: {
                 tabId: tabId,
             },
@@ -87,12 +89,12 @@ browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
     } catch (e) {
         console.error(`failed to execute script: ${e}`);
     }
-    // const sending = browser.tabs.sendMessage(tabId, "Run");
+    // const sending = api.tabs.sendMessage(tabId, "Run");
 });
 
-browser.action.onClicked.addListener(async (tab) => {
+api.action.onClicked.addListener(async (tab) => {
     try {
-        await browser.scripting.executeScript({
+        await api.scripting.executeScript({
             target: {
                 tabId: tab.id,
             },
@@ -102,5 +104,5 @@ browser.action.onClicked.addListener(async (tab) => {
     } catch (e) {
         console.error(`failed to execute script: ${e}`);
     }
-    // const sending = browser.tabs.sendMessage(tabId, "Run");
+    // const sending = api.tabs.sendMessage(tabId, "Run");
 }); */

@@ -1,3 +1,5 @@
+const api = typeof browser !== "undefined" ? browser : chrome;
+
 let hostname = window.location.hostname;
 let domain = hostname;
 if (hostname.substring(0, 4) == "www.") {
@@ -69,7 +71,7 @@ function blockElements(
 
     console.log("Deslopify: Deleted " + len.toString() + " elements.");
 
-    const response = browser.runtime.sendMessage(len);
+    const response = api.runtime.sendMessage(len);
 }
 
 // We need this loop if the user adds the extension while already on a page.
@@ -77,7 +79,7 @@ noConnection = true;
 let message;
 while (noConnection) {
     try {
-        message = browser.runtime.sendMessage({
+        message = api.runtime.sendMessage({
             message: "getBlocklist",
             data: domain,
         });
