@@ -49,6 +49,19 @@
         ],
         "textContent": ["Search Assist", "Duck.ai"]
     },
+    "extension.js.org": {
+        "classes": ["group/ai", "chat-assistant-input"],
+        "IDs": [],
+        "otherIdentifiers": [
+            "[href$='ai-access']",
+            "[aria-label='Ask a question...']",
+            "[placeholder='Ask a question...']",
+            "[aria-label='Ask AI']",
+            "[data-chat-payload-element-id='lang-shellscript-code-npx_extension_latest']",
+            "[aria-label='Copy page']"
+        ],
+        "textContent": ["Ask AI"]
+    },
     "google.com": {
         "classes": [],
         "IDs": ["m-x-content"],
@@ -89,6 +102,12 @@
             "Copilot + PC",
             "Copilot+PC"
         ]
+    },
+    "natwest.com": {
+        "classes": [],
+        "IDs": ["ccm-chat-cora-button"],
+        "otherIdentifiers": [],
+        "textContent": []
     },
     "oed.com": {
         "classes": [],
@@ -149,6 +168,12 @@
             "Vibecon",
             "Turn ideas into apps in minutes — no coding needed"
         ]
+    },
+    "savemyexams.com": {
+        "classes": [],
+        "IDs": [],
+        "otherIdentifiers": ["[aria-label='Open AI chat']"],
+        "textContent": []
     },
     "smallpdf.com": {
         "classes": [],
