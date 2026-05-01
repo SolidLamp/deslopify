@@ -1,0 +1,28 @@
+{
+    "name": "Deslopify",
+    "version": "1.0.0",
+    "description": "npm dev tools",
+    "type": "module",
+    "scripts": {
+        "build": "extension build",
+        "dev": "extension dev",
+        "start": "extension start"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/SolidLamp/deslopify.git"
+    },
+    "author": "SolidLamp",
+    "license": "AGPLv3",
+    "homepage": "https://github.com/SolidLamp/deslopify",
+    "devDependencies": {
+        "@eslint/js": "^10.0.1",
+        "eslint": "^10.3.0",
+        "eslint-config-prettier": "^10.1.8",
+        "extension": "^3.14.5",
+        "globals": "^17.6.0",
+        "typescript": "^6.0.3",
+        "typescript-eslint": "^8.59.1",
+        "web-ext": "^10.1.0"
+    }
+}

@@ -75,7 +75,7 @@ function blockElements(
 }
 
 // We need this loop if the user adds the extension while already on a page.
-noConnection = true;
+let noConnection = true;
 let message;
 while (noConnection) {
     try {

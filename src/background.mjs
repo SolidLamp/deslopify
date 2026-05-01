@@ -1,6 +1,6 @@
 const api = typeof browser !== "undefined" ? browser : chrome;
 
-const blocklistURL = api.runtime.getURL("blocklist.json");
+const blocklistURL = api.runtime.getURL("assets/blocklist.json");
 const response = await fetch(blocklistURL);
 const blocklistObject = await response.json();
 console.log(blocklistObject);
