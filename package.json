@@ -17,6 +17,7 @@
     "homepage": "https://github.com/SolidLamp/deslopify",
     "devDependencies": {
         "@eslint/js": "^10.0.1",
+        "@types/webextension-polyfill": "^0.12.5",
         "eslint": "^10.3.0",
         "eslint-config-prettier": "^10.1.8",
         "extension": "^3.14.5",
