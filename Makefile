@@ -52,8 +52,8 @@ TEST_ID := $(shell uuidgen --random)
 
 default: all
 all: firefox chromium
-firefox: $(BUILD_DIR)/deslopify-firefox.zip
-chromium: $(BUILD_DIR)/deslopify-chromium.zip
+firefox: $(BUILD_DIR)/deslopify-$(VERSION)/deslopify-$(VERSION)-firefox.zip
+chromium: $(BUILD_DIR)/deslopify-$(VERSION)/deslopify-$(VERSION)-chromium.zip
 .PHONY: default all firefox chromium
 
 
