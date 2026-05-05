@@ -7,7 +7,22 @@
             "text-sm text-gray-500 dark:text-white/50 whitespace-nowrap"
         ],
         "IDs": [],
-        "otherIdentifiers": ["[href='/platform/ai-catalyst']"],
+        "otherIdentifiers": ["[href$='platform/ai-catalyst']"],
+        "textContent": []
+    },
+    "bing.com": {
+        "classes": [
+            "cdxCopilotIcon",
+            "cdxCopilotIconBg",
+            "aitools_content",
+            "tools_list",
+            "gs_temp"
+        ],
+        "IDs": ["codex", "b-scopeListItem-copilotsearch"],
+        "otherIdentifiers": [
+            "[aria-label='Open Copilot']",
+            "[title='Open Copilot']"
+        ],
         "textContent": []
     },
     "britannica.com": {
@@ -16,7 +31,7 @@
             "category-link-CHATBOT"
         ],
         "IDs": [],
-        "otherIdentifiers": ["[href='/chatbot']"],
+        "otherIdentifiers": ["[href$='chatbot']"],
         "textContent": []
     },
     "collinsdictionary.com": {
@@ -29,7 +44,8 @@
         "classes": ["ai-header-button"],
         "IDs": [],
         "otherIdentifiers": [
-            "[onclick='window.assistantTracker?.eventBurgerMenuItemClick()']"
+            "[onclick='window.assistantTracker?.eventBurgerMenuItemClick()']",
+            "[href$='assistant']"
         ],
         "textContent": []
     },
@@ -48,6 +64,18 @@
             "[href='https://duck.ai/']"
         ],
         "textContent": ["Search Assist", "Duck.ai"]
+    },
+    "ecosia.org": {
+        "classes": ["ai-overview-content"],
+        "IDs": ["search-form-ai-suggestion"],
+        "otherIdentifiers": [
+            "[data-test-id='search-navigation-item-chat']",
+            "[data-test-id='search-form-ai-suggestion']",
+            "[data-test-id='ai-overview-content']",
+            "[data-test-id='ai-overview']",
+            "[data-test-id='mainline-result-aiOverview']"
+        ],
+        "textContent": []
     },
     "extension.js.org": {
         "classes": ["group/ai", "chat-assistant-input"],
@@ -140,6 +168,18 @@
         "otherIdentifiers": ["[href='/what-to-pack']"],
         "textContent": []
     },
+    "presearch.com": {
+        "classes": [],
+        "IDs": [],
+        "otherIdentifiers": ["[x-show='showAiResults()']"],
+        "textContent": []
+    },
+    "qwant.com": {
+        "classes": [],
+        "IDs": ["llm-text-box"],
+        "otherIdentifiers": ["[data-click-label='llm_mode_dropdown_tab_bar']"],
+        "textContent": []
+    },
     "replit.com": {
         "classes": [],
         "IDs": ["ai-prompt-input"],
@@ -174,6 +214,16 @@
         "IDs": [],
         "otherIdentifiers": ["[aria-label='Open AI chat']"],
         "textContent": []
+    },
+    "search.brave.com": {
+        "classes": [
+            "ask-button-content",
+            "ask-button-content-wrapper",
+            "ask-button-content-overlay"
+        ],
+        "IDs": ["submit-llm-button", "llm-snippet"],
+        "otherIdentifiers": [],
+        "textContent": ["Ask"]
     },
     "smallpdf.com": {
         "classes": [],
