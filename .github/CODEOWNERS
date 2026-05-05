@@ -1,0 +1,26 @@
+# Scripts - Senior Contributors:
+#   - @SolidLamp
+*.js @SolidLamp
+*.cjs @SolidLamp
+*.mjs @SolidLamp
+*.ts @SolidLamp
+*.cts @SolidLamp
+*.mts @SolidLamp
+src/blocklist.schema.json @SolidLamp
+
+# Environment / Packaging - Core Contributors:
+#   - @SolidLamp
+.github/ @SolidLamp
+.forgejo/ @SolidLamp
+.vscode/ @SolidLamp
+.editorconfig @SolidLamp
+.gitignore @SolidLamp
+.prettierrc @SolidLamp
+.prettierrc @SolidLamp
+*.config.js @SolidLamp
+*.config.cjs @SolidLamp
+*.config.mjs @SolidLamp
+tsconfig.json @SolidLamp
+Makefile @SolidLamp
+LICENCE @SolidLamp
+LICENSE @SolidLamp 
