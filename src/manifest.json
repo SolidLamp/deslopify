@@ -1,8 +1,8 @@
 {
     "manifest_version": 3,
     "name": "Deslopify",
-    "version": "0.7",
-    "version_name": "Beta build 7",
+    "version": "0.8",
+    "version_name": "Beta build 8",
 
     "description": "A content blocker which hides 'in-your-face AI' elements on supported websites.",
 
@@ -24,18 +24,18 @@
     "content_scripts": [
         {
             "matches": ["<all_urls>"],
-            "js": ["deslopify.mjs"]
+            "js": ["deslopify.ts"]
         }
     ],
 
     "gecko:background": {
-        "scripts": ["background.mjs"],
+        "scripts": ["background.ts"],
         "persistent": false,
         "type": "module"
     },
 
     "chromium:background": {
-        "service_worker": "background.mjs",
+        "service_worker": "background.ts",
         "type": "module"
     },
 

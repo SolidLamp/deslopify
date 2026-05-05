@@ -103,16 +103,13 @@ api.runtime.onMessage.addListener(
         sender: MessageSender,
         sendResponse: (a: Object) => void,
     ) => {
-        if (!Object.hasOwn(sender, "tab")) {
+        let tabID: Number
+        try {
+            tabID = sender.tab.id;
+        } catch (TypeError) {
+            console.log("Error with MessageSender: tab not present.");
             sendResponse({ message: "Error with MessageSender" });
         }
-        if (typeof sender.tab != "object") {
-            sendResponse({ message: "Error with MessageSender" });
-        }
-        if (Object.hasOwn(sender.tab, "id")) {
-            sendResponse({ message: "Error with MessageSender" });
-        }
-        const tabID = sender.tab.id;
         if (typeof message == "number") {
             updateBadgeCounter(message, tabID, sendResponse);
         } else if (

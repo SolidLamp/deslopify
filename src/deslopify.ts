@@ -102,7 +102,7 @@ function blockElements(
     );
     addElements(elements, blockedTextElements);
 
-    console.log(elements.length.toString() + " elements detected.");
+    console.log(`Deslopify: ${elements.length.toString()} elements detected.`);
     let len: number = elements.length;
 
     for (let i = 0; i < len; ++i) {
@@ -116,18 +116,18 @@ function blockElements(
 
 /**
  * Calls blockElements with a packed blocklist.
- * 
+ *
  * @param blocklist - The blocklist to unpack
  */
 function unpackBlocklist(blocklist: Blocklist): void {
     let blockedClasses =
         typeof blocklist.classes !== "undefined" ? blocklist.classes : [];
     let blockedIDs =
-        typeof blocklist.classes !== "undefined" ? blocklist.classes : [];
+        typeof blocklist.IDs !== "undefined" ? blocklist.IDs : [];
     let blockedOtherIdentifiers =
-        typeof blocklist.classes !== "undefined" ? blocklist.classes : [];
+        typeof blocklist.otherIdentifiers !== "undefined" ? blocklist.otherIdentifiers : [];
     let blockedTextContent =
-        typeof blocklist.classes !== "undefined" ? blocklist.classes : [];
+        typeof blocklist.textContent !== "undefined" ? blocklist.textContent : [];
     blockElements(
         blockedClasses,
         blockedIDs,
