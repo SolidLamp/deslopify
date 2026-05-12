@@ -16,12 +16,18 @@
             "cdxCopilotIconBg",
             "aitools_content",
             "tools_list",
-            "gs_temp"
+            "gs_temp",
+            "b_copilot_icon",
+            "composer_container",
+            "crtrm-video"
         ],
-        "IDs": ["codex", "b-scopeListItem-copilotsearch"],
+        "IDs": ["codex", "b-scopeListItem-copilotsearch", "crtrm-video"],
         "otherIdentifiers": [
             "[aria-label='Open Copilot']",
-            "[title='Open Copilot']"
+            "[title='Open Copilot']",
+            "[data-c*='/images/create/ai-image-generator']",
+            "[data-prompt='Image Creator']",
+            "[href=*='/copilotsearch']"
         ],
         "textContent": []
     },
@@ -130,6 +136,21 @@
             "Copilot + PC",
             "Copilot+PC"
         ]
+    },
+    "lorealparisusa.com": {
+        "classes": [
+            "oap-beauty-genius",
+            "oap-beauty-genius-wrapper",
+            "oap-beauty-genius-footer-module__image",
+            "oap-beauty-genius-footer-module__image-container",
+            "oap-beauty-genius-header-icon"
+        ],
+        "IDs": [],
+        "otherIdentifiers": [
+            "[href$='/skin-genius-landing-page']",
+            "[alt='Beauty Genius']"
+        ],
+        "textContent": []
     },
     "natwest.com": {
         "classes": [],
