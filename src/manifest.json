@@ -1,8 +1,8 @@
 {
     "manifest_version": 3,
     "name": "Deslopify",
-    "version": "0.8",
-    "version_name": "Beta build 8",
+    "version": "0.9",
+    "version_name": "Beta build 9",
 
     "description": "A content blocker which hides 'in-your-face AI' elements on supported websites.",
 

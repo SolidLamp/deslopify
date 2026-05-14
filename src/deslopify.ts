@@ -26,7 +26,7 @@ interface Blocklist {
 }
 
 console.log(
-    "Deslopify is provided under the GNU Affero General Public License version 3. This extension is provided without warranty. Please see http://www.gnu.org/licenses/ for more details.",
+    "Deslopify is provided under the GNU Affero General Public License version 3. This extension is provided without warranty. Please see http://www.gnu.org/licenses/ for more details. Source code can be found at https://github.com/solidlamp/deslopify.",
 );
 
 let hostname = window.location.hostname;

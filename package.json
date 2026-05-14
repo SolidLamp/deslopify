@@ -18,10 +18,12 @@
     "devDependencies": {
         "@eslint/js": "^10.0.1",
         "@types/webextension-polyfill": "^0.12.5",
+        "ajv-cli": "^5.0.0",
         "eslint": "^10.3.0",
         "eslint-config-prettier": "^10.1.8",
         "extension": "^3.14.5",
         "globals": "^17.6.0",
+        "js-beautify": "^1.15.4",
         "typescript": "^6.0.3",
         "typescript-eslint": "^8.59.1",
         "web-ext": "^10.1.0"

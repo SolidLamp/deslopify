@@ -14,18 +14,11 @@
     You should have received a copy of the GNU Affero General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-export {}
+export {};
+
+import validate from "./validator.cjs";
 
 const api = typeof browser !== "undefined" ? browser : chrome;
-
-console.log(
-    "Deslopify is provided under the GNU Affero General Public License version 3. This extension is provided without warranty. Please see http://www.gnu.org/licenses/ for more details.",
-);
-
-const blocklistURL = api.runtime.getURL("assets/blocklist.json");
-const response = await fetch(blocklistURL);
-const blocklistObject = await response.json();
-console.log(blocklistObject);
 
 interface Blocklist {
     classes: string[];
@@ -44,6 +37,25 @@ interface MessageSender {
     tlsChannelId?: string;
     url?: string;
     userScriptWorldId?: string;
+}
+
+console.log(
+    "Deslopify is provided under the GNU Affero General Public License version 3. This extension is provided without warranty. Please see http://www.gnu.org/licenses/ for more details. Source code can be found at https://github.com/solidlamp/deslopify.",
+);
+
+const blocklistURL = api.runtime.getURL("assets/blocklist.json");
+const response = await fetch(blocklistURL);
+let blocklistObject = await response.json();
+const validBlocklist: Boolean = validate(blocklistObject);
+
+console.log(blocklistObject);
+console.log(validBlocklist);
+
+if (!validBlocklist) {
+    blocklistObject = {
+        $schema: "./blocklist.schema.json",
+        format_version: 2,
+    };
 }
 
 /**
@@ -103,7 +115,7 @@ api.runtime.onMessage.addListener(
         sender: MessageSender,
         sendResponse: (a: Object) => void,
     ) => {
-        let tabID: Number
+        let tabID: Number;
         try {
             tabID = sender.tab.id;
         } catch (TypeError) {
