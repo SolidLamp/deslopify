@@ -100,7 +100,7 @@
         "classes": [],
         "IDs": ["m-x-content"],
         "otherIdentifiers": ["[data-mstk-u='']", "[data-fh='']"],
-        "textContent": ["AI Mode"]
+        "textContent": ["AI Mode", "Applying AI towards science and the environment"]
     },
     "indeed.com": {
         "classes": [],
@@ -262,6 +262,18 @@
         "classes": [],
         "IDs": [],
         "otherIdentifiers": ["[href*='ai-assist']"],
+        "textContent": []
+    },
+    "tutorchase.com": {
+        "classes": [],
+        "IDs": [],
+        "otherIdentifiers": ["[aria-label='Open AI Tutor Chat']"],
+        "textContent": []
+    },
+    "youtube.com": {
+        "classes": [],
+        "IDs": ["expandable-metadata"],
+        "otherIdentifiers": [],
         "textContent": []
     }
 }
