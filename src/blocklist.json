@@ -46,6 +46,12 @@
         "otherIdentifiers": [],
         "textContent": []
     },
+    "cookbook.ziglang.cc": {
+        "classes": [],
+        "IDs": [],
+        "otherIdentifiers": ["[src='/images/logo.webp']"],
+        "textContent": []
+    },
     "dictionary.cambridge.org": {
         "classes": ["ai-header-button"],
         "IDs": [],
@@ -54,6 +60,12 @@
             "[href$='assistant']"
         ],
         "textContent": []
+    },
+    "dskbank.bg": {
+        "classes": [],
+        "IDs": [],
+        "otherIdentifiers": ["[href^='https://chatbot.dskbank.bg']"],
+        "textContent": ["При въпроси - "]
     },
     "duckduckgo.com": {
         "classes": [],
@@ -83,6 +95,21 @@
         ],
         "textContent": []
     },
+    "eureka.patsnap.com": {
+        "classes": [
+            "input-area",
+            "banner-input",
+            "ip-agent-item",
+            "banner-subtitle",
+            "project-ad",
+            "air-banner"
+        ],
+        "IDs": ["ipListContainer"],
+        "otherIdentifiers": [],
+        "textContent": [
+            " Unlock AI-driven, actionable R&amp;D insights for your next breakthrough. "
+        ]
+    },
     "extension.js.org": {
         "classes": ["group/ai", "chat-assistant-input"],
         "IDs": [],
@@ -96,11 +123,20 @@
         ],
         "textContent": ["Ask AI"]
     },
+    "github.com": {
+        "classes": [],
+        "IDs": [],
+        "otherIdentifiers": ["[href='/github-copilot/pro']"],
+        "textContent": []
+    },
     "google.com": {
         "classes": [],
         "IDs": ["m-x-content"],
         "otherIdentifiers": ["[data-mstk-u='']", "[data-fh='']"],
-        "textContent": ["AI Mode", "Applying AI towards science and the environment"]
+        "textContent": [
+            "AI Mode",
+            "Applying AI towards science and the environment"
+        ]
     },
     "indeed.com": {
         "classes": [],
@@ -111,6 +147,12 @@
     "investopedia.com": {
         "classes": [],
         "IDs": ["askmiso-ask-query_1-0"],
+        "otherIdentifiers": [],
+        "textContent": []
+    },
+    "kagi.com": {
+        "classes": ["qa", "qa-content", "qa-container-box"],
+        "IDs": [],
         "otherIdentifiers": [],
         "textContent": []
     },
@@ -268,6 +310,12 @@
         "classes": [],
         "IDs": [],
         "otherIdentifiers": ["[aria-label='Open AI Tutor Chat']"],
+        "textContent": []
+    },
+    "uk.rs-online.com": {
+        "classes": [],
+        "IDs": ["notificationApp"],
+        "otherIdentifiers": [],
         "textContent": []
     },
     "youtube.com": {
