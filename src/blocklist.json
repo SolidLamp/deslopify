@@ -130,7 +130,7 @@
         "textContent": []
     },
     "google.com": {
-        "classes": [],
+        "classes": ["YzCcne"],
         "IDs": ["m-x-content"],
         "otherIdentifiers": ["[data-mstk-u='']", "[data-fh='']"],
         "textContent": [
@@ -190,7 +190,17 @@
         "IDs": [],
         "otherIdentifiers": [
             "[href$='/skin-genius-landing-page']",
-            "[alt='Beauty Genius']"
+            "[alt='Beauty Genius']",
+            "[jscontroller='xdV2Hc']"
+        ],
+        "textContent": []
+    },
+    "mail.google.com": {
+        "classes": [],
+        "IDs": [],
+        "otherIdentifiers": [
+            "[data-is-tooltip-wrapper='true']",
+            "[data-rp-placement-id='gemkick-pep-icon-callout-id']"
         ],
         "textContent": []
     },
