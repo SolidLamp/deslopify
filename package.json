@@ -4,16 +4,14 @@
     "description": "npm dev tools",
     "type": "module",
     "scripts": {
-        "build": "extension build",
-        "dev": "extension dev",
-        "start": "extension start"
+        "build": "make"
     },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/SolidLamp/deslopify.git"
     },
     "author": "SolidLamp",
-    "license": "AGPLv3",
+    "license": "AGPL-3.0-or-later",
     "homepage": "https://github.com/SolidLamp/deslopify",
     "devDependencies": {
         "@eslint/js": "^10.0.1",

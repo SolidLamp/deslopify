@@ -7,6 +7,7 @@
 ![GitHub Issues or Pull Requests by label](https://img.shields.io/github/issues/SolidLamp/deslopify/blocklist?style=plastic)
 ![Weekly Downloads](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Faddons.mozilla.org%2Fapi%2Fv5%2Faddons%2Faddon%2Fdeslopify%2F&query=weekly_downloads&suffix=%20downloads%2Fweek&style=plastic&label=Firefox%20Add-ons&labelColor=%23FF662B&color=%238836D3)
 
+A WebExtension to hide forced AI elements on numerous websites. 
 
 [Get Deslopify on Firefox Addons!](https://addons.mozilla.org/en-GB/firefox/addon/deslopify)
 
@@ -34,29 +35,65 @@ Many websites have began to embed AI assistants or other AI elements which infri
 
 Deslopify can be built easily, with a pre-prepared Makefile provided.
 
-Given that you have [`npm`](https://www.npmjs.com/) and [`GNU Make`](https://www.gnu.org/software/make/) installed, you can run the following commands to build Deslopify:
+The required dependencies are:
+- [`GNU Grep`](https://www.gnu.org/software/grep/)
+- [`GNU Make`](https://www.gnu.org/software/make/)
+- [`jq`](https://jqlang.org/)
+- [`npm`](https://www.npmjs.com/)
+- [`node.js`](https://nodejs.org/)
+- [`uuidgen`](https://man7.org/linux/man-pages/man1/uuidgen.1.html)
+
+These dependencies can be set up with [Nix](https://nixos.org/) with the command:
+`nix-shell --pure -I nixpkgs=https://github.com/NixOS/nixpkgs/archive/nixpkgs-unstable.tar.gz -p bash cacert gnumake jq nodejs util-linux`
+
+You can then build Deslopify with the following commands, depending on your package manager:
+
+### npm
 
 ```Shell
 $ npm i
-$ make
+$ npm run build
 ```
 
-In the event where ```npm i``` does not properly install dependencies, or if you are using an alternative package manager, please refer to the dependencies listed in package.json.
+### pnpm
 
-Alternatively, ```make test``` can be used instead of ```make``` to generate a build which uses a unique UUID for testing purposes.
+```Shell
+$ pnpm i
+$ pnpm approve-builds
+$ pnpm run build
+```
+
+### Yarn
+
+```Shell
+$ yarn
+$ yarn build
+```
+
+### Bun
+
+```Shell
+$ bun install
+$ bun run build
+```
+
+***
+
+Optionally, for test builds with unique UUIDs, 'test' may be appended to the last command in all of thse examples.
 
 ## Supported Websites
 
 The current list of supported websites can be seen at blocklist.json. Support of websites may vary as websites are updated and new slop is added. Users are free to suggest improvements and add support for websites by raising issues.
 
 
-## Other useful extensions/projects
+## Other useful projects
 
 Here are a number of other useful extensions or projects which help protect against artifical intelligence on the internet:
 
 | Project | Comparison |
 | :------ | :--------- |
-| [uBlockOrigin-HUGE-AI-Blocklist](https://github.com/laylavish/uBlockOrigin-HUGE-AI-Blocklist) | A blocklist for [uBlock Origin](https://github.com/gorhill/uBlock) which blocks websites dedicated to AI. This is out of the scope of Deslopify, but many users may appreciate such a feature. |
+| [uBlockOrigin & uBlacklist Huge AI Blocklist](https://github.com/laylavish/uBlockOrigin-HUGE-AI-Blocklist) | A blocklist for [uBlock Origin](https://github.com/gorhill/uBlock) which blocks websites dedicated to AI. This is out of the scope of Deslopify, but many users may appreciate such a feature. |
 | [Alerte sur les sites GenAI](https://github.com/Gathor59/Extension-Alerte-GenAI/tree/version-2) | An extension which detects if text is generated with AI tooling using heuristics, and provides an error message to the user in such case. (The extension is provided only in French.) |
+| [The No-AI Software Directory](https://github.com/thatshubham/no-ai) | A list of general-purpose software products and other resources which do not integrate AI tooling. |
 
 

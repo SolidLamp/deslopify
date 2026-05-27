@@ -1,0 +1,7 @@
+telemetry = false
+
+[install]
+dev = true
+ignoreScripts = false
+registry = "https://registry.npmjs.org"
+saveTextLockfile = true
