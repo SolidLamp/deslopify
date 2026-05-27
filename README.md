@@ -43,8 +43,8 @@ The required dependencies are:
 - [`node.js`](https://nodejs.org/)
 - [`uuidgen`](https://man7.org/linux/man-pages/man1/uuidgen.1.html)
 
-These dependencies can be set up with [Nix](https://nixos.org/) with the command:
-`nix-shell --pure -I nixpkgs=https://github.com/NixOS/nixpkgs/archive/nixpkgs-unstable.tar.gz -p bash cacert gnumake jq nodejs util-linux`
+These dependencies can be set up with [Nix](https://nixos.org/) by running the following command in the root directory, given you have a modern Nix version with [Flake](https://wiki.nixos.org/wiki/Flakes) support:
+`nix develop --ignore-environment`
 
 You can then build Deslopify with the following commands, depending on your package manager:
 

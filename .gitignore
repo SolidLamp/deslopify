@@ -1,6 +1,19 @@
 build/
 dist/
-*.tar.gz
-*.tar.xz
+
+.yarn/
+.pnp.cjs
+.pnp.loader.mjs
+package-lock.json
+pnpm-lock.yaml
+pnpm-workspace.yaml
+yarn.lock
+bun.lock
+
 *.zip
+*.7z
+*.tar.gz
+*.tar.bz2
+*.tar.zst
+*.tar.xz
 
