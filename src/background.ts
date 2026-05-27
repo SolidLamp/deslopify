@@ -33,7 +33,7 @@ interface MessageSender {
     frameId?: number;
     id?: string;
     origin?: string;
-    tab?: Object;
+    tab?: object;
     tlsChannelId?: string;
     url?: string;
     userScriptWorldId?: string;
@@ -46,7 +46,7 @@ console.log(
 const blocklistURL = api.runtime.getURL("assets/blocklist.json");
 const response = await fetch(blocklistURL);
 let blocklistObject = await response.json();
-const validBlocklist: Boolean = validate(blocklistObject);
+const validBlocklist: boolean = validate(blocklistObject);
 
 console.log(blocklistObject);
 console.log(validBlocklist);
@@ -68,9 +68,9 @@ if (!validBlocklist) {
 function updateBadgeCounter(
     count: number,
     tabID: number,
-    sendResponse: (a: Object) => void,
+    sendResponse: (a: object) => void,
 ): void {
-    let message: string = count.toString();
+    const message: string = count.toString();
     console.log("Received message!");
     if (message == "0") {
         sendResponse({ message: "Did not update." });
@@ -99,7 +99,7 @@ function getBlocklist(domain: string): Blocklist {
         return defaultBlocklist;
     }
     if (domain in blocklistObject) {
-        let blocklist = blocklistObject[domain];
+        const blocklist = blocklistObject[domain];
         console.log(`Deslopify: Domain found: ${domain}!`);
         console.log(blocklist);
         return blocklist;
@@ -111,16 +111,20 @@ function getBlocklist(domain: string): Blocklist {
 
 api.runtime.onMessage.addListener(
     (
-        message: Object,
+        message: object,
         sender: MessageSender,
-        sendResponse: (a: Object) => void,
+        sendResponse: (a: object) => void,
     ) => {
-        let tabID: Number;
+        let tabID: number;
         try {
             tabID = sender.tab.id;
-        } catch (TypeError) {
-            console.log("Error with MessageSender: tab not present.");
-            sendResponse({ message: "Error with MessageSender" });
+        } catch (err) {
+            if (err instanceof TypeError) {
+                console.log("Error with MessageSender: tab not present.");
+                sendResponse({ message: "Error with MessageSender" });
+            } else {
+                throw err;
+            }
         }
         if (typeof message == "number") {
             updateBadgeCounter(message, tabID, sendResponse);

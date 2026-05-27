@@ -1,6 +1,7 @@
 root = true
 
 [*]
+charset = utf-8
 indent_style = space
 indent_size = 4
 tab_width = 8
@@ -9,4 +10,17 @@ insert_final_newline = true
 max_line_length = 100
 
 [*.{js,ts}]
-charset = utf-8
+indent_style = space
+indent_size = 4
+
+[*.json]
+indent_style = space
+indent_size = 4
+
+[*.rst]
+indent_style = space
+indent_size = 2
+
+[{*.mk, Makefile}]
+indent_style = tab
+indent_size = 8

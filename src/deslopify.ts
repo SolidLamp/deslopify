@@ -29,7 +29,7 @@ console.log(
     "Deslopify is provided under the GNU Affero General Public License version 3. This extension is provided without warranty. Please see http://www.gnu.org/licenses/ for more details. Source code can be found at https://github.com/solidlamp/deslopify.",
 );
 
-let hostname = window.location.hostname;
+const hostname = window.location.hostname;
 let domain = hostname;
 if (hostname.substring(0, 4) == "www.") {
     domain = hostname.slice(4);
@@ -45,7 +45,7 @@ function addElements(
     elementsForRemoval: HTMLElement[],
     elementsToAdd: Element[],
 ): void {
-    for (let element of elementsToAdd) {
+    for (const element of elementsToAdd) {
         if (element instanceof HTMLElement) {
             elementsForRemoval.push(element);
         }
@@ -66,20 +66,20 @@ function blockElements(
     blockedOtherIdentifiers: string[],
     blockedTextContent: string[],
 ): void {
-    let elements: HTMLElement[] = [];
+    const elements: HTMLElement[] = [];
 
     // Detect elements by class
     for (let i = 0; i < blockedClasses.length; ++i) {
-        let newElements = document.getElementsByClassName(blockedClasses[i]);
+        const newElements = document.getElementsByClassName(blockedClasses[i]);
         if (newElements) {
-            let newElementArray: Element[] = Array.from(newElements);
+            const newElementArray: Element[] = Array.from(newElements);
             addElements(elements, newElementArray);
         }
     }
 
     // Detect elements by id
     for (let i = 0; i < blockedIDs.length; ++i) {
-        let newElement = document.getElementById(blockedIDs[i]);
+        const newElement = document.getElementById(blockedIDs[i]);
         if (newElement) {
             elements[elements.length] = newElement;
         }
@@ -87,9 +87,9 @@ function blockElements(
 
     // Detect elements by other identifiers
     for (let i = 0; i < blockedOtherIdentifiers.length; ++i) {
-        let newElements = document.querySelectorAll(blockedOtherIdentifiers[i]);
+        const newElements = document.querySelectorAll(blockedOtherIdentifiers[i]);
         if (newElements) {
-            let newElementArray: Element[] = Array.from(newElements);
+            const newElementArray: Element[] = Array.from(newElements);
             addElements(elements, newElementArray);
         }
     }
@@ -103,7 +103,7 @@ function blockElements(
     addElements(elements, blockedTextElements);
 
     console.log(`Deslopify: ${elements.length.toString()} elements detected.`);
-    let len: number = elements.length;
+    const len: number = elements.length;
 
     for (let i = 0; i < len; ++i) {
         elements[i].style.display = "none";
@@ -111,7 +111,7 @@ function blockElements(
 
     console.log("Deslopify: Deleted " + len.toString() + " elements.");
 
-    const response = api.runtime.sendMessage(len);
+    /* const response = api.runtime.sendMessage(len); */
 }
 
 /**
@@ -120,13 +120,13 @@ function blockElements(
  * @param blocklist - The blocklist to unpack
  */
 function unpackBlocklist(blocklist: Blocklist): void {
-    let blockedClasses =
+    const blockedClasses =
         typeof blocklist.classes !== "undefined" ? blocklist.classes : [];
-    let blockedIDs =
+    const blockedIDs =
         typeof blocklist.IDs !== "undefined" ? blocklist.IDs : [];
-    let blockedOtherIdentifiers =
+    const blockedOtherIdentifiers =
         typeof blocklist.otherIdentifiers !== "undefined" ? blocklist.otherIdentifiers : [];
-    let blockedTextContent =
+    const blockedTextContent =
         typeof blocklist.textContent !== "undefined" ? blocklist.textContent : [];
     blockElements(
         blockedClasses,
@@ -146,7 +146,7 @@ while (noConnection) {
             data: domain,
         });
         noConnection = false;
-    } catch (e) {
+    } catch {
         noConnection = true;
     }
 }
