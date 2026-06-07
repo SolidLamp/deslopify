@@ -14,7 +14,7 @@
     You should have received a copy of the GNU Affero General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-export {}
+export {};
 
 const api = typeof browser !== "undefined" ? browser : chrome;
 
@@ -87,7 +87,9 @@ function blockElements(
 
     // Detect elements by other identifiers
     for (let i = 0; i < blockedOtherIdentifiers.length; ++i) {
-        const newElements = document.querySelectorAll(blockedOtherIdentifiers[i]);
+        const newElements = document.querySelectorAll(
+            blockedOtherIdentifiers[i],
+        );
         if (newElements) {
             const newElementArray: Element[] = Array.from(newElements);
             addElements(elements, newElementArray);
@@ -125,9 +127,13 @@ function unpackBlocklist(blocklist: Blocklist): void {
     const blockedIDs =
         typeof blocklist.IDs !== "undefined" ? blocklist.IDs : [];
     const blockedOtherIdentifiers =
-        typeof blocklist.otherIdentifiers !== "undefined" ? blocklist.otherIdentifiers : [];
+        typeof blocklist.otherIdentifiers !== "undefined"
+            ? blocklist.otherIdentifiers
+            : [];
     const blockedTextContent =
-        typeof blocklist.textContent !== "undefined" ? blocklist.textContent : [];
+        typeof blocklist.textContent !== "undefined"
+            ? blocklist.textContent
+            : [];
     blockElements(
         blockedClasses,
         blockedIDs,

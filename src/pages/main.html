@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html lang="en-GB-oxendict">
+    <head>
+        <meta charset="utf-8" />
+    </head>
+
+    <body>
+        <div id="active" style="display: none">
+            <p>Active</p>
+        </div>
+        <div id="inactive" style="display: block">
+            <p>Inactive</p>
+        </div>
+        <div id="unsupported" class="unsupported" style="display: none">
+            <p>
+                Inactive (Unsupported) - If you believe this website should be
+                supported, please report it.
+            </p>
+        </div>
+        <div id="button-list" style="display: flex; flex-direction: column">
+            <button id="button-temp-allow" class="supported">
+                Disable blocking on this website for this session
+            </button>
+            <button id="button-perm-allow" class="supported">
+                Disable blocking on this website permanently
+            </button>
+            /* https://github.com/SolidLamp/deslopify/issues/new?template=website-support-request.md */
+            <button id="report-website">
+                Report Website for AI-generated content
+            </button>
+            /* https://github.com/SolidLamp/deslopify/issues/new?template=bug-report.md */
+            <button id="report-bug">Report Bug</button>
+        </div>
+        <script src="./popup.ts"></script>
+    </body>
+</html>
