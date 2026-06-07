@@ -6,12 +6,9 @@
     </head>
 
     <body>
-        <div id="active" style="display: none">
-            <p>Active</p>
-        </div>
-        <div id="inactive" style="display: block">
-            <p>Inactive</p>
-        </div>
+        <span id="current-webpage-url" style="display: block">https://example.com</span>
+        <span id="active" style="display: block">Active</span>
+        <span id="inactive" style="display: block">Inactive</span>
         <div id="unsupported" class="unsupported" style="display: none">
             <p>
                 Inactive (Unsupported) - If you believe this website should be
@@ -25,11 +22,15 @@
             <button id="button-perm-allow" class="supported">
                 Disable blocking on this website permanently
             </button>
-            /* https://github.com/SolidLamp/deslopify/issues/new?template=website-support-request.md */
+            /*
+            https://github.com/SolidLamp/deslopify/issues/new?template=website-support-request.md
+            */
             <button id="report-website">
                 Report Website for AI-generated content
             </button>
-            /* https://github.com/SolidLamp/deslopify/issues/new?template=bug-report.md */
+            /*
+            https://github.com/SolidLamp/deslopify/issues/new?template=bug-report.md
+            */
             <button id="report-bug">Report Bug</button>
         </div>
         <script src="./popup.ts"></script>
