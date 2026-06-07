@@ -1,6 +1,7 @@
 # .prettierrc
 bracketSpacing: true
 endOfLine: "lf"
+htmlWhitespaceSensitivity: "ignore"
 printWidth: 80
 trailingComma: "all"
 tabWidth: 4

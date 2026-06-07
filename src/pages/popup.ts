@@ -139,39 +139,49 @@ async function updateDOM(): Promise<void> {
         active = false;
     }
 
+    const body = document.getElementsByTagName("body")[0];
     const activeUI = document.getElementById("active");
     const inactiveUI = document.getElementById("inactive");
     const tempAllow = document.getElementById("button-temp-allow");
     const permAllow = document.getElementById("button-perm-allow");
+    const tempAllowText = document.getElementById("temp-allow-text");
+    const permAllowText = document.getElementById("perm-allow-text");
     const urlDisplay = document.getElementById("current-webpage-url");
 
     // Need to assert that all exist
+    if (!body) throw new Error("THE BODY IS MISSING!!!");
     if (!activeUI) throw new Error("#active missing");
     if (!inactiveUI) throw new Error("#inactive missing");
     if (!tempAllow) throw new Error("#button-temp-allow missing");
     if (!permAllow) throw new Error("#button-perm-allow missing");
+    if (!tempAllowText) throw new Error("#temp-allow-text missing");
+    if (!permAllowText) throw new Error("#perm-allow-text missing");
     if (!urlDisplay) throw new Error("#current-webpage-url missing");
 
     // Here we do the modification
     if (active) {
+        body.classList.add("active-background");
+        body.classList.remove("inactive-background");
         activeUI.style.display = "block";
         inactiveUI.style.display = "none";
     } else {
+        body.classList.add("inactive-background");
+        body.classList.remove("active-background");
         activeUI.style.display = "none";
         inactiveUI.style.display = "block";
     }
 
     // Check for buttons
     if (localArray.includes(activeWebsite)) {
-        permAllow.textContent = "Enable blocking on this website permanently";
+        permAllowText.textContent = "Enable blocking on this website permanently";
     } else {
-        permAllow.textContent = "Disable blocking on this website permanently";
+        permAllowText.textContent = "Disable blocking on this website permanently";
     }
     if (sessionArray.includes(activeWebsite)) {
-        tempAllow.textContent =
+        tempAllowText.textContent =
             "Enable blocking on this website for this session";
     } else {
-        tempAllow.textContent =
+        tempAllowText.textContent =
             "Disable blocking on this website for this session";
     }
 

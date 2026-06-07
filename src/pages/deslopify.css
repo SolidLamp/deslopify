@@ -1,0 +1,65 @@
+/* This CSS file uses Concentric-CSS */
+
+.inactive-background {
+    background-image: linear-gradient(#16033a, #4c18e7);
+}
+
+.active-background {
+    background-image: linear-gradient(#16033a, #18e7b4);
+}
+
+.ds-main {
+    display: block;
+    color: #fef5ec;
+    font: normal normal 500 16px "Source Sans 3", sans-serif;
+    font-optical-sizing: auto;
+}
+
+.ds-button {
+    display: inline-block;
+    position: relative;
+    transform: skew(-0.5rad);
+    transition: background 0.3s, color 0.3s;
+    transition-duration: 2.5s;
+    margin: 4px 2px;
+    border: 0px solid red;
+    border-radius: 5px;
+    border-color: #ff8c42;
+    background-color: #ff8c42;
+    cursor: pointer;
+    padding: 12px 120px;
+    overflow: hidden;
+    text-align: center;
+    text-decoration: none;
+}
+.ds-button > span {
+    display: block;
+    transform: skew(0.5rad);
+    color: #fef5ec;
+    font: normal normal 500 16px "Source Sans 3", sans-serif;
+    font-optical-sizing: auto;
+}
+
+.ds-button:hover {
+    box-shadow: 0 8px 16px 0 rgba(181, 174, 214, 0.6);
+    background-color: #e7184b;
+}
+
+.ds-button::before {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    transition: transform 0.5s cubic-bezier(0, 1, 1, 1);
+    background: #16033a;
+    width: 100%;
+    height: 100%;
+    content: "";
+}
+
+.ds-button:hover::before {
+    transform: translate3d(100%, 0, 0);
+}
+
+.ds-button:active {
+    transform: translateY(2%) translateX(2%) skew(-0.5rad);
+}

@@ -3,35 +3,28 @@
 <html lang="en-GB-oxendict">
     <head>
         <meta charset="utf-8" />
+        <link rel="stylesheet" href="./deslopify.css" />
     </head>
 
-    <body>
-        <span id="current-webpage-url" style="display: block">https://example.com</span>
-        <span id="active" style="display: block">Active</span>
-        <span id="inactive" style="display: block">Inactive</span>
-        <div id="unsupported" class="unsupported" style="display: none">
-            <p>
-                Inactive (Unsupported) - If you believe this website should be
-                supported, please report it.
-            </p>
-        </div>
+    <body class="inactive-background">
+        <span id="current-webpage-url" class="ds-main">example.com</span>
+        <span id="active" class="ds-main">Active</span>
+        <span id="inactive" class="ds-main">Inactive</span>
         <div id="button-list" style="display: flex; flex-direction: column">
-            <button id="button-temp-allow" class="supported">
-                Disable blocking on this website for this session
-            </button>
-            <button id="button-perm-allow" class="supported">
-                Disable blocking on this website permanently
-            </button>
-            /*
-            https://github.com/SolidLamp/deslopify/issues/new?template=website-support-request.md
-            */
-            <button id="report-website">
-                Report Website for AI-generated content
-            </button>
-            /*
-            https://github.com/SolidLamp/deslopify/issues/new?template=bug-report.md
-            */
-            <button id="report-bug">Report Bug</button>
+            <div id="button-temp-allow" class="supported ds-button">
+                <span id="temp-allow-text">
+                    Disable blocking on this website for this session
+                </span>
+            </div>
+            <div id="button-perm-allow" class="supported ds-button">
+                <span id="perm-allow-text">
+                    Disable blocking on this website permanently
+                </span>
+            </div>
+            <div id="report-website" class="ds-button">
+                <span>Report Website for AI-generated content</span>
+            </div>
+            <div id="report-bug" class="ds-button"><span>Report Bug</span></div>
         </div>
         <script src="./popup.ts"></script>
     </body>
