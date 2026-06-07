@@ -52,6 +52,12 @@
         "otherIdentifiers": ["[src='/images/logo.webp']"],
         "textContent": []
     },
+    "coolors.co": {
+        "classes": ["icon-ai-sparkles-18px"],
+        "IDs": ["generator_ai-btn"],
+        "otherIdentifiers": ["[data-index='12']"],
+        "textContent": ["Chat with Color Bot", "Try the new AI-powered Color Bot and ask it anything about your palette.", "Try also the new AI features!"]
+    },
     "dictionary.cambridge.org": {
         "classes": ["ai-header-button"],
         "IDs": [],
@@ -59,6 +65,12 @@
             "[onclick='window.assistantTracker?.eventBurgerMenuItemClick()']",
             "[href$='assistant']"
         ],
+        "textContent": []
+    },
+    "diy.com": {
+        "classes": ["chat-form-container"],
+        "IDs": [],
+        "otherIdentifiers": ["[aria-label='Hello B&Q DIY Assistant']", "[data-testid='chat-suggestion-container']"],
         "textContent": []
     },
     "dskbank.bg": {
@@ -156,6 +168,12 @@
         "otherIdentifiers": [],
         "textContent": []
     },
+    "learn.microsoft.com": {
+        "classes": ["border-color-ask-learn"],
+        "IDs": [],
+        "otherIdentifiers": [],
+        "textContent": ["Ask Learn", "Build, ship, and scale with AI-first tools and platforms."]
+    },
     "lenovo.com": {
         "classes": [
             "MuiPaper-root MuiPaper-elevation MuiPaper-elevation16",
@@ -251,6 +269,12 @@
         "classes": [],
         "IDs": ["llm-text-box"],
         "otherIdentifiers": ["[data-click-label='llm_mode_dropdown_tab_bar']"],
+        "textContent": []
+    },
+    "reddit.com": {
+        "classes": [],
+        "IDs": ["answers-suggested-queries-m3"],
+        "otherIdentifiers": [],
         "textContent": []
     },
     "replit.com": {
