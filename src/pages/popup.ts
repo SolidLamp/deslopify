@@ -45,7 +45,10 @@ function storeOnPress(id: string, storageArea: StorageArea): void {
             // Get url of current tab
             let activeWebsite: string = "";
             if ("url" in currentWebpage) {
-                activeWebsite = String(currentWebpage.url);
+                activeWebsite = new URL(currentWebpage.url).hostname;
+            }
+            if (activeWebsite.substring(0, 4) == "www.") {
+                activeWebsite = activeWebsite.slice(4);
             }
 
             // Modify array
@@ -69,6 +72,11 @@ function storeOnPress(id: string, storageArea: StorageArea): void {
                     return;
                 },
             );
+
+            // Reload tab
+            const tabid: number = currentWebpage.id;
+            api.tabs.reload(tabid);
+
         });
     }
 }

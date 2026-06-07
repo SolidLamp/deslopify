@@ -27,6 +27,12 @@ interface Blocklist {
     textContent: string[];
 }
 
+interface GeneralBlockList {
+    $schema: string;
+    format_version: number;
+    [key: string]: string | number | Blocklist;
+}
+
 interface MessageSender {
     documentId?: string;
     documentLifecycle?: string;
@@ -45,7 +51,7 @@ console.log(
 
 const blocklistURL = api.runtime.getURL("assets/blocklist.json");
 const response = await fetch(blocklistURL);
-let blocklistObject = await response.json();
+let blocklistObject: GeneralBlockList = await response.json();
 const validBlocklist: boolean = validate(blocklistObject);
 
 console.log(blocklistObject);
@@ -87,7 +93,7 @@ function updateBadgeCounter(
  * @param domain - the domain of the webpage to check with the full blocklist.
  * @returns the blocklist for the given domain.
  */
-function getBlocklist(domain: string): Blocklist {
+async function getBlocklist(domain: string): Promise<Blocklist> {
     const defaultBlocklist: Blocklist = {
         classes: [],
         IDs: [],
@@ -98,15 +104,39 @@ function getBlocklist(domain: string): Blocklist {
         console.warn("Deslopify: Invalid domain");
         return defaultBlocklist;
     }
+    let blocklist: Blocklist = defaultBlocklist;
     if (domain in blocklistObject) {
-        const blocklist = blocklistObject[domain];
+        blocklist = blocklistObject[domain];
         console.log(`Deslopify: Domain found: ${domain}!`);
         console.log(blocklist);
-        return blocklist;
     } else {
         console.log(`Deslopify: Domain has no data: ${domain}`);
         return defaultBlocklist;
     }
+
+    const localStorage: object = await api.storage.local.get(null);
+
+    if (
+        typeof localStorage === "object" &&
+        Object.hasOwn(localStorage, "button-perm-allow") &&
+        localStorage["button-perm-allow"].includes(domain)
+    ) {
+        console.log("Website allowlisted in local storage.");
+        return defaultBlocklist;
+    }
+
+    const sessionStorage: object = await api.storage.session.get(null);
+
+    if (
+        typeof sessionStorage === "object" &&
+        Object.hasOwn(sessionStorage, "button-temp-allow") &&
+        sessionStorage["button-temp-allow"].includes(domain)
+    ) {
+        console.log("Website allowlisted in session storage.");
+        return defaultBlocklist;
+    }
+
+    return blocklist;
 }
 
 api.runtime.onMessage.addListener(
@@ -134,11 +164,14 @@ api.runtime.onMessage.addListener(
             "data" in message &&
             message.message == "getBlocklist"
         ) {
-            const blocklist = getBlocklist(message.data);
-            sendResponse({ message: blocklist });
+            getBlocklist(message.data).then((blocklist) => {
+                sendResponse({ message: blocklist });
+            });
         } else {
             sendResponse({ message: "Failed to parse message." });
         }
+
+        return true;
     },
 );
 
