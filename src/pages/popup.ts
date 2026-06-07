@@ -51,46 +51,61 @@ async function getStoredArray(
 function storeOnPress(id: string, storageArea: StorageArea): void {
     const element: HTMLElement | null = document.getElementById(id);
 
-    if (element != null) {
-        element.addEventListener("click", async () => {
-            // Get current tab
-            const currentTab = await getCurrentTab();
-            const activeWebsite = currentTab.activeWebsite;
-            const currentWebpage = currentTab.currentWebpage;
-
-            // Get the current array from memory
-            const storageArray = await getStoredArray(id, storageArea);
-
-            // Modify array
-            console.log(storageArray);
-            const index = storageArray.indexOf(activeWebsite);
-            if (index > -1) {
-                storageArray.splice(index, 1);
-                console.log(`Removed website ${activeWebsite}`);
-            } else {
-                storageArray[storageArray.length] = activeWebsite;
-                console.log(`Added website ${activeWebsite}`);
-            }
-
-            // Write array to memory
-            storageArea.set({ [id]: storageArray }).then(
-                () => {
-                    console.log("Stored!");
-                },
-                (error: any) => {
-                    console.error(error);
-                    return;
-                },
-            );
-
-            // Update popup to reflect changes
-            updateDOM();
-
-            // Reload tab
-            const tabid: number = currentWebpage.id;
-            api.tabs.reload(tabid);
-        });
+    if (element === null) {
+        throw new Error(`Element ${id} does not exist!`);
     }
+
+    element.addEventListener("click", async () => {
+        // Get current tab
+        const currentTab = await getCurrentTab();
+        const activeWebsite = currentTab.activeWebsite;
+        const currentWebpage = currentTab.currentWebpage;
+
+        // Get the current array from memory
+        const storageArray = await getStoredArray(id, storageArea);
+
+        // Modify array
+        console.log(storageArray);
+        const index = storageArray.indexOf(activeWebsite);
+        if (index > -1) {
+            storageArray.splice(index, 1);
+            console.log(`Removed website ${activeWebsite}`);
+        } else {
+            storageArray[storageArray.length] = activeWebsite;
+            console.log(`Added website ${activeWebsite}`);
+        }
+
+        // Write array to memory
+        storageArea.set({ [id]: storageArray }).then(
+            () => {
+                console.log("Stored!");
+            },
+            (error: any) => {
+                console.error(error);
+                return;
+            },
+        );
+
+        // Update popup to reflect changes
+        updateDOM();
+
+        // Reload tab
+        const tabid: number = currentWebpage.id;
+        api.tabs.reload(tabid);
+    });
+}
+
+function openLinkOnPress(id: string, link: string): void {
+    const element: HTMLElement | null = document.getElementById(id);
+
+    if (element === null) {
+        throw new Error(`Element ${id} does not exist!`);
+    }
+
+    element.addEventListener("click", () => {
+        api.tabs.create({ active: true, url: link });
+        close();
+    });
 }
 
 async function updateDOM(): Promise<void> {
@@ -178,4 +193,12 @@ async function updateDOM(): Promise<void> {
 
 storeOnPress("button-temp-allow", api.storage.session);
 storeOnPress("button-perm-allow", api.storage.local);
+openLinkOnPress(
+    "report-website",
+    "https://github.com/SolidLamp/deslopify/issues/new?template=website-support-request.md",
+);
+openLinkOnPress(
+    "report-bug",
+    "https://github.com/SolidLamp/deslopify/issues/new?template=bug-report.md",
+);
 updateDOM();
