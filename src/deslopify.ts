@@ -69,8 +69,8 @@ function blockElements(
     const elements: HTMLElement[] = [];
 
     // Detect elements by class
-    for (let i = 0; i < blockedClasses.length; ++i) {
-        const newElements = document.getElementsByClassName(blockedClasses[i]);
+    for (const blockedClass of blockedClasses) {
+        const newElements = document.getElementsByClassName(blockedClass);
         if (newElements) {
             const newElementArray: Element[] = Array.from(newElements);
             addElements(elements, newElementArray);
@@ -78,17 +78,17 @@ function blockElements(
     }
 
     // Detect elements by id
-    for (let i = 0; i < blockedIDs.length; ++i) {
-        const newElement = document.getElementById(blockedIDs[i]);
+    for (const blockedID of blockedIDs) {
+        const newElement = document.getElementById(blockedID);
         if (newElement) {
             elements[elements.length] = newElement;
         }
     }
 
     // Detect elements by other identifiers
-    for (let i = 0; i < blockedOtherIdentifiers.length; ++i) {
+    for (const blockedOtherIdentifier of blockedOtherIdentifiers) {
         const newElements = document.querySelectorAll(
-            blockedOtherIdentifiers[i],
+            blockedOtherIdentifier,
         );
         if (newElements) {
             const newElementArray: Element[] = Array.from(newElements);
@@ -113,7 +113,7 @@ function blockElements(
 
     console.log("Deslopify: Deleted " + len.toString() + " elements.");
 
-    /* const response = api.runtime.sendMessage(len); */
+    const response = api.runtime.sendMessage(len);
 }
 
 /**
