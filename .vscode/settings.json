@@ -1,3 +1,19 @@
 {
-    "makefile.configureOnOpen": false
+    "makefile.configureOnOpen": false,
+    "editor.insertSpaces": true,
+    "editor.tabSize": 4,
+    "editor.detectIndentation": false,
+
+    "files.associations": {
+        "Makefile": "makefile",
+        "*.mk": "makefile"
+    },
+    
+    "[makefile]": {
+        "editor.codeActionsOnSave": {},
+        "editor.defaultFormatter": null,
+        "editor.formatOnSave": false,
+        "editor.insertSpaces": false,
+        "editor.tabSize": 8
+    }
 }

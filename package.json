@@ -4,7 +4,9 @@
     "description": "npm dev tools",
     "type": "module",
     "scripts": {
-        "build": "make"
+        "build": "make clean && make",
+        "clean": "make clean",
+        "testbuild": "make clean && make test"
     },
     "repository": {
         "type": "git",
