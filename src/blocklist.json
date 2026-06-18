@@ -2,6 +2,12 @@
     "$schema": "./blocklist.schema.json",
     "format_version": 2,
 
+    "abdn.ac.uk": {
+        "classes": ["gecko-chat-widget-app"],
+        "IDs": [],
+        "otherIdentifiers": [],
+        "textContent": []
+    },
     "anaconda.com": {
         "classes": [
             "text-sm text-gray-500 dark:text-white/50 whitespace-nowrap"
@@ -136,9 +142,15 @@
         "textContent": ["Ask AI"]
     },
     "github.com": {
-        "classes": [],
+        "classes": ["DashboardBannerCopilotApp"],
         "IDs": [],
         "otherIdentifiers": ["[href='/github-copilot/pro']"],
+        "textContent": []
+    },
+    "gla.ac.uk": {
+        "classes": ["gecko-chat-widget-app"],
+        "IDs": [],
+        "otherIdentifiers": ["[aria-label='Gilbert The Bot!']", "[data-for='tooltip_Gilbert The Bot!']"],
         "textContent": []
     },
     "google.com": {
@@ -349,6 +361,12 @@
     "uk.rs-online.com": {
         "classes": [],
         "IDs": ["notificationApp"],
+        "otherIdentifiers": [],
+        "textContent": []
+    },
+    "worldofbooks.com": {
+        "classes": ["ai-recommendation-block"],
+        "IDs": [],
         "otherIdentifiers": [],
         "textContent": []
     },
