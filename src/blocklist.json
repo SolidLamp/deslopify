@@ -144,7 +144,7 @@
     "github.com": {
         "classes": ["DashboardBannerCopilotApp"],
         "IDs": [],
-        "otherIdentifiers": ["[href='/github-copilot/pro']"],
+        "otherIdentifiers": ["[href='/github-copilot/pro']", "[data-tab-item='agents']", "[data-tab-item='models']"],
         "textContent": []
     },
     "gla.ac.uk": {
@@ -347,9 +347,9 @@
         "textContent": ["AI PDF"]
     },
     "stackoverflow.com": {
-        "classes": [],
-        "IDs": [],
-        "otherIdentifiers": ["[href*='ai-assist']"],
+        "classes": ["ai-center"],
+        "IDs": ["nav-sofa"],
+        "otherIdentifiers": ["[href*='ai-assist']", "[href='http://agents.stackoverflow.com']"],
         "textContent": []
     },
     "tutorchase.com": {
