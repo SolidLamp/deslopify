@@ -14,9 +14,13 @@ src/blocklist.schema.json @SolidLamp
 .forgejo/ @SolidLamp
 .vscode/ @SolidLamp
 .editorconfig @SolidLamp
+.envrc @SolidLamp
 .gitignore @SolidLamp
 .prettierrc @SolidLamp
-.prettierrc @SolidLamp
+.yarnrc.yml @SolidLamp
+bunfig.toml @SolidLamp
+flake.nix @SolidLamp
+shell.nix @ SolidLamp
 *.config.js @SolidLamp
 *.config.cjs @SolidLamp
 *.config.mjs @SolidLamp
