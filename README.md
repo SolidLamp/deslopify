@@ -13,6 +13,8 @@ A WebExtension to hide forced AI elements on numerous websites.
 
 ***
 
+<img src="./docs/img/deslopify-example.png" alt="Logo" width="10%" />
+
 ## About
 
 > [!NOTE]
