@@ -46,9 +46,26 @@
         "otherIdentifiers": ["[href$='chatbot']"],
         "textContent": []
     },
-    "collinsdictionary.com": {
-        "classes": ["assistantIcon"],
+    "canva.com": {
+        "classes": [],
         "IDs": [],
+        "otherIdentifiers": [
+            "[href$='settings/ai']",
+            "[href$='canva.com/ai']",
+            "[href$='dream-lab']",
+            "[aria-label='Magic Media']",
+            "[role='menu']",
+            "[aria-label='Assistant Panel']"
+        ],
+        "textContent": []
+    },
+    "collinsdictionary.com": {
+        "classes": [
+            "assistantIcon",
+            "ai-widget-container",
+            "assistant-sticky-bar"
+        ],
+        "IDs": ["ai-widget"],
         "otherIdentifiers": [],
         "textContent": []
     },
@@ -62,7 +79,11 @@
         "classes": ["icon-ai-sparkles-18px"],
         "IDs": ["generator_ai-btn"],
         "otherIdentifiers": ["[data-index='12']"],
-        "textContent": ["Chat with Color Bot", "Try the new AI-powered Color Bot and ask it anything about your palette.", "Try also the new AI features!"]
+        "textContent": [
+            "Chat with Color Bot",
+            "Try the new AI-powered Color Bot and ask it anything about your palette.",
+            "Try also the new AI features!"
+        ]
     },
     "dictionary.cambridge.org": {
         "classes": ["ai-header-button"],
@@ -76,7 +97,10 @@
     "diy.com": {
         "classes": ["chat-form-container"],
         "IDs": [],
-        "otherIdentifiers": ["[aria-label='Hello B&Q DIY Assistant']", "[data-testid='chat-suggestion-container']"],
+        "otherIdentifiers": [
+            "[aria-label='Hello B&Q DIY Assistant']",
+            "[data-testid='chat-suggestion-container']"
+        ],
         "textContent": []
     },
     "dskbank.bg": {
@@ -144,13 +168,20 @@
     "github.com": {
         "classes": ["DashboardBannerCopilotApp"],
         "IDs": [],
-        "otherIdentifiers": ["[href='/github-copilot/pro']", "[data-tab-item='agents']", "[data-tab-item='models']"],
+        "otherIdentifiers": [
+            "[href='/github-copilot/pro']",
+            "[data-tab-item='agents']",
+            "[data-tab-item='models']"
+        ],
         "textContent": []
     },
     "gla.ac.uk": {
         "classes": ["gecko-chat-widget-app"],
         "IDs": [],
-        "otherIdentifiers": ["[aria-label='Gilbert The Bot!']", "[data-for='tooltip_Gilbert The Bot!']"],
+        "otherIdentifiers": [
+            "[aria-label='Gilbert The Bot!']",
+            "[data-for='tooltip_Gilbert The Bot!']"
+        ],
         "textContent": []
     },
     "google.com": {
@@ -184,7 +215,10 @@
         "classes": ["border-color-ask-learn"],
         "IDs": [],
         "otherIdentifiers": [],
-        "textContent": ["Ask Learn", "Build, ship, and scale with AI-first tools and platforms."]
+        "textContent": [
+            "Ask Learn",
+            "Build, ship, and scale with AI-first tools and platforms."
+        ]
     },
     "lenovo.com": {
         "classes": [
@@ -286,7 +320,7 @@
     "reddit.com": {
         "classes": [],
         "IDs": ["answers-suggested-queries-m3"],
-        "otherIdentifiers": [],
+        "otherIdentifiers": ["[slot='trailingContent']"],
         "textContent": []
     },
     "replit.com": {
@@ -349,7 +383,10 @@
     "stackoverflow.com": {
         "classes": ["ai-center"],
         "IDs": ["nav-sofa"],
-        "otherIdentifiers": ["[href*='ai-assist']", "[href='http://agents.stackoverflow.com']"],
+        "otherIdentifiers": [
+            "[href*='ai-assist']",
+            "[href='http://agents.stackoverflow.com']"
+        ],
         "textContent": []
     },
     "tutorchase.com": {
