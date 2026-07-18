@@ -80,7 +80,7 @@ function updateBadgeCounter(
     console.log("Received message!");
     if (message == "0") {
         sendResponse({ message: "Did not update." });
-    } else {
+    } else if (tabID != undefined) {
         api.action.setBadgeText({ text: message, tabId: tabID });
         api.action.setBadgeBackgroundColor({ color: "grey" });
         sendResponse({ message: "Succesfully updated." });
