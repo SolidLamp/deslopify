@@ -8,12 +8,57 @@
         "otherIdentifiers": [],
         "textContent": []
     },
+    "agents.meta.stackexchange.com": {
+        "classes": ["ai-center"],
+        "IDs": ["nav-sofa"],
+        "otherIdentifiers": [
+            "[href*='ai-assist']",
+            "[href='http://agents.stackoverflow.com']"
+        ],
+        "textContent": []
+    },
+    "apple.stackexchange.com": {
+        "classes": ["ai-center"],
+        "IDs": ["nav-sofa"],
+        "otherIdentifiers": [
+            "[href*='ai-assist']",
+            "[href='http://agents.stackoverflow.com']"
+        ],
+        "textContent": []
+    },
     "anaconda.com": {
         "classes": [
             "text-sm text-gray-500 dark:text-white/50 whitespace-nowrap"
         ],
         "IDs": [],
         "otherIdentifiers": ["[href$='platform/ai-catalyst']"],
+        "textContent": []
+    },
+    "android.stackexchange.com": {
+        "classes": ["ai-center"],
+        "IDs": ["nav-sofa"],
+        "otherIdentifiers": [
+            "[href*='ai-assist']",
+            "[href='http://agents.stackoverflow.com']"
+        ],
+        "textContent": []
+    },
+    "askubuntu.com": {
+        "classes": ["ai-center"],
+        "IDs": ["nav-sofa"],
+        "otherIdentifiers": [
+            "[href*='ai-assist']",
+            "[href='http://agents.stackoverflow.com']"
+        ],
+        "textContent": []
+    },
+    "bicycles.stackexchange.com": {
+        "classes": ["ai-center"],
+        "IDs": ["nav-sofa"],
+        "otherIdentifiers": [
+            "[href*='ai-assist']",
+            "[href='http://agents.stackoverflow.com']"
+        ],
         "textContent": []
     },
     "bing.com": {
@@ -44,6 +89,15 @@
         ],
         "IDs": [],
         "otherIdentifiers": ["[href$='chatbot']"],
+        "textContent": []
+    },
+    "boardgames.stackexchange.com": {
+        "classes": ["ai-center"],
+        "IDs": ["nav-sofa"],
+        "otherIdentifiers": [
+            "[href*='ai-assist']",
+            "[href='http://agents.stackoverflow.com']"
+        ],
         "textContent": []
     },
     "canva.com": {
@@ -137,6 +191,24 @@
         ],
         "textContent": []
     },
+    "electronics.stackexchange.com": {
+        "classes": ["ai-center"],
+        "IDs": ["nav-sofa"],
+        "otherIdentifiers": [
+            "[href*='ai-assist']",
+            "[href='http://agents.stackoverflow.com']"
+        ],
+        "textContent": []
+    },
+    "english.stackexchange.com": {
+        "classes": ["ai-center"],
+        "IDs": ["nav-sofa"],
+        "otherIdentifiers": [
+            "[href*='ai-assist']",
+            "[href='http://agents.stackoverflow.com']"
+        ],
+        "textContent": []
+    },
     "eureka.patsnap.com": {
         "classes": [
             "input-area",
@@ -165,6 +237,24 @@
         ],
         "textContent": ["Ask AI"]
     },
+    "gamedev.stackexchange.com": {
+        "classes": ["ai-center"],
+        "IDs": ["nav-sofa"],
+        "otherIdentifiers": [
+            "[href*='ai-assist']",
+            "[href='http://agents.stackoverflow.com']"
+        ],
+        "textContent": []
+    },
+    "gaming.stackexchange.com": {
+        "classes": ["ai-center"],
+        "IDs": ["nav-sofa"],
+        "otherIdentifiers": [
+            "[href*='ai-assist']",
+            "[href='http://agents.stackoverflow.com']"
+        ],
+        "textContent": []
+    },
     "github.com": {
         "classes": ["DashboardBannerCopilotApp"],
         "IDs": [],
@@ -181,6 +271,15 @@
         "otherIdentifiers": [
             "[aria-label='Gilbert The Bot!']",
             "[data-for='tooltip_Gilbert The Bot!']"
+        ],
+        "textContent": []
+    },
+    "graphicdesign.stackexchange.com": {
+        "classes": ["ai-center"],
+        "IDs": ["nav-sofa"],
+        "otherIdentifiers": [
+            "[href*='ai-assist']",
+            "[href='http://agents.stackoverflow.com']"
         ],
         "textContent": []
     },
@@ -212,9 +311,16 @@
         "textContent": []
     },
     "learn.microsoft.com": {
-        "classes": ["border-color-ask-learn"],
-        "IDs": [],
-        "otherIdentifiers": [],
+        "classes": [
+            "border-color-ask-learn",
+            "ai-summary-cta-text",
+            "gradient-ask-learn-logo"
+        ],
+        "IDs": ["ms--ai-summary"],
+        "otherIdentifiers": [
+            "[data-id='ai-summary']",
+            "[data-test-id='ask-learn-assistant-flyout-entry']"
+        ],
         "textContent": [
             "Ask Learn",
             "Build, ship, and scale with AI-first tools and platforms."
@@ -268,6 +374,33 @@
         ],
         "textContent": []
     },
+    "math.stackexchange.com": {
+        "classes": ["ai-center"],
+        "IDs": ["nav-sofa"],
+        "otherIdentifiers": [
+            "[href*='ai-assist']",
+            "[href='http://agents.stackoverflow.com']"
+        ],
+        "textContent": []
+    },
+    "meta.stackexchange.com": {
+        "classes": ["ai-center"],
+        "IDs": ["nav-sofa"],
+        "otherIdentifiers": [
+            "[href*='ai-assist']",
+            "[href='http://agents.stackoverflow.com']"
+        ],
+        "textContent": []
+    },
+    "money.stackexchange.com": {
+        "classes": ["ai-center"],
+        "IDs": ["nav-sofa"],
+        "otherIdentifiers": [
+            "[href*='ai-assist']",
+            "[href='http://agents.stackoverflow.com']"
+        ],
+        "textContent": []
+    },
     "natwest.com": {
         "classes": [],
         "IDs": ["ccm-chat-cora-button"],
@@ -292,6 +425,15 @@
             "Studio/ AI Agent",
             "Studio AI Agent"
         ]
+    },
+    "philosophy.stackexchange.com": {
+        "classes": ["ai-center"],
+        "IDs": ["nav-sofa"],
+        "otherIdentifiers": [
+            "[href*='ai-assist']",
+            "[href='http://agents.stackoverflow.com']"
+        ],
+        "textContent": []
     },
     "plughopper.com": {
         "classes": [
@@ -368,6 +510,15 @@
         "otherIdentifiers": [],
         "textContent": ["Ask"]
     },
+    "serverfault.com": {
+        "classes": ["ai-center"],
+        "IDs": ["nav-sofa"],
+        "otherIdentifiers": [
+            "[href*='ai-assist']",
+            "[href='http://agents.stackoverflow.com']"
+        ],
+        "textContent": []
+    },
     "smallpdf.com": {
         "classes": [],
         "IDs": [],
@@ -380,7 +531,53 @@
         ],
         "textContent": ["AI PDF"]
     },
+    "softwareengineering.stackexchange.com": {
+        "classes": ["ai-center"],
+        "IDs": ["nav-sofa"],
+        "otherIdentifiers": [
+            "[href*='ai-assist']",
+            "[href='http://agents.stackoverflow.com']"
+        ],
+        "textContent": []
+    },
+    "stackapps.com": {
+        "classes": ["ai-center"],
+        "IDs": ["nav-sofa"],
+        "otherIdentifiers": [
+            "[href*='ai-assist']",
+            "[href='http://agents.stackoverflow.com']"
+        ],
+        "textContent": []
+    },
+    "stackexchange.com": {
+        "classes": ["ai-center"],
+        "IDs": ["nav-sofa"],
+        "otherIdentifiers": [
+            "[href*='ai-assist']",
+            "[href='http://agents.stackoverflow.com']"
+        ],
+        "textContent": []
+    },
     "stackoverflow.com": {
+        "classes": ["ai-center"],
+        "IDs": ["nav-sofa"],
+        "otherIdentifiers": [
+            "[href*='ai-assist']",
+            "[href='http://agents.stackoverflow.com']",
+            "[aria-label='Stack Overflow for Agents']"
+        ],
+        "textContent": []
+    },
+    "superuser.com": {
+        "classes": ["ai-center"],
+        "IDs": ["nav-sofa"],
+        "otherIdentifiers": [
+            "[href*='ai-assist']",
+            "[href='http://agents.stackoverflow.com']"
+        ],
+        "textContent": []
+    },
+    "tex.stackexchange.com": {
         "classes": ["ai-center"],
         "IDs": ["nav-sofa"],
         "otherIdentifiers": [
@@ -398,6 +595,39 @@
     "uk.rs-online.com": {
         "classes": [],
         "IDs": ["notificationApp"],
+        "otherIdentifiers": [],
+        "textContent": []
+    },
+    "unix.stackexchange.com": {
+        "classes": ["ai-center"],
+        "IDs": ["nav-sofa"],
+        "otherIdentifiers": [
+            "[href*='ai-assist']",
+            "[href='http://agents.stackoverflow.com']"
+        ],
+        "textContent": []
+    },
+    "webapps.stackexchange.com": {
+        "classes": ["ai-center"],
+        "IDs": ["nav-sofa"],
+        "otherIdentifiers": [
+            "[href*='ai-assist']",
+            "[href='http://agents.stackoverflow.com']"
+        ],
+        "textContent": []
+    },
+    "mebmasters.stackexchange.com": {
+        "classes": ["ai-center"],
+        "IDs": ["nav-sofa"],
+        "otherIdentifiers": [
+            "[href*='ai-assist']",
+            "[href='http://agents.stackoverflow.com']"
+        ],
+        "textContent": []
+    },
+    "wites.onlinelibrary.wiley.com": {
+        "classes": ["ai-chat-modal-control"],
+        "IDs": ["ai-chat-button-control"],
         "otherIdentifiers": [],
         "textContent": []
     },
