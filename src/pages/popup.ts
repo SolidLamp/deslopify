@@ -141,34 +141,42 @@ async function updateDOM(): Promise<void> {
 
     const body = document.getElementsByTagName("body")[0];
     const activeUI = document.getElementById("active");
-    const inactiveUI = document.getElementById("inactive");
     const tempAllow = document.getElementById("button-temp-allow");
     const permAllow = document.getElementById("button-perm-allow");
     const tempAllowText = document.getElementById("temp-allow-text");
     const permAllowText = document.getElementById("perm-allow-text");
     const urlDisplay = document.getElementById("current-webpage-url");
+    const standbyIcon = document.getElementById("hex-standby-svg");
+    const hexagonIcon = document.getElementById("hexagon");
 
     // Need to assert that all exist
     if (!body) throw new Error("THE BODY IS MISSING!!!");
     if (!activeUI) throw new Error("#active missing");
-    if (!inactiveUI) throw new Error("#inactive missing");
     if (!tempAllow) throw new Error("#button-temp-allow missing");
     if (!permAllow) throw new Error("#button-perm-allow missing");
     if (!tempAllowText) throw new Error("#temp-allow-text missing");
     if (!permAllowText) throw new Error("#perm-allow-text missing");
     if (!urlDisplay) throw new Error("#current-webpage-url missing");
+    if (!standbyIcon) throw new Error("#hex-standby-svg missing");
+    if (!hexagonIcon) throw new Error("#hexagon missing");
 
     // Here we do the modification
     if (active) {
         body.classList.add("active-background");
         body.classList.remove("inactive-background");
-        activeUI.style.display = "block";
-        inactiveUI.style.display = "none";
+        standbyIcon.classList.add("ds-active-standby");
+        standbyIcon.classList.remove("ds-inactive-standby");
+        hexagonIcon.classList.add("ds-active-hexagon");
+        hexagonIcon.classList.remove("ds-inactive-hexagon");
+        activeUI.textContent = "Active";
     } else {
         body.classList.add("inactive-background");
         body.classList.remove("active-background");
-        activeUI.style.display = "none";
-        inactiveUI.style.display = "block";
+        standbyIcon.classList.add("ds-inactive-standby");
+        standbyIcon.classList.remove("ds-active-standby");
+        hexagonIcon.classList.add("ds-inactive-hexagon");
+        hexagonIcon.classList.remove("ds-active-hexagon");
+        activeUI.textContent = "Inactive";
     }
 
     // Check for buttons
@@ -194,7 +202,6 @@ async function updateDOM(): Promise<void> {
             element.style.display = "none";
         }
         activeUI.textContent = "Unsupported Website";
-        inactiveUI.textContent = "Unsupported Website";
     }
 
     // Update URL

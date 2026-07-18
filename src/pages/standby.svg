@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+    width="126.64828mm"
+    height="146.24084mm"
+    viewBox="0 0 126.64829 146.24084"
+    version="1.1"
+    id="svg5"
+    inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+    sodipodi:docname="standby.svg"
+    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:svg="http://www.w3.org/2000/svg">
+    <sodipodi:namedview
+        id="namedview7"
+        pagecolor="#505050"
+        bordercolor="#eeeeee"
+        borderopacity="1"
+        inkscape:showpageshadow="0"
+        inkscape:pageopacity="0"
+        inkscape:pagecheckerboard="0"
+        inkscape:deskcolor="#505050"
+        inkscape:document-units="mm"
+        showgrid="false"
+        inkscape:zoom="0.52203984"
+        inkscape:cx="352.46352"
+        inkscape:cy="360.12577"
+        inkscape:window-width="1312"
+        inkscape:window-height="744"
+        inkscape:window-x="54"
+        inkscape:window-y="0"
+        inkscape:window-maximized="1"
+        inkscape:current-layer="g6577" />
+    <symbol id="main-root" viewBox="0 0 126.64829 146.24084">
+        <defs
+            id="defs2" />
+        <g
+            inkscape:label="Layer 1"
+            inkscape:groupmode="layer"
+            id="layer1"
+            transform="translate(17,19.116668)">
+            <g
+                id="g6577">
+                <path
+                    sodipodi:type="star"
+                    style="fill:#ffffff;stroke:none;stroke-width:7.99999"
+                    id="path1733"
+                    inkscape:flatsided="true"
+                    sodipodi:sides="6"
+                    sodipodi:cx="63.474815"
+                    sodipodi:cy="117.52891"
+                    sodipodi:r1="73.120422"
+                    sodipodi:r2="63.324146"
+                    sodipodi:arg1="1.5707963"
+                    sodipodi:arg2="2.0943951"
+                    inkscape:rounded="0"
+                    inkscape:randomized="0"
+                    d="M 63.474817,190.64933 0.15067305,154.08912 0.15067109,80.968698 63.474813,44.408485 l 63.324147,36.56021 0,73.120425 z"
+                    transform="translate(-17.150671,-63.525153)"
+                    inkscape:transform-center-y="-1.4806792e-06"
+                    inkscape:label="background" />
+                <rect
+                    style="fill:#000000;stroke:#000000;stroke-width:8;stroke-dasharray:none"
+                    id="rect788"
+                    width="0.12816663"
+                    height="33.804028"
+                    x="45.793461"
+                    y="-3.2660925"
+                    inkscape:label="littlethingatthetop" />
+                <path
+                    style="display:inline;fill:none;stroke:#000000;stroke-width:7.99999"
+                    d="m 57.272233,10.803073 31.849288,18.388193 v 49.14493 L 46.560761,102.90867 3.9999971,78.336206 l -2e-6,-49.14494 30.1726619,-17.420199"
+                    id="path842"
+                    sodipodi:nodetypes="ccccccc"
+                    inkscape:label="hex-circle" />
+                <path
+                    style="display:inline;fill:none;stroke:#000000;stroke-width:7.99999"
+                    d="m 57.272233,10.803429 31.849292,18.388193 v 49.14493 L 46.560761,102.90903 3.9999971,78.336562 l -2e-6,-49.14494 30.1726619,-17.420199"
+                    id="path842-6"
+                    sodipodi:nodetypes="ccccccc"
+                    inkscape:label="hex-circle-colour" />
+                <path
+                    style="display:none;fill:none;stroke:#000000;stroke-width:10.965"
+                    d="m 61.343674,-5.196708 43.653386,25.20329 v 67.359201 l -58.334785,33.679587 -58.334788,-33.679573 -2e-6,-67.359215 41.355363,-23.8765352"
+                    id="path842-3"
+                    sodipodi:nodetypes="ccccccc"
+                    inkscape:label="border" />
+            </g>
+        </g>
+    </symbol>
+    <use href="#main-root" />
+</svg>

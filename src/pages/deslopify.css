@@ -1,11 +1,44 @@
 /* This CSS file uses Concentric-CSS */
 
+html,
+body {
+    width: 500px;
+    height: 600px;
+    margin: 0;
+}
+
 .inactive-background {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     background-image: linear-gradient(#16033a, #4c18e7);
 }
 
 .active-background {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     background-image: linear-gradient(#16033a, #18e7b4);
+}
+
+.topbar {
+    display: block;
+    margin: 0;
+    background-color: #16033a;
+    padding: 0;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.topbar > span {
+    box-sizing: border-box;
+    display: block;
+    overflow: hidden;
+    text-align: center;
+    text-decoration: none;
+    color: white;
 }
 
 .ds-main {
@@ -18,7 +51,7 @@
 .ds-button {
     display: inline-block;
     position: relative;
-    transform: skew(-0.5rad);
+    transform: skew(-0.25rad);
     transition: background 0.3s, color 0.3s;
     transition-duration: 2.5s;
     margin: 4px 2px;
@@ -32,9 +65,10 @@
     text-align: center;
     text-decoration: none;
 }
+
 .ds-button > span {
     display: block;
-    transform: skew(0.5rad);
+    transform: skew(0.25rad);
     color: #fef5ec;
     font: normal normal 500 16px "Source Sans 3", sans-serif;
     font-optical-sizing: auto;
@@ -49,7 +83,8 @@
     position: absolute;
     top: 0%;
     right: 0%;
-    transition: transform 0.5s cubic-bezier(0, 1, 1, 1);
+    transition: transform 0.5s cubic-bezier(0, 1, 1, 1), opacity 0.01s;
+    transition-duration: 1.5s;
     background: #16033a;
     width: 100%;
     height: 100%;
@@ -57,9 +92,44 @@
 }
 
 .ds-button:hover::before {
+    opacity: 0;
     transform: translate3d(100%, 0, 0);
 }
 
 .ds-button:active {
-    transform: translateY(2%) translateX(2%) skew(-0.5rad);
+    transform: translateY(2%) translateX(0.5%) skew(-0.25rad);
+}
+
+.ds-button:active > span {
+    transform: skew(0.25rad);
+}
+
+.ds-inactive-standby {
+    width: 35%;
+    height: auto;
+    flex-shrink: 0;
+    transform: rotate(180deg);
+    padding: 1em;
+}
+
+.ds-active-standby {
+    width: 35%;
+    height: auto;
+    flex-shrink: 0;
+    transform: rotate(0);
+    padding: 1em;
+}
+
+.ds-inactive-hexagon {
+    display: inline;
+    fill: none;
+    stroke: #000;
+    stroke-width: 8;
+}
+
+.ds-active-hexagon {
+    display: inline;
+    fill: none;
+    stroke: url(#Gradient1);
+    stroke-width: 8;
 }

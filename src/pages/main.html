@@ -7,9 +7,52 @@
     </head>
 
     <body class="inactive-background">
-        <span id="current-webpage-url" class="ds-main">example.com</span>
-        <span id="active" class="ds-main">Active</span>
-        <span id="inactive" class="ds-main">Inactive</span>
+
+        <div class="topbar">
+            <span>
+            <span id="current-webpage-url" class="ds-main">example.com</span>
+            <span id="active" class="ds-main">Active</span>
+            </span>
+        </div>
+
+        <br />
+
+        <svg
+            id="hex-standby-svg"
+            class="ds-inactive-standby"
+            viewBox="0 0 126.648 146.241"
+            xmlns="http://www.w3.org/2000/svg"
+        >
+            <defs>
+                <linearGradient id="Gradient1" x1="0" x2="0" y1="0" y2="1">
+                    <stop class="stop1" stop-color="black" offset="0%" />
+                    <stop class="stop3" stop-color="#18e7b4" offset="100%" />
+                </linearGradient>
+            </defs>
+            <path
+                style="fill: #fff; stroke: none; stroke-width: 8"
+                d="M63.475 190.65.15 154.09V80.968l63.324-36.56 63.324 36.56v73.12z"
+                transform="translate(-.15 -44.408)"
+            />
+            <path
+                style="
+                    fill: #000;
+                    stroke: #000;
+                    stroke-width: 8;
+                    stroke-dasharray: none;
+                "
+                d="M45.793-3.266h.128v33.804h-.128z"
+                transform="translate(17 19.117)"
+            />
+            <path
+                id="hexagon"
+                class="ds-inactive-hexagon"
+                d="m57.272 10.803 31.85 18.388v49.145L46.56 102.91 4 78.336V29.191l30.173-17.42"
+                transform="translate(17 19.117)"
+            />
+        </svg>
+
+        <br />
         <div id="button-list" style="display: flex; flex-direction: column">
             <div id="button-temp-allow" class="supported ds-button">
                 <span id="temp-allow-text">
@@ -26,6 +69,11 @@
             </div>
             <div id="report-bug" class="ds-button"><span>Report Bug</span></div>
         </div>
+
+        <div class="topbar">
+            <span id="current-version" class="ds-main">Deslopify v0.11</span>
+        </div>
+
         <script src="./popup.ts"></script>
     </body>
 </html>
