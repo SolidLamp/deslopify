@@ -13,7 +13,7 @@ A WebExtension to hide forced AI elements on numerous websites.
 
 ***
 
-<img src="./docs/img/deslopify-example.png" alt="Logo" width="10%" />
+![Example image depicting two images. The first depicts Google's AI overview erroneously claiming that the website is not Google, whilst the second is the website after Deslopify is active, where the AI overview is removed](./docs/img/deslopify-example.png)
 
 ## About
 
@@ -97,5 +97,6 @@ Here are a number of other useful extensions or projects which help protect agai
 | [uBlockOrigin & uBlacklist Huge AI Blocklist](https://github.com/laylavish/uBlockOrigin-HUGE-AI-Blocklist) | A blocklist for [uBlock Origin](https://github.com/gorhill/uBlock) which blocks websites dedicated to AI. This is out of the scope of Deslopify, but many users may appreciate such a feature. |
 | [Alerte sur les sites GenAI](https://github.com/Gathor59/Extension-Alerte-GenAI/tree/version-2) | An extension which detects if text is generated with AI tooling using heuristics, and provides an error message to the user in such case. (The extension is provided only in French.) |
 | [The No-AI Software Directory](https://github.com/thatshubham/no-ai) | A list of general-purpose software products and other resources which do not integrate AI tooling. |
+| [Stevo's AI Blocklist](https://github.com/Stevoisiak/Stevos-AI-Blocklist) | A blocklist similar for [uBlock Origin](https://github.com/gorhill/uBlock) and AdGuard, which blocks AI elements on the website. This is very similar to Deslopify, although it is provided as a blocklist rather than as an extension. This can be detrimental the outreach to less technical users, although it increases privacy and security. |
 
 
