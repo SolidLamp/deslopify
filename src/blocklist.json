@@ -8,6 +8,21 @@
         "otherIdentifiers": [],
         "textContent": []
     },
+    "aberdeencity.gov.uk": {
+        "classes": [],
+        "IDs": [],
+        "otherIdentifiers": ["[aria-label='Open Chatbot']"],
+        "textContent": []
+    },
+    "account.proton.me": {
+        "classes": ["explore-app-proton-lumo", "lumo-troubleshoot-launcher"],
+        "IDs": [],
+        "otherIdentifiers": [
+            "[href='https://lumo.proton.me/u/1']",
+            "[aria-label='Go to Lumo']"
+        ],
+        "textContent": []
+    },
     "agents.meta.stackexchange.com": {
         "classes": ["ai-center"],
         "IDs": ["nav-sofa"],
@@ -111,6 +126,12 @@
             "[role='menu']",
             "[aria-label='Assistant Panel']"
         ],
+        "textContent": []
+    },
+    "clarencemedicalrhyl.wales": {
+        "classes": ["druidWebchatRoot_v2"],
+        "IDs": ["druidWebchatRoot_v2"],
+        "otherIdentifiers": [],
         "textContent": []
     },
     "collinsdictionary.com": {
@@ -226,14 +247,15 @@
     },
     "extension.js.org": {
         "classes": ["group/ai", "chat-assistant-input"],
-        "IDs": [],
+        "IDs": ["chat-assistant-sheet"],
         "otherIdentifiers": [
             "[href$='ai-access']",
             "[aria-label='Ask a question...']",
             "[placeholder='Ask a question...']",
             "[aria-label='Ask AI']",
             "[data-chat-payload-element-id='lang-shellscript-code-npx_extension_latest']",
-            "[aria-label='Copy page']"
+            "[aria-label='Copy page']",
+            "[data-component-part='search-ask-ai-button']"
         ],
         "textContent": ["Ask AI"]
     },
@@ -291,6 +313,12 @@
             "AI Mode",
             "Applying AI towards science and the environment"
         ]
+    },
+    "help.minecraft.net": {
+        "classes": ["chat-widget-container", "chat-toggle-button"],
+        "IDs": [],
+        "otherIdentifiers": [],
+        "textContent": []
     },
     "indeed.com": {
         "classes": [],
@@ -392,6 +420,16 @@
         ],
         "textContent": []
     },
+    "michaels.com": {
+        "classes": [],
+        "IDs": ["hero", "zeroState"],
+        "otherIdentifiers": [
+            "[aria-label='Open Ask Mike chat']",
+            "[chat-title='Ask Mike']",
+            "[placeholder-text='Ask Anything']"
+        ],
+        "textContent": ["Ask Mike"]
+    },
     "money.stackexchange.com": {
         "classes": ["ai-center"],
         "IDs": ["nav-sofa"],
@@ -434,6 +472,12 @@
             "[href='http://agents.stackoverflow.com']"
         ],
         "textContent": []
+    },
+    "photopea.com": {
+        "classes": [],
+        "IDs": [],
+        "otherIdentifiers": [],
+        "textContent": ["Generate with AI"]
     },
     "plughopper.com": {
         "classes": [
