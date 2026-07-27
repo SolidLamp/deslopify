@@ -64,12 +64,19 @@ if (!validBlocklist) {
     };
 }
 
-/* function injectSiteSpecificScripts(tabID: number, domain: string): void {
-    const googleSearchDomains: string[] = ["google.com", "google.co.uk"]
-    if (googleSearchDomains.includes(domain)) {
-        api.scripting.executeScript({ files: null, injectImmediately: true, target: {tabID: tabID}})
-    }
-} */
+const enhancedblocklistURL = api.runtime.getURL(
+    "assets/enhancedblocklist.json",
+);
+const enhancedresponse = await fetch(enhancedblocklistURL);
+let enhancedblocklist: object = await enhancedresponse.json();
+
+let siteSpecificScripts: string[] = [];
+
+for (const property in enhancedblocklist) {
+    siteSpecificScripts = siteSpecificScripts.concat(
+        enhancedblocklist[property],
+    );
+}
 
 /**
  * Updates the count as displayed on the badge next to the extension icon.
@@ -82,16 +89,48 @@ function updateBadgeCounter(
     count: number,
     tabID: number,
     sendResponse: (a: object) => void,
-): void {
+): boolean {
     const message: string = count.toString();
     console.log("Received message!");
+
     if (message == "0") {
         sendResponse({ message: "Did not update." });
-    } else if (tabID != undefined) {
-        api.action.setBadgeText({ text: message, tabId: tabID });
-        api.action.setBadgeBackgroundColor({ color: "grey" });
-        sendResponse({ message: "Succesfully updated." });
+        return false;
+    } else if (tabID == undefined) {
+        sendResponse({ message: "Did not update." });
+        return false;
     }
+
+    let domain: string = "";
+    api.tabs.get(tabID).then((tab: object) => {
+        let url = new URL(tab.url);
+        domain = url.hostname;
+        if (domain.substring(0, 4) == "www.") {
+            domain = domain.slice(4);
+        }
+
+        console.log(siteSpecificScripts);
+        console.log(api.tabs.get(tabID));
+        console.log(domain);
+
+        if (siteSpecificScripts.includes(domain)) {
+            const text = `${message}+`;
+            api.action.setBadgeText({ text: text, tabId: tabID });
+            api.action.setBadgeTextColor({ color: "white", tabId: tabID });
+            api.action.setBadgeBackgroundColor({
+                color: "green",
+                tabId: tabID,
+            });
+            sendResponse({ message: "Succesfully updated." });
+        } else {
+            api.action.setBadgeText({ text: message, tabId: tabID });
+            api.action.setBadgeTextColor({ color: "black", tabId: tabID });
+            api.action.setBadgeBackgroundColor({ color: "grey", tabId: tabID });
+            sendResponse({ message: "Succesfully updated." });
+        }
+    });
+
+    return true;
 }
 
 /**

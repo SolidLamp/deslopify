@@ -26,8 +26,9 @@ if (hostname.substring(0, 4) == "www.") {
     domain = hostname.slice(4);
 }
 
-//if (domain)
-//throw new Error("Not Google.")
+if (domain.substring(0, 6) != "google") {
+    throw new Error("Not Google.");
+}
 
 /**
  * Deletes 'People Also Ask' questions where an AI overview would be expected.
@@ -86,3 +87,4 @@ function removePeopleAlsoAsk(): void {
         subtree: true,
     });
 })();
+

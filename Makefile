@@ -83,16 +83,20 @@ clean:
 
 # Test builds
 
-$(BUILD_DIR)/deslopify-test-builds/deslopify-$(TEST_ID)-firefox.zip: $(BUILD_DIR)/firefox $(BUILD_DIR)/firefox/blocklist.json $(BUILD_DIR)/firefox/blocklist.schema.json
+$(BUILD_DIR)/deslopify-test-builds/deslopify-$(TEST_ID)-firefox.zip: $(BUILD_DIR)/firefox $(BUILD_DIR)/firefox/blocklist.json $(BUILD_DIR)/firefox/blocklist.schema.json $(BUILD_DIR)/firefox/enhancedblocklist.json
 > web-ext build -s $(BUILD_DIR)/firefox -a $(BUILD_DIR)/deslopify-test-builds --filename {name}-$(TEST_ID)-firefox.zip
 
-$(BUILD_DIR)/deslopify-test-builds/deslopify-$(TEST_ID)-chromium.zip: $(BUILD_DIR)/chromium $(BUILD_DIR)/chromium/blocklist.json $(BUILD_DIR)/chromium/blocklist.schema.json
+$(BUILD_DIR)/deslopify-test-builds/deslopify-$(TEST_ID)-chromium.zip: $(BUILD_DIR)/chromium $(BUILD_DIR)/chromium/blocklist.json $(BUILD_DIR)/chromium/blocklist.schema.json $(BUILD_DIR)/chromium/enhancedblocklist.json
 > web-ext build -s $(BUILD_DIR)/chromium -a $(BUILD_DIR)/deslopify-test-builds --filename {name}-$(TEST_ID)-chromium.zip
 
 # Firefox
 
-$(BUILD_DIR)/deslopify-$(VERSION)/deslopify-$(VERSION)-firefox.zip: $(BUILD_DIR)/firefox $(BUILD_DIR)/firefox/blocklist.json $(BUILD_DIR)/firefox/blocklist.schema.json
+$(BUILD_DIR)/deslopify-$(VERSION)/deslopify-$(VERSION)-firefox.zip: $(BUILD_DIR)/firefox $(BUILD_DIR)/firefox/blocklist.json $(BUILD_DIR)/firefox/blocklist.schema.json $(BUILD_DIR)/firefox/enhancedblocklist.json
 > web-ext build -s $(BUILD_DIR)/firefox -a $(BUILD_DIR)/deslopify-$(VERSION) --filename {name}-{version}-firefox.zip
+
+$(BUILD_DIR)/firefox/enhancedblocklist.json: $(BUILD_DIR)/firefox
+> MANGLED_NAME=$$(ls $(BUILD_DIR)/firefox/assets | grep enhancedblocklist --max-count 1)
+> cp $(BUILD_DIR)/firefox/assets/$$MANGLED_NAME $(BUILD_DIR)/firefox/assets/enhancedblocklist.json
 
 $(BUILD_DIR)/firefox/blocklist.schema.json: $(BUILD_DIR)/firefox
 > MANGLED_NAME=$$(ls $(BUILD_DIR)/firefox/assets | grep blocklist.schema --max-count 1)
@@ -108,8 +112,12 @@ $(BUILD_DIR)/firefox: common
 
 # Chromium-specific
 
-$(BUILD_DIR)/deslopify-$(VERSION)/deslopify-$(VERSION)-chromium.zip: $(BUILD_DIR)/chromium $(BUILD_DIR)/chromium/blocklist.json $(BUILD_DIR)/chromium/blocklist.schema.json
+$(BUILD_DIR)/deslopify-$(VERSION)/deslopify-$(VERSION)-chromium.zip: $(BUILD_DIR)/chromium $(BUILD_DIR)/chromium/blocklist.json $(BUILD_DIR)/chromium/blocklist.schema.json $(BUILD_DIR)/chromium/enhancedblocklist.json
 > web-ext build -s $(BUILD_DIR)/chromium -a $(BUILD_DIR)/deslopify-$(VERSION) --filename {name}-{version}-chromium.zip
+
+$(BUILD_DIR)/chromium/enhancedblocklist.json: $(BUILD_DIR)/chromium
+> MANGLED_NAME=$$(ls $(BUILD_DIR)/firefox/assets | grep enhancedblocklist --max-count 1)
+> cp $(BUILD_DIR)/chromium/assets/$$MANGLED_NAME $(BUILD_DIR)/chromium/assets/enhancedblocklist.json
 
 $(BUILD_DIR)/chromium/blocklist.schema.json: $(BUILD_DIR)/chromium
 > MANGLED_NAME=$$(ls $(BUILD_DIR)/chromium/assets | grep blocklist.schema --max-count 1)
