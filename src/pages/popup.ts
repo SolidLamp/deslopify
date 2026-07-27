@@ -195,12 +195,17 @@ async function updateDOM(): Promise<void> {
 
     // Unsupported websites
     if (!supported) {
-        const buttons: HTMLElement[] = Array.from(
-            document.getElementsByClassName("supported"),
-        );
+        const buttons = document.getElementsByClassName("supported");
         for (const element of buttons) {
             element.style.display = "none";
         }
+
+        const bodies = document.getElementsByClassName("ds-supported-website");
+        for (const element of bodies) {
+            element.classList.add("ds-unsupported-website");
+            element.classList.remove("ds-supported-website");
+        }
+        
         activeUI.textContent = "Unsupported Website";
     }
 
