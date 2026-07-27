@@ -64,6 +64,13 @@ if (!validBlocklist) {
     };
 }
 
+/* function injectSiteSpecificScripts(tabID: number, domain: string): void {
+    const googleSearchDomains: string[] = ["google.com", "google.co.uk"]
+    if (googleSearchDomains.includes(domain)) {
+        api.scripting.executeScript({ files: null, injectImmediately: true, target: {tabID: tabID}})
+    }
+} */
+
 /**
  * Updates the count as displayed on the badge next to the extension icon.
  *
