@@ -18,6 +18,10 @@
 // Problem: Blocking a class is easy, but blocking the absence of a class is not
 // Solution: add 'noai' to those that are allowed, and remove not having it.
 
+export {};
+
+const api = typeof browser !== "undefined" ? browser : chrome;
+
 // For google.com
 
 const hostname = window.location.hostname;
@@ -77,6 +81,30 @@ function removePeopleAlsoAsk(): void {
     }
 }
 
+// We need this loop if the user adds the extension while already on a page.
+let noConnection: boolean = true;
+let message: { message: string | boolean } = { message: "Connection error." };
+while (noConnection) {
+    try {
+        message = await api.runtime.sendMessage({
+            message: "getActive",
+            data: domain,
+        });
+        noConnection = false;
+    } catch {
+        noConnection = true;
+    }
+}
+
+let active: boolean = false;
+if (typeof message.message === "boolean") {
+    active = message.message;
+}
+
+if (!active) {
+    throw new Error("Inactive.")
+}
+
 ((): void => {
     const observer = new MutationObserver(() => {
         removePeopleAlsoAsk();
@@ -87,4 +115,3 @@ function removePeopleAlsoAsk(): void {
         subtree: true,
     });
 })();
-

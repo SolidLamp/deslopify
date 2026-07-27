@@ -185,6 +185,42 @@ async function getBlocklist(domain: string): Promise<Blocklist> {
     return blocklist;
 }
 
+async function getStoredArray(
+    id: string,
+    storageArea: StorageArea,
+): Promise<string[]> {
+    let storageArray: string[] = [];
+    let storage: object | string[] = await storageArea.get(id);
+
+    if (typeof storage === "object" && Object.hasOwn(storage, id)) {
+        storageArray = storage[id];
+    } else if (typeof storage === "object" && storage.constructor === Array) {
+        storageArray = storage;
+    }
+    return storageArray;
+}
+
+async function getActive(activeWebsite: string): Promise<boolean> {
+    let active: boolean = true;
+
+    const localArray = await getStoredArray(
+        "button-perm-allow",
+        api.storage.local,
+    );
+    const sessionArray = await getStoredArray(
+        "button-temp-allow",
+        api.storage.session,
+    );
+    if (
+        localArray.includes(activeWebsite) ||
+        sessionArray.includes(activeWebsite)
+    ) {
+        active = false;
+    }
+
+    return active;
+}
+
 api.runtime.onMessage.addListener(
     (
         message: object,
@@ -212,6 +248,15 @@ api.runtime.onMessage.addListener(
         ) {
             getBlocklist(message.data).then((blocklist) => {
                 sendResponse({ message: blocklist });
+            });
+        } else if (
+            typeof message == "object" &&
+            "message" in message &&
+            "data" in message &&
+            message.message == "getActive"
+        ) {
+            getActive(message.data).then((bool: boolean) => {
+                sendResponse({ message: bool });
             });
         } else {
             sendResponse({ message: "Failed to parse message." });
