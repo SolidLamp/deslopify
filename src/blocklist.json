@@ -178,6 +178,12 @@
         ],
         "textContent": []
     },
+    "docs.replit.com": {
+        "classes": [],
+        "IDs": ["chat-assistant-textarea"],
+        "otherIdentifiers": [],
+        "textContent": []
+    },
     "dskbank.bg": {
         "classes": [],
         "IDs": [],
@@ -219,6 +225,19 @@
             "[href*='ai-assist']",
             "[href='http://agents.stackoverflow.com']"
         ],
+        "textContent": []
+    },
+    "en.uhomes.com": {
+        "classes": [
+            "meichat-bottom-popup",
+            "uhomes-ai-logo",
+            "uhomes-ai-entry",
+            "list-chat-icon-container",
+            "seg-ai",
+            "toggle-pill"
+        ],
+        "IDs": ["meichat-bottom-popup"],
+        "otherIdentifiers": ["[aria-label='AI Assistant']"],
         "textContent": []
     },
     "english.stackexchange.com": {
@@ -420,6 +439,15 @@
         ],
         "textContent": []
     },
+    "metro.co.uk": {
+        "classes": ["metro-answers", "metro-disclaimer"],
+        "IDs": [],
+        "otherIdentifiers": ["[default-placeholder='Ask Metro anything...']"],
+        "textContent": [
+            "Ask Metro",
+            "Use AI to go deeper into the stories you care about – powered by Metro and trusted publications."
+        ]
+    },
     "michaels.com": {
         "classes": [],
         "IDs": ["hero", "zeroState"],
@@ -485,16 +513,27 @@
             "fixed sm:right-6 z-50",
             "flex-1 overflow-y-auto px-4 py-4 space-y-3",
             "relative max-w-7xl mx-auto px-4 sm:px-6",
-            "w-1 h-1 rounded-full dark:bg-white/20"
+            "w-1 h-1 rounded-full dark:bg-white/20",
+            "hd-resp-2col-hero"
         ],
         "IDs": [],
         "otherIdentifiers": ["[href='/what-to-pack']"],
-        "textContent": []
+        "textContent": [
+            "Don't pack the wrong plug.",
+            "Going somewhere that uses",
+            "Tell Pluggy where you're going and we'll build a packing list — weather, the right adapter, eSIM, what to leave at home."
+        ]
     },
     "presearch.com": {
         "classes": [],
         "IDs": [],
         "otherIdentifiers": ["[x-show='showAiResults()']"],
+        "textContent": []
+    },
+    "proquest.com": {
+        "classes": ["generate-image-description-btn"],
+        "IDs": [],
+        "otherIdentifiers": [],
         "textContent": []
     },
     "qwant.com": {
@@ -584,6 +623,12 @@
         ],
         "textContent": []
     },
+    "spaceship.com": {
+        "classes": ["hp-ai-website-builder-card"],
+        "IDs": [],
+        "otherIdentifiers": ["[aria-label='Ask Alf']"],
+        "textContent": []
+    },
     "stackapps.com": {
         "classes": ["ai-center"],
         "IDs": ["nav-sofa"],
@@ -627,6 +672,15 @@
         "otherIdentifiers": [
             "[href*='ai-assist']",
             "[href='http://agents.stackoverflow.com']"
+        ],
+        "textContent": []
+    },
+    "theregister.com": {
+        "classes": [],
+        "IDs": [],
+        "otherIdentifiers": [
+            "[href='https://intelligence.theregister.com']",
+            "[aria-label='Open AI chat']"
         ],
         "textContent": []
     },
