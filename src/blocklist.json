@@ -3,11 +3,12 @@
     "format_version": 3,
 
     "*.stackexchange.com": {
-        "classes": ["ai-center"],
+        "classes": [],
         "IDs": ["nav-sofa"],
         "otherIdentifiers": [
             "[href*='ai-assist']",
-            "[href='http://agents.stackoverflow.com']",
+            "[href$='stackoverflow.com/ai-assist']",
+            "[href$='agents.stackoverflow.com']",
             "[aria-label='Stack Overflow for Agents']"
         ],
         "textContent": []
