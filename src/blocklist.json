@@ -13,6 +13,12 @@
         ],
         "textContent": []
     },
+    "*.fandom.com": {
+        "classes": ["trfc161"],
+        "IDs": [],
+        "otherIdentifiers": [],
+        "textContent": []
+    },
     "abdn.ac.uk": {
         "classes": ["gecko-chat-widget-app"],
         "IDs": [],
@@ -34,6 +40,41 @@
         ],
         "textContent": []
     },
+    "alibaba.com": {
+        "classes": ["ai-mode-entry-wrapper", "accio-wrapper"],
+        "IDs": [
+            "icbu-marketing-pc-first-order-popup",
+            "icbu-buyer-pc-top-banner"
+        ],
+        "otherIdentifiers": [],
+        "textContent": []
+    },
+    "amazon.com": {
+        "classes": [
+            "health-ai-header",
+            "ask-health-ai-section",
+            "pui-sub-nav-health-ai-button"
+        ],
+        "IDs": [
+            "nav-rufus-disco",
+            "rufus-ask-rufus-tooltip",
+            "nile-inline_feature_div",
+            "nile-inline-btf_feature_div",
+            "nav-health-ai"
+        ],
+        "otherIdentifiers": [],
+        "textContent": []
+    },
+    "americanbanker.com": {
+        "classes": [
+            "miso-page-header-search",
+            "miso-hybrid-search-combo__disclaimer",
+            "miso-hybrid-search-combo__grid-answer"
+        ],
+        "IDs": [],
+        "otherIdentifiers": [],
+        "textContent": []
+    },
     "anaconda.com": {
         "classes": [
             "text-sm text-gray-500 dark:text-white/50 whitespace-nowrap"
@@ -42,7 +83,31 @@
         "otherIdentifiers": ["[href$='platform/ai-catalyst']"],
         "textContent": []
     },
+    "android.com": {
+        "classes": [],
+        "IDs": ["ai-on-android", "create-your-own-unique-android-bot"],
+        "otherIdentifiers": ["[data-link-text='Gemini']"],
+        "textContent": []
+    },
     "askubuntu.com": "*.stackexchange.com",
+    "baidu.com": {
+        "classes": ["aisearch-btn_1yI-K", "panel-list_8jHmm"],
+        "IDs": ["csaitab", "ai-accompanies-height-container"],
+        "otherIdentifiers": [],
+        "textContent": []
+    },
+    "belk.com": {
+        "classes": [],
+        "IDs": ["shopping-assistant-header"],
+        "otherIdentifiers": ["[aria-label='Ask Belk']"],
+        "textContent": []
+    },
+    "bestbuy.com": {
+        "classes": [],
+        "IDs": [],
+        "otherIdentifiers": ["[data-component-name='AiReviewSummary']"],
+        "textContent": []
+    },
     "bing.com": {
         "classes": [
             "cdxCopilotIcon",
@@ -52,9 +117,17 @@
             "gs_temp",
             "b_copilot_icon",
             "composer_container",
-            "crtrm-video"
+            "crtrm-video",
+            "conversation_starters"
         ],
-        "IDs": ["codex", "b-scopeListItem-copilotsearch", "crtrm-video"],
+        "IDs": [
+            "codex",
+            "b-scopeListItem-copilotsearch",
+            "crtrm-video",
+            "aitools",
+            "sa_ai_block",
+            "imgcrtr_key"
+        ],
         "otherIdentifiers": [
             "[aria-label='Open Copilot']",
             "[title='Open Copilot']",
@@ -64,6 +137,12 @@
         ],
         "textContent": []
     },
+    "bloomberg.com": {
+        "classes": ["SummaryOnlyTakeaways_takeaways__8ayMD"],
+        "IDs": [],
+        "otherIdentifiers": ["[data-testid='ai-takeaways']"],
+        "textContent": []
+    },
     "britannica.com": {
         "classes": [
             "header-topic-britannica-ai-module",
@@ -71,6 +150,29 @@
         ],
         "IDs": [],
         "otherIdentifiers": ["[href$='chatbot']"],
+        "textContent": []
+    },
+    "boldbi.com": {
+        "classes": [
+            "elementor-element-6e4054b5",
+            "elementor-element-59cecfb8",
+            "elementor-element-3d31878",
+            "elementor-element-6d83d9b2"
+        ],
+        "IDs": ["boldchat-host"],
+        "otherIdentifiers": [],
+        "textContent": []
+    },
+    "bunnings.com.au": {
+        "classes": [],
+        "IDs": [],
+        "otherIdentifiers": ["[aria-label='Ask Bunnings AI']"],
+        "textContent": []
+    },
+    "businessinsider.com": {
+        "classes": ["catch-me-up-quickly", "ai-summary-questions"],
+        "IDs": [],
+        "otherIdentifiers": [],
         "textContent": []
     },
     "canva.com": {
@@ -84,6 +186,12 @@
             "[role='menu']",
             "[aria-label='Assistant Panel']"
         ],
+        "textContent": []
+    },
+    "claimyr.com": {
+        "classes": ["chat-container-container"],
+        "IDs": [],
+        "otherIdentifiers": [],
         "textContent": []
     },
     "clarencemedicalrhyl.wales": {
@@ -118,6 +226,21 @@
             "Try also the new AI features!"
         ]
     },
+    "databricks.com": {
+        "classes": [],
+        "IDs": [],
+        "otherIdentifiers": [
+            "[data-cy='AiSummary']",
+            "[data-promo-id='87eda153-219a-46c6-828a-9d54503f5adc']"
+        ],
+        "textContent": []
+    },
+    "datacamp.com": {
+        "classes": ["code-block-footer"],
+        "IDs": [],
+        "otherIdentifiers": ["[aria-labelledby='explore-with-ai-heading']"],
+        "textContent": []
+    },
     "dictionary.cambridge.org": {
         "classes": ["ai-header-button"],
         "IDs": [],
@@ -125,6 +248,14 @@
             "[onclick='window.assistantTracker?.eventBurgerMenuItemClick()']",
             "[href$='assistant']"
         ],
+        "textContent": []
+    },
+    "diffchecker.com": {
+        "classes": [
+            "border-none no-underline rounded-md bg-surface-purple text-foreground-inverse"
+        ],
+        "IDs": [],
+        "otherIdentifiers": [],
         "textContent": []
     },
     "diy.com": {
@@ -165,8 +296,20 @@
         ],
         "textContent": ["Search Assist", "Duck.ai"]
     },
+    "dummies.com": {
+        "classes": ["n4-dummies-ai_btn"],
+        "IDs": [],
+        "otherIdentifiers": ["[href$='/dummies-ai']"],
+        "textContent": []
+    },
+    "ebay.com": {
+        "classes": ["srp-river-answer--FAQ_KW_SRP_MODULE"],
+        "IDs": [],
+        "otherIdentifiers": [],
+        "textContent": []
+    },
     "ecosia.org": {
-        "classes": ["ai-overview-content"],
+        "classes": ["ai-overview-content", "omnibox-search-form__ai-chat"],
         "IDs": ["search-form-ai-suggestion"],
         "otherIdentifiers": [
             "[data-test-id='search-navigation-item-chat']",
@@ -188,6 +331,27 @@
         ],
         "IDs": ["meichat-bottom-popup"],
         "otherIdentifiers": ["[aria-label='AI Assistant']"],
+        "textContent": []
+    },
+    "emojicombos.co": {
+        "classes": [],
+        "IDs": [],
+        "otherIdentifiers": [
+            "[href='https://perchance.org/ai-chat']",
+            "[href='https://perchance.org/ai-icon-generator']"
+        ],
+        "textContent": [" (with 'flat' style) to create source images."]
+    },
+    "etsy.com": {
+        "classes": [],
+        "IDs": [],
+        "otherIdentifiers": ["[data-appears-component-name='reviews_feature_tags']"],
+        "textContent": []
+    },
+    "exceljet.net": {
+        "classes": ["chatbot-callout", "hero-chatbot-link", "block-chatbot-cta"],
+        "IDs": [],
+        "otherIdentifiers": [],
         "textContent": []
     },
     "eureka.patsnap.com": {
@@ -219,6 +383,18 @@
         ],
         "textContent": ["Ask AI"]
     },
+    "g4media.ro": {
+        "classes": [],
+        "IDs": ["g4-ai-chat-root"],
+        "otherIdentifiers": [],
+        "textContent": []
+    },
+    "gettyimages.com": {
+        "classes": ["ai_container"],
+        "IDs": [],
+        "otherIdentifiers": ["[data-testid='AIGenerator']"],
+        "textContent": []
+    },
     "github.com": {
         "classes": ["DashboardBannerCopilotApp"],
         "IDs": [],
@@ -247,9 +423,21 @@
             "Applying AI towards science and the environment"
         ]
     },
+    "help.adblockplus.org": {
+        "classes": ["ai-actions"],
+        "IDs": [],
+        "otherIdentifiers": [],
+        "textContent": []
+    },
     "help.minecraft.net": {
         "classes": ["chat-widget-container", "chat-toggle-button"],
         "IDs": [],
+        "otherIdentifiers": [],
+        "textContent": []
+    },
+    "idrinkproducts.com": {
+        "classes": [],
+        "IDs": ["smart-bot-container"],
         "otherIdentifiers": [],
         "textContent": []
     },
@@ -425,7 +613,9 @@
         "textContent": []
     },
     "replit.com": {
-        "classes": [],
+        "classes": [
+            "ButtonGroup2-module__XpaxrW__buttonGroupItem CanvasAddMenu-module__mL0JCa__triggerButton"
+        ],
         "IDs": ["ai-prompt-input"],
         "otherIdentifiers": [
             "[alt='AI']",
@@ -442,7 +632,8 @@
             "[class*='DesignCanvasCard']",
             "[class*='ParallelAgentsCard']",
             "[class*='MultipleArtifactsCard']",
-            "[class*='TeamsCard']"
+            "[class*='TeamsCard']",
+            "[data-analytics-id='canvas_empty_state_start_prompt']"
         ],
         "textContent": [
             "Agent 4",
@@ -514,6 +705,25 @@
             "[href*='ai-assist']",
             "[href='http://agents.stackoverflow.com']"
         ],
+        "textContent": []
+    },
+    "support-qa.eplus.jp": {
+        "classes": [],
+        "IDs": [],
+        "otherIdentifiers": ["[title='AI Chat Support']"],
+        "textContent": []
+    },
+    "thebricks.com": {
+        "classes": [
+            "Modal_container__jm1jX",
+            "Cta1_container__T8L_e",
+            "Cta2_container__dcad2",
+            "Cta3_container__pjUHX",
+            "Cta4_container__Ut98Y",
+            "Cta5_container__8bABo"
+        ],
+        "IDs": ["sidebar-cta", "announcement-banner"],
+        "otherIdentifiers": [],
         "textContent": []
     },
     "theregister.com": {
