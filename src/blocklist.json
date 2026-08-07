@@ -140,7 +140,7 @@
             "ai-widget-container",
             "assistant-sticky-bar"
         ],
-        "IDs": ["ai-widget"],
+        "IDs": ["ai-widget", "assistant-link"],
         "otherIdentifiers": [],
         "textContent": []
     },
@@ -153,7 +153,7 @@
     "coolors.co": {
         "classes": ["icon-ai-sparkles-18px"],
         "IDs": ["generator_ai-btn"],
-        "otherIdentifiers": ["[data-index='12']"],
+        "otherIdentifiers": ["[data-index='12']", "[href$='/color-bot']"],
         "textContent": [
             "Chat with Color Bot",
             "Try the new AI-powered Color Bot and ask it anything about your palette.",
@@ -174,7 +174,8 @@
         "IDs": [],
         "otherIdentifiers": [
             "[aria-label='Hello B&Q DIY Assistant']",
-            "[data-testid='chat-suggestion-container']"
+            "[data-testid='chat-suggestion-container']",
+            "[data-testid='hello-bq']"
         ],
         "textContent": []
     },
@@ -346,7 +347,7 @@
         "textContent": []
     },
     "investopedia.com": {
-        "classes": [],
+        "classes": ["askmiso-ask-query", "askmiso-ask-query-secondary"],
         "IDs": ["askmiso-ask-query_1-0"],
         "otherIdentifiers": [],
         "textContent": []
@@ -400,6 +401,7 @@
         "classes": [
             "oap-beauty-genius",
             "oap-beauty-genius-wrapper",
+            "oap-beauty-genius-footer-module",
             "oap-beauty-genius-footer-module__image",
             "oap-beauty-genius-footer-module__image-container",
             "oap-beauty-genius-header-icon"
@@ -440,13 +442,10 @@
         "textContent": []
     },
     "metro.co.uk": {
-        "classes": ["metro-answers", "metro-disclaimer"],
+        "classes": ["metro-answers"],
         "IDs": [],
         "otherIdentifiers": ["[default-placeholder='Ask Metro anything...']"],
-        "textContent": [
-            "Ask Metro",
-            "Use AI to go deeper into the stories you care about – powered by Metro and trusted publications."
-        ]
+        "textContent": []
     },
     "michaels.com": {
         "classes": [],
@@ -723,7 +722,7 @@
         ],
         "textContent": []
     },
-    "wites.onlinelibrary.wiley.com": {
+    "wires.onlinelibrary.wiley.com": {
         "classes": ["ai-chat-modal-control"],
         "IDs": ["ai-chat-button-control"],
         "otherIdentifiers": [],
