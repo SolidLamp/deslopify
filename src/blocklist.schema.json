@@ -11,7 +11,7 @@
     },
     "required": ["$schema", "format_version"],
     "additionalProperties": {
-        "type": "object",
+        "type": ["object", "string"],
         "properties": {
             "classes": {
                 "type": "array",

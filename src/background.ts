@@ -133,6 +133,76 @@ function updateBadgeCounter(
     return true;
 }
 
+async function getBlockedElements(
+    domain: string,
+    loop?: boolean,
+): Promise<Blocklist> {
+    const defaultBlocklist: Blocklist = {
+        classes: [],
+        IDs: [],
+        otherIdentifiers: [],
+        textContent: [],
+    };
+
+    let blocklist: Blocklist = defaultBlocklist;
+    if (domain in blocklistObject) {
+        console.log(`Deslopify: Domain found: ${domain}!`);
+        const found_blocklist = blocklistObject[domain];
+        if (typeof found_blocklist === "object") {
+            blocklist = found_blocklist;
+            return blocklist;
+        }
+        if (typeof found_blocklist === "string" && loop === true) {
+            console.log(`Deslopify: Double references not supported.`);
+            return defaultBlocklist;
+        } else if (typeof found_blocklist === "string") {
+            blocklist = await getBlockedElements(found_blocklist, true);
+        }
+    } else {
+        console.log(`Deslopify: Domain has no data: ${domain}`);
+        return defaultBlocklist;
+    }
+
+    return blocklist;
+}
+
+async function getDomainData(domain: string): Promise<Blocklist> {
+    const defaultBlocklist: Blocklist = {
+        classes: [],
+        IDs: [],
+        otherIdentifiers: [],
+        textContent: [],
+    };
+
+    const parts = domain.split(".");
+    const arr = [domain];
+    for (let i = 1; i <= parts.length; i++) {
+        let glob = "*.".concat(parts.slice(i, parts.length).join("."));
+        glob = glob == "*." ? "*" : glob;
+        arr.push(glob);
+    }
+
+    let blocklist: Blocklist = defaultBlocklist;
+
+    for (const website of arr) {
+        const new_blocklist = await getBlockedElements(website);
+        blocklist = {
+            classes: [...blocklist.classes, ...new_blocklist.classes],
+            IDs: [...blocklist.IDs, ...new_blocklist.IDs],
+            otherIdentifiers: [
+                ...blocklist.otherIdentifiers,
+                ...new_blocklist.otherIdentifiers,
+            ],
+            textContent: [
+                ...blocklist.textContent,
+                ...new_blocklist.textContent,
+            ],
+        };
+    }
+
+    return blocklist;
+}
+
 /**
  * Gets the blocklist
  *
@@ -148,15 +218,6 @@ async function getBlocklist(domain: string): Promise<Blocklist> {
     };
     if (typeof domain != "string") {
         console.warn("Deslopify: Invalid domain");
-        return defaultBlocklist;
-    }
-    let blocklist: Blocklist = defaultBlocklist;
-    if (domain in blocklistObject) {
-        blocklist = blocklistObject[domain];
-        console.log(`Deslopify: Domain found: ${domain}!`);
-        console.log(blocklist);
-    } else {
-        console.log(`Deslopify: Domain has no data: ${domain}`);
         return defaultBlocklist;
     }
 
@@ -181,6 +242,8 @@ async function getBlocklist(domain: string): Promise<Blocklist> {
         console.log("Website allowlisted in session storage.");
         return defaultBlocklist;
     }
+
+    const blocklist: Blocklist = await getDomainData(domain);
 
     return blocklist;
 }
