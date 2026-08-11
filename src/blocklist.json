@@ -137,6 +137,16 @@
         ],
         "textContent": []
     },
+    "blog.logrocket.com": {
+        "classes": [
+            "plug-dev-top",
+            "plug-gutter",
+            "blog-plug inline-plug css-plug"
+        ],
+        "IDs": [],
+        "otherIdentifiers": [],
+        "textContent": []
+    },
     "bloomberg.com": {
         "classes": ["SummaryOnlyTakeaways_takeaways__8ayMD"],
         "IDs": [],
@@ -345,11 +355,17 @@
     "etsy.com": {
         "classes": [],
         "IDs": [],
-        "otherIdentifiers": ["[data-appears-component-name='reviews_feature_tags']"],
+        "otherIdentifiers": [
+            "[data-appears-component-name='reviews_feature_tags']"
+        ],
         "textContent": []
     },
     "exceljet.net": {
-        "classes": ["chatbot-callout", "hero-chatbot-link", "block-chatbot-cta"],
+        "classes": [
+            "chatbot-callout",
+            "hero-chatbot-link",
+            "block-chatbot-cta"
+        ],
         "IDs": [],
         "otherIdentifiers": [],
         "textContent": []
@@ -405,6 +421,12 @@
         ],
         "textContent": []
     },
+    "gitlab.com": {
+        "classes": ["ai-panels"],
+        "IDs": [],
+        "otherIdentifiers": [],
+        "textContent": []
+    },
     "gla.ac.uk": {
         "classes": ["gecko-chat-widget-app"],
         "IDs": [],
@@ -441,10 +463,50 @@
         "otherIdentifiers": [],
         "textContent": []
     },
+    "imgflip.com": {
+        "classes": ["ai", "mm-toggle-ai", "ai-banner"],
+        "IDs": [],
+        "otherIdentifiers": [
+            "[href='/ai-meme']",
+            "[title='AI Meme Generator']"
+        ],
+        "textContent": [
+            "Do you have a wacky AI that can write memes for me?",
+            "(Funny you ask. Why yes, we do. Here you go:"
+        ]
+    },
     "indeed.com": {
         "classes": [],
         "IDs": ["mosaic-provider-career-guide-scout-promo"],
         "otherIdentifiers": [],
+        "textContent": []
+    },
+    "insight.com": {
+        "classes": ["c-header-main-nav__item-nia-icon", "c-nia-container"],
+        "IDs": ["insight-ai", "text-e22ebd5949"],
+        "otherIdentifiers": [],
+        "textContent": []
+    },
+    "insightsoftware.com": {
+        "classes": ["ai-summarize-section"],
+        "IDs": [],
+        "otherIdentifiers": ["[href$='insightsoftware-ai/']"],
+        "textContent": []
+    },
+    "investing.com": {
+        "classes": ["c-header-main-nav__item-nia-icon", "c-nia-container"],
+        "IDs": ["insight-ai", "text-e22ebd5949"],
+        "otherIdentifiers": [
+            "[href$=/warrenai]",
+            "[href$=/pro/propicks]",
+            "[href$=/pro/propicks?entry=navbar_menu_propicks]",
+            "[href*=/pro/onboarding/ai-chart-analysis]",
+            "[href*=/warrenai?]",
+            "[data-test='mobile-ws-tab-5']",
+            "[data-test='mobile-ws-tab-8']",
+            "[data-test='contextual-subscription-hook']",
+            "[data-test='inv-pro-strategies']"
+        ],
         "textContent": []
     },
     "investopedia.com": {
@@ -453,10 +515,39 @@
         "otherIdentifiers": [],
         "textContent": []
     },
-    "kagi.com": {
-        "classes": ["qa", "qa-content", "qa-container-box"],
+    "ishopchangi.com": {
+        "classes": [],
+        "IDs": ["chat-wrapper"],
+        "otherIdentifiers": [],
+        "textContent": []
+    },
+    "jimdo.com": {
+        "classes": [],
+        "IDs": ["companion"],
+        "otherIdentifiers": [],
+        "textContent": []
+    },
+    "jsfiddle.net": {
+        "classes": ["si_ai"],
         "IDs": [],
         "otherIdentifiers": [],
+        "textContent": []
+    },
+    "kagi.com": {
+        "classes": [
+            "qa",
+            "qa-content",
+            "qa-container-box",
+            "_0_quick_answer_trigger_btn",
+            "quick-answer-trigger-link",
+            "summarize-link"
+        ],
+        "IDs": [],
+        "otherIdentifiers": [
+            "[href='/assistant']",
+            "[href='/summarizer']",
+            "[href='/fastgpt']"
+        ],
         "textContent": []
     },
     "learn.microsoft.com": {
@@ -498,6 +589,22 @@
             "Copilot+PC"
         ]
     },
+    "linkedin.com": {
+        "classes": [
+            "share-creation-state__writing-assistant-container--premium"
+        ],
+        "IDs": [],
+        "otherIdentifiers": ["[data-test-icon='premium-signal-ai-small']"],
+        "textContent": []
+    },
+    "linuxmind.dev": {
+        "classes": ["aipkit_chat_container"],
+        "IDs": [],
+        "otherIdentifiers": [
+            "[src^='https://linuxmind.dev/wp-content/uploads/2026/04/ChatGPT-Image-']"
+        ],
+        "textContent": []
+    },
     "lorealparisusa.com": {
         "classes": [
             "oap-beauty-genius",
@@ -513,6 +620,23 @@
             "[alt='Beauty Genius']",
             "[jscontroller='xdV2Hc']"
         ],
+        "textContent": []
+    },
+    "lowes.com": {
+        "classes": ["review-ai-summary"],
+        "IDs": [],
+        "otherIdentifiers": ["[data-linkid='mylow']", "[data-linkid='Mylow']"],
+        "textContent": []
+    },
+    "macys.com": {
+        "classes": [
+            "ask-ai-gecx-btn",
+            "google-prompts",
+            "ask-something-else",
+            "generated-summary-main-container"
+        ],
+        "IDs": ["ask-ai-gecx-button"],
+        "otherIdentifiers": [],
         "textContent": []
     },
     "mail.google.com": {
