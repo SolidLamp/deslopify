@@ -19,6 +19,7 @@
         "otherIdentifiers": [],
         "textContent": []
     },
+    "*.onlinelibrary.wiley.com": "onlinelibrary.wiley.com",
     "abdn.ac.uk": {
         "classes": ["gecko-chat-widget-app"],
         "IDs": [],
@@ -87,6 +88,12 @@
         "classes": [],
         "IDs": ["ai-on-android", "create-your-own-unique-android-bot"],
         "otherIdentifiers": ["[data-link-text='Gemini']"],
+        "textContent": []
+    },
+    "app.vanta.com": {
+        "classes": [],
+        "IDs": ["vanta-agent"],
+        "otherIdentifiers": ["[data-testid='global-vanta-ai-button']"],
         "textContent": []
     },
     "askubuntu.com": "*.stackexchange.com",
@@ -251,6 +258,12 @@
         "otherIdentifiers": ["[aria-labelledby='explore-with-ai-heading']"],
         "textContent": []
     },
+    "developer.vonage.com": {
+        "classes": ["ai-icon-group"],
+        "IDs": ["kapa-button", "ask-ai-input"],
+        "otherIdentifiers": ["[data-testid='copy-llm-btn']"],
+        "textContent": []
+    },
     "dictionary.cambridge.org": {
         "classes": ["ai-header-button"],
         "IDs": [],
@@ -282,6 +295,16 @@
         "classes": [],
         "IDs": ["chat-assistant-textarea"],
         "otherIdentifiers": [],
+        "textContent": []
+    },
+    "docs.stripe.com": {
+        "classes": [],
+        "IDs": [],
+        "otherIdentifiers": [
+            "[data-testid='StripeAssistant--Header-AskAI']",
+            "[data-section-ask='true']",
+            "[href$='/agents']"
+        ],
         "textContent": []
     },
     "dskbank.bg": {
@@ -399,6 +422,12 @@
         ],
         "textContent": ["Ask AI"]
     },
+    "flyscoot.com": {
+        "classes": ["ai-text", "ai-text-container", "ai-trip-section"],
+        "IDs": [],
+        "otherIdentifiers": [],
+        "textContent": []
+    },
     "g4media.ro": {
         "classes": [],
         "IDs": ["g4-ai-chat-root"],
@@ -456,6 +485,12 @@
         "IDs": [],
         "otherIdentifiers": [],
         "textContent": []
+    },
+    "help.salesforce.com": {
+        "classes": [],
+        "IDs": [],
+        "otherIdentifiers": ["[aria-label='Message Area']"],
+        "textContent": ["Ask Agentforce"]
     },
     "idrinkproducts.com": {
         "classes": [],
@@ -648,6 +683,12 @@
         ],
         "textContent": []
     },
+    "member.uhc.com": {
+        "classes": [],
+        "IDs": [],
+        "otherIdentifiers": ["[data-test-id='global-nav-ask-ai']"],
+        "textContent": []
+    },
     "metro.co.uk": {
         "classes": ["metro-answers"],
         "IDs": [],
@@ -689,6 +730,12 @@
             "Studio AI Agent"
         ]
     },
+    "onlinelibrary.wiley.com": {
+        "classes": ["ai-chat-modal-control"],
+        "IDs": ["ai-chat-button-control"],
+        "otherIdentifiers": [],
+        "textContent": []
+    },
     "photopea.com": {
         "classes": [],
         "IDs": [],
@@ -728,6 +775,12 @@
         "classes": [],
         "IDs": ["llm-text-box"],
         "otherIdentifiers": ["[data-click-label='llm_mode_dropdown_tab_bar']"],
+        "textContent": []
+    },
+    "recoverit.wondershare.com": {
+        "classes": ["ai-summary"],
+        "IDs": [],
+        "otherIdentifiers": [],
         "textContent": []
     },
     "reddit.com": {
@@ -774,6 +827,15 @@
         "otherIdentifiers": ["[aria-label='Open AI chat']"],
         "textContent": []
     },
+    "sciencedirect.com": {
+        "classes": [],
+        "IDs": [
+            "reading-assistant-container",
+            "reading-assistant-main-body-section"
+        ],
+        "otherIdentifiers": [],
+        "textContent": []
+    },
     "search.brave.com": {
         "classes": [
             "ask-button-content",
@@ -784,6 +846,27 @@
         "otherIdentifiers": [],
         "textContent": ["Ask"]
     },
+    "semrush.com": {
+        "classes": [],
+        "IDs": ["vwo-ai-visibility-cta"],
+        "otherIdentifiers": [
+            "[data-test='uvp-tile-tooltip']",
+            "[aria-label='Outperform your search competitors.']"
+        ],
+        "textContent": []
+    },
+    "sentry.zendesk.com": {
+        "classes": ["new-search-component-span", "ask-ai"],
+        "IDs": [],
+        "otherIdentifiers": [],
+        "textContent": []
+    },
+    "sephora.com": {
+        "classes": [],
+        "IDs": [],
+        "otherIdentifiers": ["[data-comp~='AIBeautyChatDrop']"],
+        "textContent": []
+    },
     "serverfault.com": {
         "classes": ["ai-center"],
         "IDs": ["nav-sofa"],
@@ -791,6 +874,18 @@
             "[href*='ai-assist']",
             "[href='http://agents.stackoverflow.com']"
         ],
+        "textContent": []
+    },
+    "shopthemint.com": {
+        "classes": ["fb_iframe_widget"],
+        "IDs": ["ai-chat-plugin-banner-container"],
+        "otherIdentifiers": [],
+        "textContent": []
+    },
+    "sleepopolis.com": {
+        "classes": [],
+        "IDs": ["art-chat-launcher", "art-chat-widget"],
+        "otherIdentifiers": [],
         "textContent": []
     },
     "smallpdf.com": {
@@ -822,6 +917,14 @@
     },
     "stackexchange.com": "*.stackexchange.com",
     "stackoverflow.com": "*.stackexchange.com",
+    "star-history.com": {
+        "classes": [],
+        "IDs": [],
+        "otherIdentifiers": ["[alt='Dify']", "[href*='dify.ai']"],
+        "textContent": [
+            "Dify- Open-source platform for building LLM apps, from agents to AI workflows."
+        ]
+    },
     "superuser.com": {
         "classes": ["ai-center"],
         "IDs": ["nav-sofa"],
@@ -836,6 +939,28 @@
         "IDs": [],
         "otherIdentifiers": ["[title='AI Chat Support']"],
         "textContent": []
+    },
+    "techbloat.com": {
+        "classes": [],
+        "IDs": [],
+        "otherIdentifiers": ["[data-ym-p3-product='chipps']"],
+        "textContent": []
+    },
+    "tecnoblog.net": {
+        "classes": ["tb-single-tecnochat"],
+        "IDs": [],
+        "otherIdentifiers": [],
+        "textContent": []
+    },
+    "telerik.com": {
+        "classes": [],
+        "IDs": [],
+        "otherIdentifiers": [
+            "[href='https://www.telerik.com/agent-memory']",
+            "[class^='ai-button-module--aiButton--']",
+            "[class^='parag-rag-answer-module--topContainer--']"
+        ],
+        "textContent": ["Complete AI Toolbox"]
     },
     "thebricks.com": {
         "classes": [
@@ -859,10 +984,22 @@
         ],
         "textContent": []
     },
+    "turbotax.intuit.com": {
+        "classes": [],
+        "IDs": ["aic-entry"],
+        "otherIdentifiers": [],
+        "textContent": []
+    },
     "tutorchase.com": {
         "classes": [],
         "IDs": [],
         "otherIdentifiers": ["[aria-label='Open AI Tutor Chat']"],
+        "textContent": []
+    },
+    "twilio.com": {
+        "classes": [],
+        "IDs": [],
+        "otherIdentifiers": ["[aria-label='Open in assistant']"],
         "textContent": []
     },
     "uk.rs-online.com": {
@@ -871,9 +1008,87 @@
         "otherIdentifiers": [],
         "textContent": []
     },
-    "wires.onlinelibrary.wiley.com": {
-        "classes": ["ai-chat-modal-control"],
-        "IDs": ["ai-chat-button-control"],
+    "ulta.com": {
+        "classes": [],
+        "IDs": [],
+        "otherIdentifiers": ["[service*='commerce-ai']"],
+        "textContent": []
+    },
+    "ups.com": {
+        "classes": [],
+        "IDs": ["digital-assistant-launcher", "WACContainer"],
+        "otherIdentifiers": [],
+        "textContent": []
+    },
+    "usnews.com": {
+        "classes": [],
+        "IDs": [],
+        "otherIdentifiers": ["[aria-label='Ask U.S. News AI']"],
+        "textContent": []
+    },
+    "vimeo.com": {
+        "classes": [],
+        "IDs": [],
+        "otherIdentifiers": [
+            "[aria-label='Vimeo AI']",
+            "[data-bp-cta-location-id='9c3e2300d913447a8224f3da9dfc39a7']",
+            "[href$='/features/vimeo-ai']",
+            "[href$='/features/ai-translation']"
+        ],
+        "textContent": []
+    },
+    "virustotal.com": {
+        "classes": ["card"],
+        "IDs": [],
+        "otherIdentifiers": [],
+        "textContent": ["Code insights"]
+    },
+    "walmart.com": {
+        "classes": ["unified-chat-component"],
+        "IDs": ["top-highlights-module"],
+        "otherIdentifiers": ["[data-testid='bulleted-summary']"],
+        "textContent": []
+    },
+    "washingtonpost.com": {
+        "classes": [
+            "Highlights-singleCardContent-538a5c6f07095c4d6aed9dbfbed465fa",
+            "wpds-c-bHXelH-igoXVOL-css",
+            "wpds-c-kSOqLF-ijwAmXJ-css",
+            "wpds-c-fixGjY-ihtVbxi-css"
+        ],
+        "IDs": ["ask-the-post-ai-results-disclaimer"],
+        "otherIdentifiers": [
+            "[href=*'/ask-the-post-ai']",
+            "[id$='-trigger-ask-the-post-ai']",
+            "[data-testid='ai-overview-btn']"
+        ],
+        "textContent": []
+    },
+    "webmail.strato.de": {
+        "classes": [],
+        "IDs": [],
+        "otherIdentifiers": [
+            "[data-app-name='io.ox/ai-chat']",
+            "[aria-label='KI-Chat']",
+            "[aria-label='KI-Integration']"
+        ],
+        "textContent": []
+    },
+    "webmd.com": {
+        "classes": ["ai-ovw-wrapper"],
+        "IDs": [],
+        "otherIdentifiers": [],
+        "textContent": []
+    },
+    "webshapedesign.co.uk": {
+        "classes": ["wsai-toggle-wrapper"],
+        "IDs": [],
+        "otherIdentifiers": [],
+        "textContent": []
+    },
+    "womansworld.com": {
+        "classes": ["gist-answers-widget"],
+        "IDs": [],
         "otherIdentifiers": [],
         "textContent": []
     },
@@ -887,6 +1102,12 @@
         "classes": [],
         "IDs": ["expandable-metadata"],
         "otherIdentifiers": [],
+        "textContent": []
+    },
+    "zocdoc.com": {
+        "classes": ["ai-search-hero__search-container-wrapper"],
+        "IDs": [],
+        "otherIdentifiers": ["[data-test='ai-search-hero-quick-links']"],
         "textContent": []
     }
 }
