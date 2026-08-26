@@ -292,9 +292,9 @@
         "textContent": []
     },
     "docs.replit.com": {
-        "classes": [],
+        "classes": ["chat-assistant-floating-input"],
         "IDs": ["chat-assistant-textarea"],
-        "otherIdentifiers": [],
+        "otherIdentifiers": ["[aria-label='Toggle assistant panel']"],
         "textContent": []
     },
     "docs.stripe.com": {
@@ -810,7 +810,11 @@
             "[class*='ParallelAgentsCard']",
             "[class*='MultipleArtifactsCard']",
             "[class*='TeamsCard']",
-            "[data-analytics-id='canvas_empty_state_start_prompt']"
+            "[data-analytics-id='canvas_empty_state_start_prompt']",
+            "[class^='HomeChatGreeting-module']",
+            "[class^='HomeChatSuggestions-module']",
+            "[class^='ExpandAgentChat-module']",
+            "[class^='Agent2FloatieSurface-module']"
         ],
         "textContent": [
             "Agent 4",
@@ -918,9 +922,22 @@
     "stackexchange.com": "*.stackexchange.com",
     "stackoverflow.com": "*.stackexchange.com",
     "star-history.com": {
-        "classes": [],
+        "classes": ["sidebar-sticky"],
         "IDs": [],
-        "otherIdentifiers": ["[alt='Dify']", "[href*='dify.ai']"],
+        "otherIdentifiers": [
+            "[alt='Dify']",
+            "[href*='dify.ai']",
+            "[href='/compare/ai-agent-sandbox']",
+            "[href='/compare/ai-agent-orchestration']",
+            "[href='/compare/ai-coding-tool']",
+            "[href='/compare/llm-framework']",
+            "[href='/compare/local-ai-runner']",
+            "[href='/compare/ai-memory']",
+            "[href='/compare/ai-chat-ui']",
+            "[href='/compare/ai-agent-framework']",
+            "[href='/compare/ai-image-generation']",
+            "[href='/compare/ai-gateway']"
+        ],
         "textContent": [
             "Dify- Open-source platform for building LLM apps, from agents to AI workflows."
         ]
