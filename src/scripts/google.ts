@@ -20,7 +20,7 @@
 
 export {};
 
-import blocklist from "../blocklist.json" with { type: "json" };
+import blocklist from "../blocklist.json" with { type: "json" }; 
 
 const api = typeof browser !== "undefined" ? browser : chrome;
 
@@ -96,10 +96,7 @@ function markAsAI(): void {
     const allResults = document.getElementsByClassName("zReHs");
     for (const e of allResults) {
         /* This approach is not perfect as it has been observed that Google
-           Search may return /goto? addresses if not signed in.
-           For example, it occurs on my ESR copy of Firefox but not latest
-           on the same computer with the same IP.
-           So, it likely depends on cookies, or some other tracker.
+           Search is likely to return /goto? addresses if not signed in.
            However, I spent a fortnight attempting to decode it and gave
            up so I just didn't bother anymore.
            Probably a TODO, but whether it is even possible is another 
@@ -126,10 +123,11 @@ function markAsAI(): void {
             }
             console.log(parent);
             const aiWarning = document.createElement("span");
-            aiWarning.textContent = "Deslopify: Website contains AI"
+            aiWarning.textContent = "Website contains Generative AI Elements";
+            aiWarning.style =
+                "transform: skew(-0.25rad); border-radius: 5px; background-color: #ff8c42; padding: 2px 12px; display: inline flow-root; color: #fef5ec; font: normal normal 500 16px 'Source Sans 3', sans-serif;";
             parent.appendChild(aiWarning);
         }
-        
     }
 }
 
@@ -154,13 +152,12 @@ if (typeof message.message === "boolean") {
 }
 
 if (!active) {
-    throw new Error("Inactive.")
+    throw new Error("Inactive.");
 }
 
 ((): void => {
-
     markAsAI();
-    
+
     const observer = new MutationObserver(() => {
         removePeopleAlsoAsk();
     });
