@@ -20,6 +20,8 @@
 
 export {};
 
+import blocklist from "../blocklist.json" with { type: "json" };
+
 const api = typeof browser !== "undefined" ? browser : chrome;
 
 // For google.com
@@ -63,8 +65,10 @@ function removePeopleAlsoAsk(): void {
     // We want to get all children of LQCGqc, and check for the injected 'noai'
     const peopleAlsoAsk = document.getElementsByClassName("LQCGqc");
     for (const e of peopleAlsoAsk) {
+        let hasNoNonAI: boolean = true;
         const children: HTMLElement[] = Array.from(e.children);
         let questions: HTMLElement[] = [];
+        let parent: HTMLElement | null = e.parentElement;
 
         // Children include both <div>s (we want) and <style>s (don't want).
         for (const child of children) {
@@ -76,8 +80,56 @@ function removePeopleAlsoAsk(): void {
         for (const question of questions) {
             if (question.getAttribute("data-noai") !== "true") {
                 question.style.display = "none";
+            } else {
+                hasNoNonAI = false;
             }
         }
+
+        if (hasNoNonAI && parent) {
+            parent.style.display = "none";
+        }
+    }
+}
+
+function markAsAI(): void {
+    // console.log(blocklist);
+    const allResults = document.getElementsByClassName("zReHs");
+    for (const e of allResults) {
+        /* This approach is not perfect as it has been observed that Google
+           Search may return /goto? addresses if not signed in.
+           For example, it occurs on my ESR copy of Firefox but not latest
+           on the same computer with the same IP.
+           So, it likely depends on cookies, or some other tracker.
+           However, I spent a fortnight attempting to decode it and gave
+           up so I just didn't bother anymore.
+           Probably a TODO, but whether it is even possible is another 
+           question; it could be non-reversible, e.g. a server-side hash
+           table, as the /goto? links have a redirect to the actual page.
+           Regardless, assume that doesn't happen.
+           Sincerely, me (SolidLamp) */
+        const href: string | null = e.getAttribute("href");
+        const url: string = href ? new URL(href).hostname : "none";
+        if (url in blocklist) {
+            let parent: Element | null = e;
+            try {
+                for (let i = 0; i < 4; i++) {
+                    // There are four parents
+                    parent = parent.parentElement;
+                }
+            } catch (TypeError) {
+                parent = null;
+                console.error("Deslopify: Error finding parent!");
+                break;
+            }
+            if (!parent) {
+                console.log("Deslopify: Parent missing?");
+            }
+            console.log(parent);
+            const aiWarning = document.createElement("span");
+            aiWarning.textContent = "Deslopify: Website contains AI"
+            parent.appendChild(aiWarning);
+        }
+        
     }
 }
 
@@ -106,6 +158,9 @@ if (!active) {
 }
 
 ((): void => {
+
+    markAsAI();
+    
     const observer = new MutationObserver(() => {
         removePeopleAlsoAsk();
     });
