@@ -7,7 +7,7 @@
 ![GitHub Issues or Pull Requests by label](https://img.shields.io/github/issues/SolidLamp/deslopify/blocklist?style=plastic)
 ![Weekly Downloads](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Faddons.mozilla.org%2Fapi%2Fv5%2Faddons%2Faddon%2Fdeslopify%2F&query=weekly_downloads&suffix=%20downloads%2Fweek&style=plastic&label=Firefox%20Add-ons&labelColor=%23FF662B&color=%238836D3)
 
-A WebExtension to hide forced AI elements on numerous websites. 
+Deslopify is a WebExtension for Firefox which hides AI elements on [over 132 websites!](./src/blocklist.json) 
 
 [Get Deslopify on Firefox Addons!](https://addons.mozilla.org/en-GB/firefox/addon/deslopify)
 
@@ -56,6 +56,13 @@ You can then build Deslopify with the following commands, depending on your pack
 $ npm i
 $ npm run build
 ```
+<details>
+
+<summary>
+
+### Other package managers
+
+</summary>
 
 ### pnpm
 
@@ -78,8 +85,8 @@ $ yarn build
 $ bun install
 $ bun run build
 ```
+</details>
 
-***
 
 Optionally, for test builds with unique UUIDs, 'test' may be appended to the last command in all of thse examples.
 
@@ -97,6 +104,8 @@ Here are a number of other useful extensions or projects which help protect agai
 | [just_a_husk's image-search AI Blocklist](https://codeberg.org/just_a_husk/uBlockOrigin-AI-Blocklist) | A blocklist for [uBlock Origin](https://github.com/gorhill/uBlock) and uBlacklist which blocks AI imagery from appearing on the web and in search engines. |
 | [Alerte sur les sites GenAI](https://github.com/Gathor59/Extension-Alerte-GenAI/tree/version-2) | An extension which detects if text is generated with AI tooling using heuristics, and provides an error message to the user in such case. (The extension is provided only in French.) |
 | [The No-AI Software Directory](https://github.com/thatshubham/no-ai) | A list of general-purpose software products and other resources which do not integrate AI tooling. |
-| [Stevo's AI Blocklist](https://github.com/Stevoisiak/Stevos-AI-Blocklist) | A blocklist similar to Deslopify for [uBlock Origin](https://github.com/gorhill/uBlock) and AdGuard, which blocks AI elements on the website. This is very similar to Deslopify, although it is provided as a blocklist rather than as an extension. This can be detrimental the outreach to less technical users, although it increases privacy and security. |
+| [Stevo's AI Blocklist](https://github.com/Stevoisiak/Stevos-AI-Blocklist) | A blocklist for [uBlock Origin](https://github.com/gorhill/uBlock) and AdGuard which blocks AI elements on the website with a similar scope to Dislopify. Although it is a similar project, it is provided as a blocklist rather than as an extension. This may be detrimental to the outreach of the project towards less technical users, however it increases privacy and security. [There has been information sharing between this project and Deslopify in the past.](https://github.com/Stevoisiak/Stevos-AI-Blocklist/pull/162) |
+| [AiSList & AiBlock](https://aisloplist.com/) | A WebExtension for Firefox and Chromium browsers which provides a community-maintained blocklist for AI slop on YouTube. |
+| [AI uBlock Origin Blacklist](https://github.com/alvi-se/ai-ublock-blacklist) | A blocklist for [uBlock Origin](https://github.com/gorhill/uBlock) which is aimed towards removing websites consisting of text written by Generative AI. |
 
 
