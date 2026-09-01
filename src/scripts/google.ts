@@ -63,6 +63,7 @@ function removePeopleAlsoAsk(): void {
 
     // LQCGqc appears to be the class of 'People Also Ask'
     // We want to get all children of LQCGqc, and check for the injected 'noai'
+    console.log("Deslopify: Custom site-specific script investigating");
     const peopleAlsoAsk = document.getElementsByClassName("LQCGqc");
     for (const e of peopleAlsoAsk) {
         let hasNoNonAI: boolean = true;
@@ -91,8 +92,7 @@ function removePeopleAlsoAsk(): void {
     }
 }
 
-function markAsAI(): void {
-    // console.log(blocklist);
+async function markAsAI(): Promise<void> {
     const allResults = document.getElementsByClassName("zReHs");
     for (const e of allResults) {
         /* This approach is not perfect as it has been observed that Google
@@ -105,7 +105,12 @@ function markAsAI(): void {
            Regardless, assume that doesn't happen.
            Sincerely, me (SolidLamp) */
         const href: string | null = e.getAttribute("href");
-        const url: string = href ? new URL(href).hostname : "none";
+        let url: string = "none";
+        try { // breaks out for google urls.
+            url = href ? new URL(href).hostname : "none";
+        } catch (TypeError) {
+            url = "none";
+        }
         if (url in blocklist) {
             let parent: Element | null = e;
             try {
@@ -121,7 +126,6 @@ function markAsAI(): void {
             if (!parent) {
                 console.log("Deslopify: Parent missing?");
             }
-            console.log(parent);
             const aiWarning = document.createElement("span");
             aiWarning.textContent = "Website contains Generative AI Elements";
             aiWarning.style =
@@ -155,8 +159,9 @@ if (!active) {
     throw new Error("Inactive.");
 }
 
-((): void => {
-    markAsAI();
+(async (): Promise<void> => {
+
+    await markAsAI();
 
     const observer = new MutationObserver(() => {
         removePeopleAlsoAsk();
