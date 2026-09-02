@@ -20,7 +20,7 @@
 
 export {};
 
-import blocklist from "../blocklist.json" with { type: "json" }; 
+import blocklist from "../blocklist.json" with { type: "json" };
 
 const api = typeof browser !== "undefined" ? browser : chrome;
 
@@ -36,11 +36,90 @@ if (domain.substring(0, 6) != "google") {
     throw new Error("Not Google.");
 }
 
+function createPPALink(question: string): string {
+    return `
+<a href="/search?q=${encodeURIComponent(question)}" style="color: inherit;
+text-decoration: none;">
+    <div class="wQiwMc related-question-pair" data-q="${question}">
+        <div class="roMIYb o3PDvf HYvwY cS7M8 oST1qe g7pt6d h373nd ilulF ysxiae iRPzcb"></div>
+        <div style="display: flex; 
+        justify-content: space-between;
+        align-items: center;
+        margin: 4px 2px;
+        border-radius: 6px;
+        background-color: #4D5156;
+        cursor: pointer;
+        padding: 12px 20px;">
+        <span class="JCzEY tNxQIb CSkcDe">${question}</span>
+            <div class="p8Jhnd">
+                <span>🔍︎</span>
+            </div>
+        </div>
+    </div>
+</a>
+    `;
+}
+
+function createPeopleAlsoAsk(suggestions: string[]): string {
+    let string = `
+        <div class="eJH8qe adDDi" style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 20px;
+        ">
+        <span class="mgAbYb RES9jf YC72Wc IFnjPb JGD2rd" aria-level="2" role="heading">People also ask</span>
+        <span style="
+            transform: skew(-0.25rad);
+            border-radius: 5px;
+            background-color: #ff8c42;
+            padding: 2px 12px;
+            display: inline flow-root;
+            color: #fef5ec;
+            font: normal normal 500 16px 'Source Sans 3', sans-serif;
+            ">DESLOPIFIED</span>
+        </div>`;
+    for (const suggestion of suggestions) {
+        string = string.concat(createPPALink(suggestion));
+    }
+    return string;
+}
+
+function getSuggestions(suggestionElement: Element): string[] {
+    const queries: string[] = [];
+    for (const child of suggestionElement.children) {
+        let main: HTMLElement | null = null;
+        try {
+            main = child.children[0].children[0];
+        } catch (TypeError) {
+            console.error("Deslopify: child missing? Continuing...");
+            main = null;
+        }
+
+        if (!main) {
+            continue;
+        }
+
+        const query = main.getAttribute("data-q");
+        if (typeof query === "string") {
+            queries.push(query);
+        }
+    }
+    return queries;
+}
+
 /**
- * Deletes 'People Also Ask' questions where an AI overview would be expected.
+ * This function handles the deslopification of Google's 'People Also Ask'
+ * questions. This is through the observation that all non-AI 'People Also Ask'
+ * popups appear to have the class Sbgr0, so 'People Also Ask' popups without
+ * the class are changed.
+ * This function formerly simply deleted them, but as of Sep 2026, it appears
+ * that all Google 'People Also Ask' questions are AI now, so this edits them
+ * to replace them with a link to the relevant search, akin to how they used
+ * to be not as integrated.
  */
 function removePeopleAlsoAsk(): void {
-    // Get elements with Sbgr0, and add 'non-ai: true' to parent elements
+    // Get elements with Sbgr0, and add 'noai: true' to parent elements
     const newElements = document.getElementsByClassName("Sbgr0");
     for (const e of newElements) {
         let parent: Element | null = e;
@@ -62,14 +141,18 @@ function removePeopleAlsoAsk(): void {
     }
 
     // LQCGqc appears to be the class of 'People Also Ask'
-    // We want to get all children of LQCGqc, and check for the injected 'noai'
-    console.log("Deslopify: Custom site-specific script investigating");
+    // // We want to get all children of LQCGqc, and check for the injected 'noai'
+    // Any children without noai will be changed to queries.
     const peopleAlsoAsk = document.getElementsByClassName("LQCGqc");
     for (const e of peopleAlsoAsk) {
         let hasNoNonAI: boolean = true;
         const children: HTMLElement[] = Array.from(e.children);
         let questions: HTMLElement[] = [];
         let parent: HTMLElement | null = e.parentElement;
+
+        if (parent && parent.getAttribute("class") !== "Wt5Tfe") {
+            parent = null;
+        }
 
         // Children include both <div>s (we want) and <style>s (don't want).
         for (const child of children) {
@@ -86,8 +169,13 @@ function removePeopleAlsoAsk(): void {
             }
         }
 
+        // Replace the whole box
         if (hasNoNonAI && parent) {
-            parent.style.display = "none";
+            // // parent.style.display = "none";
+            // Here we get each suggestion.
+            const queries: string[] = getSuggestions(e);
+            const newHTML: string = createPeopleAlsoAsk(queries);
+            parent.innerHTML = newHTML;
         }
     }
 }
@@ -106,7 +194,8 @@ async function markAsAI(): Promise<void> {
            Sincerely, me (SolidLamp) */
         const href: string | null = e.getAttribute("href");
         let url: string = "none";
-        try { // breaks out for google urls.
+        try {
+            // breaks out for google urls.
             url = href ? new URL(href).hostname : "none";
         } catch (TypeError) {
             url = "none";
@@ -160,7 +249,6 @@ if (!active) {
 }
 
 (async (): Promise<void> => {
-
     await markAsAI();
 
     const observer = new MutationObserver(() => {
