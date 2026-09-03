@@ -6,8 +6,7 @@
 *.ts @SolidLamp
 *.cts @SolidLamp
 *.mts @SolidLamp
-src/blocklist.schema.json @SolidLamp
-src/enhancedblocklist.json @SolidLamp
+src/scripts @SolidLamp
 
 # Environment / Packaging - Core Contributors:
 #   - @SolidLamp
