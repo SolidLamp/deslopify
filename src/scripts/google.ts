@@ -21,10 +21,21 @@
 export {};
 
 import blocklist from "../blocklist.json" with { type: "json" };
+import warninglist from "../warninglist.json" with { type: "json" };
 
 const api = typeof browser !== "undefined" ? browser : chrome;
 
 // For google.com
+
+const aiWebsites: Set<string> = Array.isArray(warninglist.ai)
+    ? new Set(warninglist.ai)
+    : new Set();
+const proaiWebsites: Set<string> = Array.isArray(warninglist.proai)
+    ? new Set(warninglist.proai)
+    : new Set();
+const antiaiWebsites: Set<string> = Array.isArray(warninglist.antiai)
+    ? new Set(warninglist.antiai)
+    : new Set();
 
 const hostname = window.location.hostname;
 let domain = hostname;
@@ -183,15 +194,16 @@ function removePeopleAlsoAsk(): void {
 async function markAsAI(): Promise<void> {
     const allResults = document.getElementsByClassName("zReHs");
     for (const e of allResults) {
-        /* This approach is not perfect as it has been observed that Google
-           Search is likely to return /goto? addresses if not signed in.
-           However, I spent a fortnight attempting to decode it and gave
-           up so I just didn't bother anymore.
-           Probably a TODO, but whether it is even possible is another 
-           question; it could be non-reversible, e.g. a server-side hash
-           table, as the /goto? links have a redirect to the actual page.
-           Regardless, assume that doesn't happen.
-           Sincerely, me (SolidLamp) */
+        /* * INFO:
+        This approach is not perfect as it has been observed that Google
+        Search is likely to return /goto? addresses if not signed in.
+        However, I spent a fortnight attempting to decode it and gave
+        up so I just didn't bother anymore.
+        Probably a TODO, but whether it is even possible is another 
+        question; it could be non-reversible, e.g. a server-side hash
+        table, as the /goto? links have a redirect to the actual page.
+        Regardless, assume that doesn't happen.
+        Sincerely, me (SolidLamp) */
         const href: string | null = e.getAttribute("href");
         let url: string = "none";
         try {
@@ -200,27 +212,58 @@ async function markAsAI(): Promise<void> {
         } catch (TypeError) {
             url = "none";
         }
-        if (url in blocklist) {
-            let parent: Element | null = e;
-            try {
-                for (let i = 0; i < 4; i++) {
-                    // There are four parents
-                    parent = parent.parentElement;
-                }
-            } catch (TypeError) {
-                parent = null;
-                console.error("Deslopify: Error finding parent!");
-                break;
-            }
-            if (!parent) {
-                console.log("Deslopify: Parent missing?");
-            }
-            const aiWarning = document.createElement("span");
-            aiWarning.textContent = "Website contains Generative AI Elements";
-            aiWarning.style =
-                "transform: skew(-0.25rad); border-radius: 5px; background-color: #ff8c42; padding: 2px 12px; display: inline flow-root; color: #fef5ec; font: normal normal 500 16px 'Source Sans 3', sans-serif;";
-            parent.appendChild(aiWarning);
+
+        if (url === "none") {
+            continue;
         }
+
+        let parent: Element | null = e;
+        try {
+            for (let i = 0; i < 4; i++) {
+                // There are four parents
+                parent = parent.parentElement;
+            }
+        } catch (TypeError) {
+            parent = null;
+            console.error("Deslopify: Error finding parent!");
+            break;
+        }
+        if (!parent) {
+            console.log("Deslopify: Parent missing?");
+            return;
+        }
+
+        // This again
+        if (url.substring(0, 4) == "www.") {
+            url = url.slice(4);
+        }
+
+        // Now we do the visual stuff
+        const aiWarning = document.createElement("span");
+        aiWarning.style =
+            "transform: skew(-0.25rad); border-radius: 5px; background-color: #ff8c42; padding: 2px 12px; display: inline flow-root; color: #fef5ec; font: normal normal 500 16px 'Source Sans 3', sans-serif;";
+        
+        console.log(aiWebsites);
+        console.log(proaiWebsites);
+        console.log(antiaiWebsites);
+        console.log(`${url}; ${aiWebsites.has(url)}; ${url in blocklist}; ${proaiWebsites.has(url)}; ${antiaiWebsites.has(url)}; `);
+        if (aiWebsites.has(url)) {
+            aiWarning.textContent = "AI";
+            aiWarning.style.setProperty("background-color", "#93032E");
+        } else if (url in blocklist) {
+            aiWarning.textContent = "Website contains Generative AI Elements";
+            aiWarning.style.setProperty("background-color", "#ff8c42");
+        } else if (proaiWebsites.has(url)) {
+            aiWarning.textContent = "Pro-AI";
+            aiWarning.style.setProperty("background-color", "#473198");
+        } else if (antiaiWebsites.has(url)) {
+            aiWarning.textContent = "Anti-AI";
+            aiWarning.style.setProperty("background-color", "#60A561");
+        } else {
+            aiWarning.style.display = "none";
+        }
+
+        parent.appendChild(aiWarning);
     }
 }
 
