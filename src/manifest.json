@@ -225,6 +225,11 @@
         {
             "matches": ["*://www.ecosia.org/*"],
             "js": ["scripts/ecosia.ts"]
+        },
+        {
+            "matches": ["*://search.brave.com/*"],
+            "js": ["scripts/search.brave.ts"],
+            "run_at": "document_idle"
         }
     ],
 
