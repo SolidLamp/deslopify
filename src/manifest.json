@@ -221,6 +221,10 @@
         {
             "matches": ["*://www.startpage.com/*"],
             "js": ["scripts/startpage.ts"]
+        },
+        {
+            "matches": ["*://www.ecosia.org/*"],
+            "js": ["scripts/ecosia.ts"]
         }
     ],
 
