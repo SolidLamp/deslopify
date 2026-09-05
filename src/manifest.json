@@ -230,6 +230,11 @@
             "matches": ["*://search.brave.com/*"],
             "js": ["scripts/search.brave.ts"],
             "run_at": "document_idle"
+        },
+        {
+            "matches": ["*://www.qwant.com/*"],
+            "js": ["scripts/qwant.ts"],
+            "run_at": "document_idle"
         }
     ],
 
