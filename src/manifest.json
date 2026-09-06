@@ -239,6 +239,10 @@
         {
             "matches": ["*://duckduckgo.com/*"],
             "js": ["scripts/duckduckgo.ts"]
+        },
+        {
+            "matches": ["*://yandex.com/*"],
+            "js": ["scripts/yandex.ts"]
         }
     ],
 
