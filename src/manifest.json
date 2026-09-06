@@ -235,6 +235,10 @@
             "matches": ["*://www.qwant.com/*"],
             "js": ["scripts/qwant.ts"],
             "run_at": "document_idle"
+        },
+        {
+            "matches": ["*://duckduckgo.com/*"],
+            "js": ["scripts/duckduckgo.ts"]
         }
     ],
 
