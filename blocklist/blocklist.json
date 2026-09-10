@@ -390,7 +390,7 @@
     },
     "eastherts.gov.uk": {
         "classes": [],
-        "IDs": ["chat_content"],
+        "IDs": ["block-eastherts-chatbotebiai"],
         "otherIdentifiers": [],
         "textContent": []
     },
@@ -905,7 +905,8 @@
             "[class^='HomeChatSuggestions-module']",
             "[class^='ExpandAgentChat-module']",
             "[class^='Agent2FloatieSurface-module']",
-            "[class^='Tour-module']"
+            "[class^='Tour-module']",
+            "[data-analytics-id='global_sidebar_starter_plan_usage_card']"
         ],
         "textContent": [
             "Agent 4",
