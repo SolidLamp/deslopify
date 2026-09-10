@@ -32,6 +32,12 @@
         "otherIdentifiers": ["[aria-label='Open Chatbot']"],
         "textContent": []
     },
+    "academic.oup.com": {
+        "classes": ["ai"],
+        "IDs": [],
+        "otherIdentifiers": [],
+        "textContent": []
+    },
     "account.proton.me": {
         "classes": ["explore-app-proton-lumo", "lumo-troubleshoot-launcher"],
         "IDs": [],
@@ -140,7 +146,9 @@
             "[title='Open Copilot']",
             "[data-c*='/images/create/ai-image-generator']",
             "[data-prompt='Image Creator']",
-            "[href=*='/copilotsearch']"
+            "[href=*='/copilotsearch']",
+            "[aria-label='Create wallpaper']",
+            "[aria-label='Text creator']"
         ],
         "textContent": []
     },
@@ -205,6 +213,16 @@
         ],
         "textContent": []
     },
+    "citationmachine.net": {
+        "classes": [],
+        "IDs": [],
+        "otherIdentifiers": [
+            "[href$='/writing-assistant']",
+            "[data-test='polish-writing']",
+            "[data-test='writing-assistant-info-banner']"
+        ],
+        "textContent": []
+    },
     "claimyr.com": {
         "classes": ["chat-container-container"],
         "IDs": [],
@@ -215,6 +233,19 @@
         "classes": ["druidWebchatRoot_v2"],
         "IDs": ["druidWebchatRoot_v2"],
         "otherIdentifiers": [],
+        "textContent": []
+    },
+    "coinmarketcap.com": {
+        "classes": [],
+        "IDs": [],
+        "otherIdentifiers": [
+            "[class^='FloatingAiChat']",
+            "[class^='ChatItemWithChevronRight']",
+            "[class^='CmcAiInsights']",
+            "[data-test='section-ai-insights']",
+            "[class^='FloatingAiChat']",
+            "[class^='homepageAiInsights']"
+        ],
         "textContent": []
     },
     "collinsdictionary.com": {
@@ -264,6 +295,12 @@
         "otherIdentifiers": ["[data-testid='copy-llm-btn']"],
         "textContent": []
     },
+    "developers.google.com": {
+        "classes": ["devsite-key-takeaways-panel-header"],
+        "IDs": [],
+        "otherIdentifiers": ["[aria-labelledby='key-takeaways-panel-title']"],
+        "textContent": []
+    },
     "dictionary.cambridge.org": {
         "classes": ["ai-header-button"],
         "IDs": [],
@@ -291,6 +328,15 @@
         ],
         "textContent": []
     },
+    "docs.gitlab.com": {
+        "classes": [],
+        "IDs": [],
+        "otherIdentifiers": [
+            "[href*='claude.ai/new']",
+            "[href*='chatgpt.com/q?']"
+        ],
+        "textContent": []
+    },
     "docs.replit.com": {
         "classes": ["chat-assistant-floating-input"],
         "IDs": ["chat-assistant-textarea"],
@@ -305,6 +351,12 @@
             "[data-section-ask='true']",
             "[href$='/agents']"
         ],
+        "textContent": []
+    },
+    "donate.justgiving.com": {
+        "classes": [],
+        "IDs": [],
+        "otherIdentifiers": ["[data-qa='ai-message-enhancer-button']"],
         "textContent": []
     },
     "dskbank.bg": {
@@ -325,7 +377,8 @@
             "[href$='assist=true']",
             "[href$='assist=false']",
             "[href*='ia=chat']",
-            "[href='https://duck.ai/']"
+            "[href='https://duck.ai/']",
+            "[class$='option-search-duckai-entry']"
         ],
         "textContent": ["Search Assist", "Duck.ai"]
     },
@@ -335,6 +388,12 @@
         "otherIdentifiers": ["[href$='/dummies-ai']"],
         "textContent": []
     },
+    "eastherts.gov.uk": {
+        "classes": [],
+        "IDs": ["chat_content"],
+        "otherIdentifiers": [],
+        "textContent": []
+    },
     "ebay.com": {
         "classes": ["srp-river-answer--FAQ_KW_SRP_MODULE"],
         "IDs": [],
@@ -342,7 +401,11 @@
         "textContent": []
     },
     "ecosia.org": {
-        "classes": ["ai-overview-content", "omnibox-search-form__ai-chat"],
+        "classes": [
+            "ai-overview-content",
+            "omnibox-search-form__ai-chat",
+            "claims-section__claims"
+        ],
         "IDs": ["search-form-ai-suggestion"],
         "otherIdentifiers": [
             "[data-test-id='search-navigation-item-chat']",
@@ -350,6 +413,16 @@
             "[data-test-id='ai-overview-content']",
             "[data-test-id='ai-overview']",
             "[data-test-id='mainline-result-aiOverview']"
+        ],
+        "textContent": ["AI that answers to the planet"]
+    },
+    "editor.flixier.com": {
+        "classes": ["ai-generate-btn"],
+        "IDs": [],
+        "otherIdentifiers": [
+            "[title='AI Tools']",
+            "[data-tab-id='agent-chat']",
+            "[data-tab-id='generate']"
         ],
         "textContent": []
     },
@@ -422,6 +495,15 @@
         ],
         "textContent": ["Ask AI"]
     },
+    "flixier.com": {
+        "classes": ["ai-generate-btn"],
+        "IDs": ["dropdown-ai"],
+        "otherIdentifiers": [
+            "[href$='/ai-video-editing-assistant']",
+            "[aria-controls='dropdown-ai']"
+        ],
+        "textContent": []
+    },
     "flyscoot.com": {
         "classes": ["ai-text", "ai-text-container", "ai-trip-section"],
         "IDs": [],
@@ -446,7 +528,9 @@
         "otherIdentifiers": [
             "[href='/github-copilot/pro']",
             "[data-tab-item='agents']",
-            "[data-tab-item='models']"
+            "[data-tab-item='models']",
+            "[data-testid*='github_copilot_day_2026']",
+            "[data-testid*='github_copilot_day']"
         ],
         "textContent": []
     },
@@ -717,6 +801,12 @@
         "otherIdentifiers": [],
         "textContent": []
     },
+    "omnicalculator.com": {
+        "classes": ["css-a1a28q"],
+        "IDs": [],
+        "otherIdentifiers": [],
+        "textContent": []
+    },
     "onecompiler.com": {
         "classes": ["mr-1"],
         "IDs": [],
@@ -814,7 +904,8 @@
             "[class^='HomeChatGreeting-module']",
             "[class^='HomeChatSuggestions-module']",
             "[class^='ExpandAgentChat-module']",
-            "[class^='Agent2FloatieSurface-module']"
+            "[class^='Agent2FloatieSurface-module']",
+            "[class^='Tour-module']"
         ],
         "textContent": [
             "Agent 4",
@@ -992,6 +1083,12 @@
         "otherIdentifiers": [],
         "textContent": []
     },
+    "thenationalnews.com": {
+        "classes": [],
+        "IDs": [],
+        "otherIdentifiers": ["[data-identifier='controls-insights-btn']"],
+        "textContent": []
+    },
     "theregister.com": {
         "classes": [],
         "IDs": [],
@@ -1114,6 +1211,12 @@
         "IDs": [],
         "otherIdentifiers": [],
         "textContent": []
+    },
+    "yandex.com": {
+        "classes": [],
+        "IDs": [],
+        "otherIdentifiers": [],
+        "textContent": ["Yandex AI"]
     },
     "youtube.com": {
         "classes": [],
