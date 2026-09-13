@@ -309,6 +309,7 @@ api.runtime.onMessage.addListener(
             "data" in message &&
             message.message == "getBlocklist"
         ) {
+            api.action.setBadgeText({ text: "", tabId: tabID });
             getBlocklist(message.data).then((blocklist) => {
                 sendResponse({ message: blocklist });
             });
