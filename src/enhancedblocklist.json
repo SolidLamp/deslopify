@@ -187,5 +187,11 @@
         "google.co.zm",
         "google.co.zw",
         "google.cat"
-    ]
+    ],
+    "StartPage": ["startpage.com"],
+    "Ecosia": ["ecosia.org"],
+    "Brave Search": ["search.brave.com"],
+    "Qwant": ["qwant.com"],
+    "DuckDuckGo": ["duckduckgo.com"],
+    "Yandex": ["yandex.com"]
 }
