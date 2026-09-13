@@ -18,20 +18,11 @@ export {};
 
 import blocklist from "../blocklist.json" with { type: "json" };
 import warninglist from "../warninglist.json" with { type: "json" };
+import { markAsAI } from "./.search.common.ts";
 
 const api = typeof browser !== "undefined" ? browser : chrome;
 
 // For yandex.com
-
-const aiWebsites: Set<string> = Array.isArray(warninglist.ai)
-    ? new Set(warninglist.ai)
-    : new Set();
-const proaiWebsites: Set<string> = Array.isArray(warninglist.proai)
-    ? new Set(warninglist.proai)
-    : new Set();
-const antiaiWebsites: Set<string> = Array.isArray(warninglist.antiai)
-    ? new Set(warninglist.antiai)
-    : new Set();
 
 const hostname = window.location.hostname;
 let domain = hostname;
@@ -42,72 +33,6 @@ if (hostname.substring(0, 4) == "www.") {
 if (domain.substring(0, 6) != "yandex") {
     throw new Error("Not Yandex.");
 }
-
-async function markAsAI(): Promise<void> {
-    const allResults = document.getElementsByClassName("OrganicTitle-Link");
-    for (const e of allResults) {
-        const href: string | null = e.getAttribute("href");
-        let url: string = "none";
-        try {
-            url = href ? new URL(href).hostname : "none";
-        } catch (TypeError) {
-            url = "none";
-        }
-
-        if (url === "none") {
-            continue;
-        }
-
-        let parent: Element | null = e;
-        try {
-            for (let i = 0; i < 3; i++) {
-                // There are four parents
-                parent = parent.parentElement;
-            }
-        } catch (TypeError) {
-            parent = null;
-            console.error("Deslopify: Error finding parent!");
-            break;
-        }
-        if (!parent) {
-            console.log("Deslopify: Parent missing?");
-            return;
-        }
-
-        if (parent.querySelector(".deslopify-ai-warning")) return;
-
-        // This again
-        if (url.substring(0, 4) == "www.") {
-            url = url.slice(4);
-        }
-
-        // Now we do the visual stuff
-        const aiWarning = document.createElement("span");
-        aiWarning.classList.add("deslopify-ai-warning")
-        aiWarning.style =
-            "transform: skew(-0.25rad); border-radius: 5px; background-color: #ff8c42; padding: 2px 12px; display: inline flow-root; color: #fef5ec; font: normal normal 500 16px 'Source Sans 3', sans-serif;";
-
-        if (aiWebsites.has(url)) {
-            aiWarning.textContent = "AI";
-            aiWarning.style.setProperty("background-color", "#93032E");
-        } else if (url in blocklist) {
-            aiWarning.textContent = "Website contains Generative AI Elements";
-            aiWarning.style.setProperty("background-color", "#ff8c42");
-        } else if (proaiWebsites.has(url)) {
-            aiWarning.textContent = "Pro-AI";
-            aiWarning.style.setProperty("background-color", "#473198");
-        } else if (antiaiWebsites.has(url)) {
-            aiWarning.textContent = "Anti-AI";
-            aiWarning.style.setProperty("background-color", "#60A561");
-        } else {
-            aiWarning.style.display = "none";
-        }
-
-        parent.appendChild(aiWarning);
-    }
-}
-
-async function markAsAIWrapper(): Promise<void> {}
 
 // We need this loop if the user adds the extension while already on a page.
 let noConnection: boolean = true;
@@ -145,7 +70,7 @@ if (!active) {
             console.log("urls different");
             
             url = location.href;
-            await markAsAI();
+            await markAsAI("OrganicTitle-Link", 3);
         }, 500);
     });
 
@@ -154,5 +79,5 @@ if (!active) {
         subtree: true,
     });
 
-    setTimeout(markAsAI, 1500);
+    setTimeout(markAsAI, 1500, "OrganicTitle-Link", 3);
 })();

@@ -1,19 +1,21 @@
 {
     "compilerOptions": {
+        "allowImportingTsExtensions": true,
         "allowJs": true,
         "allowSyntheticDefaultImports": true,
         "esModuleInterop": true,
         "forceConsistentCasingInFileNames": true,
+        "isolatedModules": false,
         "jsx": "preserve",
         "lib": ["DOM", "DOM.Iterable", "ES2023", "ESNext"],
         "types": ["webextension-polyfill"],
         "moduleResolution": "node",
         "module": "esnext",
+        "noEmit": true,
         "resolveJsonModule": true,
+        "skipLibCheck": true,
         "strict": true,
-        "target": "esnext",
-        "isolatedModules": false,
-        "skipLibCheck": true
+        "target": "esnext"
     },
     "exclude": ["node_modules", "dist"]
 }

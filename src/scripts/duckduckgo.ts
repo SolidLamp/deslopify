@@ -1,4 +1,4 @@
-/*  Deslopify site-specific script: Warnings for AI websites on Startpage
+/*  Deslopify site-specific script: Warnings for AI websites on DuckDuckGo
     Copyright (C) 2026 SolidLamp
 
     This program is free software: you can redistribute it and/or modify
@@ -18,20 +18,11 @@ export {};
 
 import blocklist from "../blocklist.json" with { type: "json" };
 import warninglist from "../warninglist.json" with { type: "json" };
+import { markAsAI } from "./.search.common.ts";
 
 const api = typeof browser !== "undefined" ? browser : chrome;
 
 // For duckduckgo.com
-
-const aiWebsites: Set<string> = Array.isArray(warninglist.ai)
-    ? new Set(warninglist.ai)
-    : new Set();
-const proaiWebsites: Set<string> = Array.isArray(warninglist.proai)
-    ? new Set(warninglist.proai)
-    : new Set();
-const antiaiWebsites: Set<string> = Array.isArray(warninglist.antiai)
-    ? new Set(warninglist.antiai)
-    : new Set();
 
 const hostname = window.location.hostname;
 let domain = hostname;
@@ -41,67 +32,6 @@ if (hostname.substring(0, 4) == "www.") {
 
 if (domain.substring(0, 10) != "duckduckgo") {
     throw new Error("Not DuckDuckGo.");
-}
-
-async function markAsAI(): Promise<void> {
-    const allResults = document.getElementsByClassName("eVNpHGjtxRBq_gLOfGDr LQNqh2U1kzYxREs65IJu");
-    for (const e of allResults) {
-        const href: string | null = e.getAttribute("href");
-        let url: string = "none";
-        try {
-            url = href ? new URL(href).hostname : "none";
-        } catch (TypeError) {
-            url = "none";
-        }
-
-        if (url === "none") {
-            continue;
-        }
-
-        let parent: Element | null = e;
-        try {
-            for (let i = 0; i < 4; i++) {
-                // There are four parents
-                parent = parent.parentElement;
-            }
-        } catch (TypeError) {
-            parent = null;
-            console.error("Deslopify: Error finding parent!");
-            break;
-        }
-        if (!parent) {
-            console.log("Deslopify: Parent missing?");
-            return;
-        }
-
-        // This again
-        if (url.substring(0, 4) == "www.") {
-            url = url.slice(4);
-        }
-
-        // Now we do the visual stuff
-        const aiWarning = document.createElement("span");
-        aiWarning.style =
-            "transform: skew(-0.25rad); border-radius: 5px; background-color: #ff8c42; padding: 2px 12px; display: inline flow-root; color: #fef5ec; font: normal normal 500 16px 'Source Sans 3', sans-serif;";
-        
-        if (aiWebsites.has(url)) {
-            aiWarning.textContent = "AI";
-            aiWarning.style.setProperty("background-color", "#93032E");
-        } else if (url in blocklist) {
-            aiWarning.textContent = "Website contains Generative AI Elements";
-            aiWarning.style.setProperty("background-color", "#ff8c42");
-        } else if (proaiWebsites.has(url)) {
-            aiWarning.textContent = "Pro-AI";
-            aiWarning.style.setProperty("background-color", "#473198");
-        } else if (antiaiWebsites.has(url)) {
-            aiWarning.textContent = "Anti-AI";
-            aiWarning.style.setProperty("background-color", "#60A561");
-        } else {
-            aiWarning.style.display = "none";
-        }
-
-        parent.appendChild(aiWarning);
-    }
 }
 
 // We need this loop if the user adds the extension while already on a page.
@@ -129,5 +59,5 @@ if (!active) {
 }
 
 (async (): Promise<void> => {
-    await markAsAI();
+    await markAsAI("eVNpHGjtxRBq_gLOfGDr LQNqh2U1kzYxREs65IJu", 4);
 })();
