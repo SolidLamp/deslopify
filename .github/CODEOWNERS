@@ -20,7 +20,7 @@ src/scripts @SolidLamp
 .yarnrc.yml @SolidLamp
 bunfig.toml @SolidLamp
 flake.nix @SolidLamp
-shell.nix @ SolidLamp
+shell.nix @SolidLamp
 *.config.js @SolidLamp
 *.config.cjs @SolidLamp
 *.config.mjs @SolidLamp
