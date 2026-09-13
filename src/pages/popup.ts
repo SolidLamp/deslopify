@@ -181,9 +181,11 @@ async function updateDOM(): Promise<void> {
 
     // Check for buttons
     if (localArray.includes(activeWebsite)) {
-        permAllowText.textContent = "Enable blocking on this website permanently";
+        permAllowText.textContent =
+            "Enable blocking on this website permanently";
     } else {
-        permAllowText.textContent = "Disable blocking on this website permanently";
+        permAllowText.textContent =
+            "Disable blocking on this website permanently";
     }
     if (sessionArray.includes(activeWebsite)) {
         tempAllowText.textContent =
@@ -205,12 +207,38 @@ async function updateDOM(): Promise<void> {
             element.classList.add("ds-unsupported-website");
             element.classList.remove("ds-supported-website");
         }
-        
+
         activeUI.textContent = "Unsupported Website";
     }
 
     // Update URL
     urlDisplay.textContent = activeWebsite;
+}
+
+/**
+ * Function to display the version of the browser extension.
+ * 
+ * @example Display basic version string on element current-version
+ * changeVersion("current-version", "Version: v{version}");
+ *
+ * @param id - An ID to select the element to be changed to display the version
+ * @param [text] - A string to change the element's text content to. This
+ * string should contain the tag {version}, which is replaced by the real
+ * version as specified in the manifest.json.
+ */
+function changeVersion(id: string, text?: string): void {
+    text = text ? text : "Deslopify v{version}";
+    const element: HTMLElement | null = document.getElementById(id);
+    if (!element) {
+        throw new Error(`Element with ID ${id} not found!`);
+    }
+
+    const manifest = api.runtime.getManifest();
+    const version = manifest.version;
+
+    const label = text.replace("{version}", `${version}`);
+
+    element.textContent = label;
 }
 
 storeOnPress("button-temp-allow", api.storage.session);
@@ -223,4 +251,5 @@ openLinkOnPress(
     "report-bug",
     "https://github.com/SolidLamp/deslopify/issues/new?template=bug-report.md",
 );
+changeVersion("current-version", "Deslopify v{version}");
 updateDOM();
