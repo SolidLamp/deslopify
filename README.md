@@ -14,6 +14,19 @@ Deslopify is a WebExtension for Firefox which hides AI elements on [over 132 web
 ***
 
 ![Example image depicting two images. The first depicts Google's AI overview erroneously claiming that the website is not Google, whilst the second is the website after Deslopify is active, where the AI overview is removed](./docs/img/deslopify-example.png)
+<details>
+
+<summary>
+
+### Other examples
+
+</summary>
+
+![Example image depicting two images. The first depicts DuckDuckGo's AI overview erroneously replies, 'The error message '%!' is not a standard Python error' when the search prompt was simply 'python errors'. In the second image, Deslopify is active and the AI prompt has disappears, as well as the AI buttons present on the website.](./docs/img/deslopify-example-ddg.png)
+
+![Example image depicting deslopify on Brave Search. Under two search results tags are visible identifying one website as containing AI features and another as being anti-AI. A Deslopify popup is also visible.](./docs/img/deslopify-example-search-filtering-brave-0.13.png)
+
+</details>
 
 ## About
 
@@ -32,6 +45,9 @@ Many websites have began to embed AI assistants or other AI elements which infri
 
 > "Anything can be improved by shoving AI in it"
 > -- Some modern website developer, probably.
+
+> "What if we just don't use AI?"
+> -- My maths professor
 
 ## Building
 
