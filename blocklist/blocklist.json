@@ -47,6 +47,16 @@
         ],
         "textContent": []
     },
+    "adobe.com": {
+        "classes": [],
+        "IDs": [],
+        "otherIdentifiers": [
+            "[data-key='category-genai']",
+            "[aria-label='Experiment, imagine, and create images with Firefly']",
+            ".tab-default-button-group[aria-label='Generative AI']"
+        ],
+        "textContent": ["Adobe Firefly"]
+    },
     "alibaba.com": {
         "classes": ["ai-mode-entry-wrapper", "accio-wrapper"],
         "IDs": [
@@ -152,6 +162,12 @@
         ],
         "textContent": []
     },
+    "bitwarden.com": {
+        "classes": [],
+        "IDs": ["portal-root"],
+        "otherIdentifiers": ["[aria-label='Ask AI (Ctrl + I)']"],
+        "textContent": []
+    },
     "blog.logrocket.com": {
         "classes": [
             "plug-dev-top",
@@ -162,6 +178,7 @@
         "otherIdentifiers": [],
         "textContent": []
     },
+    "blogs.windows.com": "microsoft.com",
     "bloomberg.com": {
         "classes": ["SummaryOnlyTakeaways_takeaways__8ayMD"],
         "IDs": [],
@@ -192,6 +209,12 @@
         "classes": [],
         "IDs": [],
         "otherIdentifiers": ["[aria-label='Ask Bunnings AI']"],
+        "textContent": []
+    },
+    "business.walmart.com": {
+        "classes": ["sparky-fab-wrapper"],
+        "IDs": [],
+        "otherIdentifiers": [],
         "textContent": []
     },
     "businessinsider.com": {
@@ -233,6 +256,12 @@
         "classes": ["druidWebchatRoot_v2"],
         "IDs": ["druidWebchatRoot_v2"],
         "otherIdentifiers": [],
+        "textContent": []
+    },
+    "code.org": {
+        "classes": [],
+        "IDs": [],
+        "otherIdentifiers": [".MuiButton-root[href='/hour-of-ai']"],
         "textContent": []
     },
     "coinmarketcap.com": {
@@ -295,6 +324,7 @@
         "otherIdentifiers": ["[data-testid='copy-llm-btn']"],
         "textContent": []
     },
+    "developercommunity.visualstudio.com": "microsoft.com",
     "developers.google.com": {
         "classes": ["devsite-key-takeaways-panel-header"],
         "IDs": [],
@@ -302,7 +332,7 @@
         "textContent": []
     },
     "dictionary.cambridge.org": {
-        "classes": ["ai-header-button"],
+        "classes": ["ai-header-button", "ai-bar"],
         "IDs": [],
         "otherIdentifiers": [
             "[onclick='window.assistantTracker?.eventBurgerMenuItemClick()']",
@@ -335,6 +365,18 @@
             "[href*='claude.ai/new']",
             "[href*='chatgpt.com/q?']"
         ],
+        "textContent": []
+    },
+    "docs.rackspace.com": {
+        "classes": ["rm-AIDropdown"],
+        "IDs": [],
+        "otherIdentifiers": [],
+        "textContent": []
+    },
+    "docs.redhat.com": {
+        "classes": [],
+        "IDs": [],
+        "otherIdentifiers": ["[data-dropdown-id='main-menu__dropdown--AI']"],
         "textContent": []
     },
     "docs.replit.com": {
@@ -510,6 +552,12 @@
         "otherIdentifiers": [],
         "textContent": []
     },
+    "forbes.com": {
+        "classes": ["jwGQ_", "genAiSummary"],
+        "IDs": [],
+        "otherIdentifiers": [],
+        "textContent": []
+    },
     "g4media.ro": {
         "classes": [],
         "IDs": ["g4-ai-chat-root"],
@@ -576,6 +624,12 @@
         "otherIdentifiers": ["[aria-label='Message Area']"],
         "textContent": ["Ask Agentforce"]
     },
+    "helpcenter.getadblock.com": {
+        "classes": ["ai-actions"],
+        "IDs": [],
+        "otherIdentifiers": [],
+        "textContent": []
+    },
     "idrinkproducts.com": {
         "classes": [],
         "IDs": ["smart-bot-container"],
@@ -599,6 +653,12 @@
         "IDs": ["mosaic-provider-career-guide-scout-promo"],
         "otherIdentifiers": [],
         "textContent": []
+    },
+    "innosupps.com": {
+        "classes": [],
+        "IDs": ["helix-chat-container"],
+        "otherIdentifiers": [],
+        "textContent": ["[src='https://app.alhena.ai/js/chat-widget/main.js']"]
     },
     "insight.com": {
         "classes": ["c-header-main-nav__item-nia-icon", "c-nia-container"],
@@ -667,6 +727,12 @@
             "[href='/summarizer']",
             "[href='/fastgpt']"
         ],
+        "textContent": []
+    },
+    "konfigurator.interdoor.pl": {
+        "classes": [],
+        "IDs": [],
+        "otherIdentifiers": ["[aria-label='Otwórz czat AI']"],
         "textContent": []
     },
     "learn.microsoft.com": {
@@ -789,10 +855,38 @@
         ],
         "textContent": ["Ask Mike"]
     },
+    "microsoft.com": {
+        "classes": [],
+        "IDs": [],
+        "otherIdentifiers": [
+            "[href*='/microsoft-copilot/']",
+            "[href$='/microsoft-365-copilot?icid=DSM_Footer_Microsoft365Copilot']",
+            "[href$='/ai?icid=DSM_Footer_AI']",
+            "[href$='/education/ai-in-education']",
+            "[href$='/ai?icid=DSM_Footer_AI']"
+        ],
+        "textContent": []
+    },
     "natwest.com": {
         "classes": [],
         "IDs": ["ccm-chat-cora-button"],
         "otherIdentifiers": [],
+        "textContent": []
+    },
+    "new.express.adobe.com": {
+        "classes": [],
+        "IDs": [],
+        "otherIdentifiers": [
+            "x-assistant-toggle",
+            "x-get-started-dialog-quickstart-card[type='create-with-ai']",
+            ".nav-tile[aria-label='Generative AI']"
+        ],
+        "textContent": []
+    },
+    "northflank.com": {
+        "classes": [],
+        "IDs": [],
+        "otherIdentifiers": ["aside:has( > [href='/blog/ai-sdlc'])"],
         "textContent": []
     },
     "oed.com": {
@@ -832,6 +926,14 @@
         "otherIdentifiers": [],
         "textContent": ["Generate with AI"]
     },
+    "photoshop.adobe.com": {
+        "classes": [],
+        "IDs": [],
+        "otherIdentifiers": [
+            ".promptbar-quick-edit-button[label='Generate an image']"
+        ],
+        "textContent": []
+    },
     "plughopper.com": {
         "classes": [
             "fixed bottom-4 right-4 sm:right-6 z-50 w-14 h-14 rounded-full",
@@ -865,6 +967,30 @@
         "classes": [],
         "IDs": ["llm-text-box"],
         "otherIdentifiers": ["[data-click-label='llm_mode_dropdown_tab_bar']"],
+        "textContent": []
+    },
+    "razer.com": {
+        "classes": [],
+        "IDs": [],
+        "otherIdentifiers": [
+            "[data-more-menu-uid='mm-razer-ai-node']",
+            "li:has( > [href='https://www.razer.com/newsletter/ai'])"
+        ],
+        "textContent": []
+    },
+    "raycast.com": {
+        "classes": [],
+        "IDs": [],
+        "otherIdentifiers": [
+            "[href$='/core-features/ai']",
+            "[href$='/store/category/ai']"
+        ],
+        "textContent": []
+    },
+    "realpython.com": {
+        "classes": [],
+        "IDs": [],
+        "otherIdentifiers": ["[href$='/tutorials/ai/']"],
         "textContent": []
     },
     "recoverit.wondershare.com": {
@@ -916,6 +1042,12 @@
             "Vibecon",
             "Turn ideas into apps in minutes — no coding needed"
         ]
+    },
+    "rock30games.com": {
+        "classes": [],
+        "IDs": [],
+        "otherIdentifiers": ["clever-search-toggler"],
+        "textContent": []
     },
     "savemyexams.com": {
         "classes": [],
@@ -996,6 +1128,30 @@
         ],
         "textContent": ["AI PDF"]
     },
+    "softonic.com": {
+        "classes": [],
+        "IDs": [],
+        "otherIdentifiers": [
+            ".js-menu-featured-item[data-track-section-id='ai']",
+            "li:has( > [data-track-category-id='ai'])",
+            "li:has(> [data-meta='card-category'] > [href='https://en.softonic.com/ai/windows'])",
+            "[for='ai-menu-status-id']",
+            "[data-track-category-id='ai-hub']"
+        ],
+        "textContent": []
+    },
+    "sogou.com": {
+        "classes": ["reactResult"],
+        "IDs": [],
+        "otherIdentifiers": [".searchnav > li:has( > #sogou_aimode)"],
+        "textContent": []
+    },
+    "sourceforge.net": {
+        "classes": [],
+        "IDs": ["google-cloud"],
+        "otherIdentifiers": [],
+        "textContent": []
+    },
     "spaceship.com": {
         "classes": ["hp-ai-website-builder-card"],
         "IDs": [],
@@ -1034,6 +1190,24 @@
             "Dify- Open-source platform for building LLM apps, from agents to AI workflows."
         ]
     },
+    "startpage.com": {
+        "classes": [],
+        "IDs": [],
+        "otherIdentifiers": [],
+        "textContent": []
+    },
+    "static.app": {
+        "classes": [],
+        "IDs": [],
+        "otherIdentifiers": ["[href$='/ai-answers']"],
+        "textContent": []
+    },
+    "studio.code.org": {
+        "classes": [],
+        "IDs": ["header-hoa", "mix-move-ai-launch-2025"],
+        "otherIdentifiers": [],
+        "textContent": []
+    },
     "superuser.com": {
         "classes": ["ai-center"],
         "IDs": ["nav-sofa"],
@@ -1047,6 +1221,22 @@
         "classes": [],
         "IDs": [],
         "otherIdentifiers": ["[title='AI Chat Support']"],
+        "textContent": []
+    },
+    "suse.com": {
+        "classes": [],
+        "IDs": [],
+        "otherIdentifiers": [
+            "[aria-label='Converse with Liz, AI Agent']",
+            "[aria-label='Ask Liz']",
+            "[title='Ask Liz']"
+        ],
+        "textContent": []
+    },
+    "sysdig.com": {
+        "classes": ["pf-cf-chat-container", "cc-navai-fill"],
+        "IDs": ["pfCfChatContainer"],
+        "otherIdentifiers": ["[href$='/blog/introducing-sysdig-secure-ai']"],
         "textContent": []
     },
     "techbloat.com": {
@@ -1150,6 +1340,12 @@
             "[href$='/features/vimeo-ai']",
             "[href$='/features/ai-translation']"
         ],
+        "textContent": []
+    },
+    "virtusa.com": {
+        "classes": [],
+        "IDs": [],
+        "otherIdentifiers": ["[class*='__aiCard']"],
         "textContent": []
     },
     "virustotal.com": {
