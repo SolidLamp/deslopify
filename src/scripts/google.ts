@@ -191,6 +191,75 @@ function removePeopleAlsoAsk(): void {
     }
 }
 
+function createPronunciation(word: string): string {
+    return `
+<div id="deslopify-audio" class="ZZKfne" style="display: none;">
+    <div>
+        <audio id="deslopify-audio-mp3" preload="auto">
+        <source src="//ssl.gstatic.com/dictionary/static/sounds/20250617/${word}--_gb_1.mp3">
+        </audio>
+        <div>
+        <button id="deslopify-audio-button" class="HxxZfc mY3e9c u9H4O" aria-label="Listen">
+            <div class="CukQkf" style="display: flex; justify-content: center; align-items: center; ">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-volume">
+                <!-- Icon by https://github.com/tabler/tabler-icons, MIT Licence -->
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M15 8a5 5 0 0 1 0 8" />
+                    <path d="M17.7 5a9 9 0 0 1 0 14" />
+                    <path d="M6 15h-2a1 1 0 0 1 -1 -1v-4a1 1 0 0 1 1 -1h2l3.5 -4.5a.8 .8 0 0 1 1.5 .5v14a.8 .8 0 0 1 -1.5 .5l-3.5 -4.5" />
+                </svg>
+            </div>
+        </button>
+        </div>
+    </div>
+    <div class="NX85qc">
+        <div class="st0Ipe">${word}</div>
+        <div id="deslopify-audio-ipa" class="ohUzqc" style="display: none;">/prəˈnaʊn(t)s/</div>
+    </div>
+</div>`;
+}
+
+const extraStyles = ".HxxZfc{align-items:center;appearance:none;background-attachment:scroll;background-clip:border-box;background-color:#0b57d0;background-image:none;background-origin:padding-box;background-position-x:0%;background-position-y:0%;background-repeat:repeat;background-size:auto;block-size:40px;border-bottom-color:#fff;border-bottom-style:none;border-bottom-width:0;border-end-end-radius:20px;border-end-start-radius:20px;border-image-outset:0;border-image-repeat:stretch;border-image-slice:100%;border-image-source:none;border-image-width:1;border-left-color:#fff;border-left-style:none;border-left-width:0;border-right-color:#fff;border-right-style:none;border-right-width:0;border-start-end-radius:20px;border-start-start-radius:20px;border-top-color:#fff;border-top-style:none;border-top-width:0;box-sizing:border-box;color:#fff;cursor:pointer;display:inline-flex;fill:#fff;font-family:Noto Sans;font-size:13.3333px;inline-size:40px;justify-content:center;line-height:normal;margin-bottom:0;margin-left:0;margin-right:0;margin-top:0;outline-color:#fff;outline-style:none;outline-width:0;position:relative;text-rendering:auto;user-select:none;will-change:transform,opacity}.NX85qc{align-items:flex-start;color:#e8e8e8;display:flex;flex-direction:column;font-family:sans-serif;font-size:14px;justify-content:center}.st0Ipe{color:#e8eaf2;font-family:Google Sans,sans-serif;font-size:28px;font-weight:400;letter-spacing:normal;line-height:36px}.ohUzqc{color:#a7a9b2;display:none;font-family:sans-serif;font-size:12px;font-weight:400;letter-spacing:normal;line-height:16px}"
+
+function defineDictionaryWord(): void {
+    const params: URLSearchParams = new URL(window.location.href).searchParams;
+    const query: string | null = params.get("q");
+    if (!query) throw Error("where query?");
+    const words: string[] = query.split("define ");
+    const word: string = words[words.length - 1].trim();
+    if (word.indexOf(" ") > -1) throw Error("too long vro");
+    const parent = document.getElementById("eKIzJc");
+    if (!parent) throw Error("where parent?");
+
+    const styleOverride = document.createElement("style");
+    styleOverride.textContent = extraStyles;
+    document.head.appendChild(styleOverride);
+
+    const newHTML: string = createPronunciation(word);
+    parent.innerHTML = newHTML;
+
+    const pronunciation = document.getElementById("deslopify-audio");
+    const audio = document.getElementById("deslopify-audio-mp3");
+    const button = document.getElementById("deslopify-audio-button");
+
+    if (!(pronunciation && audio && button)) throw Error("where elements?");
+
+    button.addEventListener("click", () => {
+        audio.play();
+    });
+    audio.addEventListener("canplay", () => {
+        pronunciation.style = "display: block;";
+    });
+
+    audio.addEventListener("loadeddata", () => {
+        if (audio.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) {
+            pronunciation.style = "display: block;";
+        }
+    });
+
+    // TODO: add the dictionary
+}
+
 async function markAsAI(): Promise<void> {
     const allResults = document.getElementsByClassName("zReHs");
     for (const e of allResults) {
@@ -242,11 +311,15 @@ async function markAsAI(): Promise<void> {
         const aiWarning = document.createElement("span");
         aiWarning.style =
             "transform: skew(-0.25rad); border-radius: 5px; background-color: #ff8c42; padding: 2px 12px; display: inline flow-root; color: #fef5ec; font: normal normal 500 16px 'Source Sans 3', sans-serif;";
-        
+
         console.log(aiWebsites);
         console.log(proaiWebsites);
         console.log(antiaiWebsites);
-        console.log(`${url}; ${aiWebsites.has(url)}; ${url in blocklist}; ${proaiWebsites.has(url)}; ${antiaiWebsites.has(url)}; `);
+        console.log(
+            `${url}; ${aiWebsites.has(url)}; ${
+                url in blocklist
+            }; ${proaiWebsites.has(url)}; ${antiaiWebsites.has(url)}; `,
+        );
         if (aiWebsites.has(url)) {
             aiWarning.textContent = "AI";
             aiWarning.style.setProperty("background-color", "#93032E");
@@ -293,6 +366,8 @@ if (!active) {
 
 (async (): Promise<void> => {
     await markAsAI();
+
+    defineDictionaryWord();
 
     const observer = new MutationObserver(() => {
         removePeopleAlsoAsk();
