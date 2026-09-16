@@ -6,14 +6,16 @@
 ![GitHub commits since latest release (branch)](https://img.shields.io/github/commits-since/SolidLamp/deslopify/latest/next?style=plastic)
 ![GitHub Issues or Pull Requests by label](https://img.shields.io/github/issues/SolidLamp/deslopify/blocklist?style=plastic)
 ![Weekly Downloads](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Faddons.mozilla.org%2Fapi%2Fv5%2Faddons%2Faddon%2Fdeslopify%2F&query=weekly_downloads&suffix=%20downloads%2Fweek&style=plastic&label=Firefox%20Add-ons&labelColor=%23FF662B&color=%238836D3)
+![Average Daily Users](https://img.shields.io/badge/dynamic/json?url=https://addons.mozilla.org/api/v5/addons/addon/deslopify/&query=average_daily_users&suffix=%20average%20daily%20users&style=plastic&label=Firefox%20Add-ons&labelColor=%23FF662B&color=%238836D3)
 
-Deslopify is a WebExtension for Firefox which hides AI elements on [over 132 websites!](./src/blocklist.json) 
+Deslopify is a WebExtension for Firefox which hides AI elements on [over 173 websites!](./src/blocklist.json) 
 
 [Get Deslopify on Firefox Addons!](https://addons.mozilla.org/en-GB/firefox/addon/deslopify)
 
 ***
 
 ![Example image depicting two images. The first depicts Google's AI overview erroneously claiming that the website is not Google, whilst the second is the website after Deslopify is active, where the AI overview is removed](./docs/img/deslopify-example.png)
+
 <details>
 
 <summary>
