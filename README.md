@@ -8,7 +8,7 @@
 ![Weekly Downloads](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Faddons.mozilla.org%2Fapi%2Fv5%2Faddons%2Faddon%2Fdeslopify%2F&query=weekly_downloads&suffix=%20downloads%2Fweek&style=plastic&label=Firefox%20Add-ons&labelColor=%23FF662B&color=%238836D3)
 ![Average Daily Users](https://img.shields.io/badge/dynamic/json?url=https://addons.mozilla.org/api/v5/addons/addon/deslopify/&query=average_daily_users&suffix=%20average%20daily%20users&style=plastic&label=Firefox%20Add-ons&labelColor=%23FF662B&color=%238836D3)
 
-Deslopify is a WebExtension for Firefox which hides AI elements on [over 173 websites!](./src/blocklist.json) 
+Deslopify is a WebExtension for Firefox which hides AI elements on [over 173 websites!](./blocklist/blocklist.json) 
 
 [Get Deslopify on Firefox Addons!](https://addons.mozilla.org/en-GB/firefox/addon/deslopify)
 
